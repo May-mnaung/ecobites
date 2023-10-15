@@ -8,12 +8,32 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <style>
         #background-color{
             background-color: #E6E5D3;
 
         }
+
+        .ratings .star{
+            display:flex;
+            grid-gap: 10px;
+
+        }
+
+        .ratings .star a{
+            transition: .6s;
+            color: #e6e4c3;
+            font-size: 30px;
+        }
+
+        .ratings .star a.active{
+            color: gold;
+        }
+
+
 
     </style>
 
@@ -104,8 +124,16 @@
                     </div>
                 
                     <br> 
-                    <div class="rating">
-                        <h6>Ratings</h6>
+                    <div class="ratings">
+                        <div class="star">
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                        </div>
+
+                        <!-- <h6>Ratings</h6>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
@@ -145,8 +173,8 @@
                                 <img src="starimg/star.png" width="20px" height="20px">
                                 <img src="starimg/star.png" width="20px" height="20px">
                             </label>
-                        </div>
-                    </div>
+                        </div> -->
+                    </div> 
                 </div>
 
             </div>
@@ -164,6 +192,7 @@
 
 
 <script>
+ 
     const button = document.getElementById("btn");
     let elementClicked = false;
     button.addEventListener("click", handleClick());
@@ -191,6 +220,23 @@
     if (elementClicked){
         displayImage(src)
     }
+
+
+    //Still working on it 
+    var stars = document.querySelectorAll('.star a');
+
+    stars.forEach((item, index1) => {
+
+        item.addEventListener("click", () =>{
+
+            stars.forEach((star,index2) => {
+                console.log(index2)
+                index1 >= index2 ? star.classList.add('active') : star.classList.remove('active')
+
+            })
+        })
+    });
+
 
 
 
