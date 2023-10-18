@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Option 1: Include in HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <style>
+        #background-color{
+            background-color: #E6E5D3;
+
+        }
+
+        .ratings .star{
+            display:flex;
+            grid-gap: 10px;
+
+        }
+
+        .ratings .star a{
+            transition: .6s;
+            color: #e6e4c3;
+            font-size: 30px;
+        }
+
+        .ratings .star a.active{
+            color: gold;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-3" id="background-color">
+            <div class="ms-4">
+                <img src="/Landing_page/Images/earth.PNG" height="80px" width="80px">
+
+                <div class="d-flex justify-content-between">
+                    <div>
+                        Filter
+                    </div>
+                    <div class="text-secondary">
+                        <!--need to put the reverse button here-->
+                        Clear filters
+                    </div>
+                </div>
+                <br> 
+                <br>
+                <div class="price">
+                    <h6>Price, $</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Cheap<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Affordable<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Expensive<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Very Expensive <span></span>
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="cuisine">
+                    <h6>Cusine/ Food Type</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        American<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Italian<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        French<span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Japanese <span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Carlifonian <span></span>
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        Seafood <span></span>
+                        </label>
+                    </div>
+                
+                    <br> 
+                    <div class="ratings">
+                        <div class="star">
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                            <a href="#" class="bi-star-fill"></a>
+                        </div>
+
+                        <!-- <h6>Ratings</h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                            <img src="starimg/star.png" width="20px" height="20px">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                                <img src="starimg/star.png" width="20px" height="20px">
+                            </label>
+                        </div> -->
+                    </div> 
+                </div>
+
+            </div>
+    
+        </div>
+   
+      
+    </div>
+
+    <button type="button" id="btn">
+        <img id="image" src="heart.jpg" alt="heart_button" width="500" height="600">
+    </button>
+    
+
+
+
+<script>
+ 
+    const button = document.getElementById("btn");
+    let elementClicked = false;
+    button.addEventListener("click", handleClick());
+    let elementClicked = true;
+        if (elementClicked){
+            button.addEventListener("click", handleUnclick())
+            let elementClicked = false;
+        }
+    
+
+    function handleClick(){
+        var image = document.getElementById("image");
+        image.src= "bolded.heart.jpg";
+
+
+    }
+
+    function handleUnclick(){
+        var image = document.getElementById("image");
+        image.src= "heart.jpg";
+    }
+
+
+
+    if (elementClicked){
+        displayImage(src)
+    }
+
+
+    //Still working on it 
+    var stars = document.querySelectorAll('.star a');
+
+    stars.forEach((item, index1) => {
+
+        item.addEventListener("click", () =>{
+
+            stars.forEach((star,index2) => {
+                console.log(index2)
+                index1 >= index2 ? star.classList.add('active') : star.classList.remove('active')
+
+            })
+        })
+    });
+
+
+
+
+
+
+
+</script>
+
+</body>
+<!-- Bootstrap JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+</html>
