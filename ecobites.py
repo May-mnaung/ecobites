@@ -20,18 +20,19 @@ def index():
 @app.route('/restaurant', methods = ['GET'])
 def restaurant():
     """
-    Dashboard Routing 
+    restaurant Routing 
     """
+    restaurants = dao.fetch_Restaurants()
     #restaurants = dao.fetch_Restaurants()
-    return render_template("/restaurants.html")
+    return render_template("/restaurants.html", restaurantsinfo=restaurants)
 
 @app.route('/contact', methods = ['GET'])
 def contact():
     """
-    Dashboard Routing 
+    Contact Routing 
     """
-    #restaurants = dao.fetch_Restaurants()
     return render_template("/contact.html")
+
 
 
 # @app.route('/restaurant', methods = ['GET'] )
