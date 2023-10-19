@@ -20,17 +20,18 @@
         .ratings .star{
             display:flex;
             grid-gap: 10px;
+            margin-bottom: 50px;
 
         }
 
         .ratings .star a{
-            transition: .6s;
-            color: #e6e4c3;
-            font-size: 30px;
+            color: #cccaa0;
+            font-size: 25px;
+            cursor: pointer;
         }
 
         .ratings .star a.active{
-            color: gold;
+            color: rgb(246, 211, 17);
         }
 
 
@@ -125,6 +126,7 @@
                 
                     <br> 
                     <div class="ratings">
+                        <h6>Restaurant ratings</h6>
                         <div class="star">
                             <a href="#" class="bi-star-fill"></a>
                             <a href="#" class="bi-star-fill"></a>
@@ -132,48 +134,6 @@
                             <a href="#" class="bi-star-fill"></a>
                             <a href="#" class="bi-star-fill"></a>
                         </div>
-
-                        <!-- <h6>Ratings</h6>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                            <img src="starimg/star.png" width="20px" height="20px">
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                                <img src="starimg/star.png" width="20px" height="20px">
-                            </label>
-                        </div> -->
                     </div> 
                 </div>
 
@@ -224,9 +184,8 @@
     }
 
 
-    //Still working on it 
-    var stars = document.querySelectorAll('.star a');
 
+    var stars = document.querySelectorAll('.star a');
     stars.forEach((item, index1) => {
 
         item.addEventListener("click", () =>{
