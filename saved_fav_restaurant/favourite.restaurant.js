@@ -13,7 +13,7 @@ function click_liked_button() {
 
         // SUCCESS
         // Got an API response
-        
+
 
     })
     .catch(error => {
@@ -23,5 +23,5 @@ function click_liked_button() {
         console.log(error.message)
     })
 
-    console.log("**** [END] call_krazymatch_api() *****")
+    console.log("**** [END] *****")
 }
