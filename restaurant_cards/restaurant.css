@@ -158,8 +158,8 @@ ul{
 .sidebar{
     width: 15%;
     height: 100vh;
-    position: fixed;
-    left: 0;
+    /* position: fixed;
+    left: 0; */
 }
 
 /* THISS */
