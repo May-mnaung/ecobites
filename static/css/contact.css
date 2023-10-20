@@ -112,12 +112,7 @@ textarea, input {
     transform: scaleY(0.6) rotate(45deg)
   }
 }
-.result-message {
-  opacity: 0;
-  transition: all 0.3s 2s;
-  transform: translateY(9rem);
-  z-index: -9999;
-}
+
 .sent {
   & .letter {
     animation: scaleLetter 1s forwards ease-in /*,

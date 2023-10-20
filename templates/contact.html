@@ -63,6 +63,13 @@
         outline: none;
     }
 
+    .result-message {
+        opacity: 0;
+        transition: all 0.3s 2s;
+        transform: translateY(9rem);
+        z-index: -9999;
+        text-align: center;
+    }
 
     </style>
 </head>
@@ -108,19 +115,19 @@
         <input type="email" placeholder="Your email" >
       </p>
       <p>
-        <button id="sendLetter" onclick="sendLetter()">Send</button>
+        <button id="sendLetter" onclick="sendmsg()">Send</button>
       </p>
     </div>
     </article>
     <div class="envelope front"></div>
     <div class="envelope back"></div>
     </div>
-    <p class="result-message centered">Thank you for your message</p>
+    <p class="result-message">Thank you for your message</p>
 
     <script>
         //JS
-        function sendLetter() {
-            alert("Button clicked!");
+        function sendmsg() {
+            document.body.classList.add("sent");
         }
     </script>
 </body>
