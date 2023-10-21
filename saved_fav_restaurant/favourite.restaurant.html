@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
 
     <title>Document</title>
-    
+    <link rel="stylesheet" href="restaurant.css">
     <!-- Bootstrap CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     
     <!-- Bootstrap Icons -->
@@ -44,12 +44,41 @@
         </div>
     </nav>
 
+
     <div class="main-content">
-    </div>
 
-       
-  
+            <!-- Row: Filter, clear filters, found results -->
+        <div class="d-flex justify-content-start ms-5" id="more-info">
+            <div>
+                Filter
+            </div>
+            <p class="ms-5"> Found results in secs </p>
+            <div class="text-secondary ms-5">
+                <button type="button" class="refresh-button">
+                    <i class="fas fa-rotate-right"></i>
+                </button>
+                Clear filters
+            </div>
+        </div>
 
-    
+       <!-- <div class="row mb-4">
+
+            <div class="d-flex justify-content-between">
+                <div class="filter">
+                    Filter
+                </div>
+
+                <div class="text-secondary">
+                    <button type="button" class="refresh-button">
+                        <i class="fas fa-rotate-right"></i>
+                    </button>
+                    Clear filters
+                </div>
+
+            </div>
+
+        </div> -->
+
 </body>
+<script src="favourite.restaurant.js"></script>
 </html>

@@ -1,9 +1,13 @@
-from flask import Flask, jsonify, render_template, request, redirect, url_for
-import dao, json
+from flask import Flask, jsonify, render_template, request, redirect, url_for, Response
+from flask_cors import CORS, cross_origin
+import dao
+from bson.json_util import dumps, loads
+
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-
-
+# Frontend codes
 
 @app.route('/', methods=['GET'])
 def index():
@@ -12,24 +16,49 @@ def index():
     """
     return render_template("/index.html")
 
-
-@app.route('/restaurants', methods = ['GET'])
+@app.route('/restaurant', methods=['GET'])
 def restaurant():
     """
-    restaurant Routing 
+    Render Restaurant Page
     """
-    restaurants = dao.fetch_Restaurants()
-    print(restaurants)
-    return json.dumps(restaurants).decode('utf-8')
+    return render_template("/restaurants.html")
 
 @app.route('/contact', methods = ['GET'])
 def contact():
     """
-    Contact Routing 
+    Contact Routing
     """
     return render_template("/contact.html")
+
+# Backend codes below
+
+# Retrieve all restaurants
+@app.route('/api/restaurants', methods = ['GET'])
+def get_restaurants():
+    """
+    restaurant Routing 
+    """
+    restaurants = dao.get_restaurants()
+    return Response(dumps(restaurants), mimetype='application/json')
+
+# Retrieve a single restaurant
+@app.route('/api/restaurant/<oid>', methods = ['GET'])
+def get_restaurant(oid):
+    """
+    restaurant Routing
+    """
+    restaurant = dao.get_restaurant(oid)
+    return Response(dumps(restaurant), mimetype='application/json')
+
+# Update a single restaurant
+@app.route('/api/restaurant/<oid>', methods = ['POST'])
+def update_restaurant(oid):
+    restaurant = dao.update_restaurant(oid, request.data)
+    return Response(dumps(restaurant), mimetype='application/json')
+
+
+
 
 
 if __name__ == "__main__":
     app.run(debug= True)
-

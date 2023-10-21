@@ -38,7 +38,14 @@ Instead of having to install each dependency one by one, they could just run the
 
 
 Flask needs to know, the .py file to run. So run that command:
-         ```export FLASK_APP=ecobites.py```
+
+         Mac users: ```export FLASK_APP=ecobites.py```
+         Windows users: ```set FLASK_APP=ecobites.py```
+
+Flask needs to know the URL to the database:
+
+        Mac users: ```export MONGO_URI=<your_mongo_uri>```
+        Windows users: ```set MONGO_URI=<your_mongo_uri>```
 
 To run the application:
          ```flask run```

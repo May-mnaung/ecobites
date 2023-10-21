@@ -1,18 +1,21 @@
-from flask import Flask,jsonify   #backend api
-from flask_pymongo import PyMongo #library needed for mangodb connect pytohn to db
-from credentials import constants   
+from flask import Flask
+from flask_pymongo import PyMongo
+from credentials import constants
+from bson.objectid import ObjectId
+from ast import literal_eval
+import json
 
 
 
-app = Flask(__name__)    #run backend
+app = Flask(__name__)
 
 # connecting to mongo
-app.config["MONGO_URI"] = constants.MONGO_CONNECT   #takes out url that contains(variable in my computer, use the library)
-mongodb_client = PyMongo(app)  #connect flask into mongo so that we can use the db
-db = mongodb_client.init_app(app, tlsAllowInvalidCertificates=True)  #connect to db
-db = mongodb_client.db["restaurants"] #give db object
+app.config["MONGO_URI"] = constants.MONGO_CONNECT
+mongodb_client = PyMongo(app)
+db = mongodb_client.init_app(app, tlsAllowInvalidCertificates=True)
+db = mongodb_client.db
 
-
+## old method
 def fetch_Restaurants() -> object:
     '''
     Queries restaurants dataset from database
@@ -21,21 +24,54 @@ def fetch_Restaurants() -> object:
     Returns:
         cursor (object): queried dataset object address
     '''
+    restaurants = db.restaurants.find()
+    return restaurants
 
-    restaurants = list(db.find())
-    restaurant_list = []
-    for restaurant in restaurants:
+# get all restaurants from database
+def get_restaurants() -> object:
+    '''
+    Queries restaurants dataset from database
+    Args:
+        None
+    Returns:
+        cursor (object): queried dataset object address
+    '''
+    restaurants = db.restaurants.find()
+    return restaurants
 
-        restaurant_dict = {
-            "Name": restaurant["Name"]
-        }
-        restaurant_list.append(restaurant_dict)
+# get a single restaurant from database
+def get_restaurant(oid) -> object:
+    # body is a JSON object
+    #     "_id": {
+    #                   "$oid": "6531369c8cc8218aa1aa13ea"
+    #               },
+    '''
+    Queries restaurants dataset from database
+    Args:
+        None
+    Returns:
+        cursor (object): queried dataset object address
+    '''
+    restaurant = db.restaurants.find_one({"_id": ObjectId(oid)})
+    return restaurant
 
+# update a single restaurant from database
+def update_restaurant(oid, data) -> object:
+    # body is a JSON object
+    # {"liked_restaurants": true}
+    '''
+    Queries restaurants dataset from database
+    Args:
+        None
+    Returns:
+        cursor (object): queried dataset object address
+    '''
 
-    return jsonify(restaurant_list)
+    data = json.loads(data)
+    print(data)
+    restaurant = db.restaurants.update_one({"_id": ObjectId(oid)}, {"$set": data})
+    return "success"
 
-
-    #15-24 call from databse
 
 if __name__ == "__main__":
     # Print all the courses
