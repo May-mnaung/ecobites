@@ -40,7 +40,7 @@
                     <div class="form-group">
                         <div class="input-group mb-3 w-100">
                             <span class="input-group-text" id="inputGroup-sizing-default"><img src="images/icons8-password-50.png" width="25px" height="25px"></span>
-                            <input type="text" id="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <input type="password" id="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         </div>
 
                     </div>
@@ -109,8 +109,10 @@
             console.log("There's error")
         }
         else{
-            document.body.classList.add("sent");
+            window.location.href = '../templates/index.html';
         }
+
+        
         //check
         console.log(name)
         console.log(msg)
