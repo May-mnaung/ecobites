@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, render_template, request, redirect, url_for
-import dao
-
+import dao, json
 app = Flask(__name__)
 
 
@@ -14,13 +13,14 @@ def index():
     return render_template("/index.html")
 
 
-@app.route('/restaurant', methods = ['GET'])
+@app.route('/restaurants', methods = ['GET'])
 def restaurant():
     """
     restaurant Routing 
     """
     restaurants = dao.fetch_Restaurants()
-    return render_template("/restaurants.html", restaurantsinfo=restaurants)
+    print(restaurants)
+    return json.dumps(restaurants).decode('utf-8')
 
 @app.route('/contact', methods = ['GET'])
 def contact():
@@ -32,3 +32,4 @@ def contact():
 
 if __name__ == "__main__":
     app.run(debug= True)
+
