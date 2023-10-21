@@ -1,13 +1,13 @@
-from typing import Self
-from flask import Flask, jsonify, render_template, request, redirect, url_for
+from flask import Flask, jsonify, render_template, request, redirect, url_for, Response
+from flask_cors import CORS, cross_origin
 import dao
+from bson.json_util import dumps, loads
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
-def get_data(data):
-     data['_id'] = str(data['_id'])
-     return data
-
+# Frontend codes
 
 @app.route('/', methods=['GET'])
 def index():
@@ -16,28 +16,49 @@ def index():
     """
     return render_template("/index.html")
 
-
-@app.route('/restaurant', methods = ['GET'])
+@app.route('/restaurant', methods=['GET'])
 def restaurant():
     """
-    Dashboard Routing 
+    Render Restaurant Page
     """
-    #restaurants = dao.fetch_Restaurants()
     return render_template("/restaurants.html")
 
 @app.route('/contact', methods = ['GET'])
 def contact():
     """
-    Dashboard Routing 
+    Contact Routing
     """
-    #restaurants = dao.fetch_Restaurants()
     return render_template("/contact.html")
 
+# Backend codes below
 
-# @app.route('/restaurant', methods = ['GET'] )
-# def get_restaurants():
-#     restaurants = dao.fetch_Restaurants()
-#     return jsonify([get_data(restaurant) for restaurant in restaurants])
+# Retrieve all restaurants
+@app.route('/api/restaurants', methods = ['GET'])
+def get_restaurants():
+    """
+    restaurant Routing 
+    """
+    restaurants = dao.get_restaurants()
+    return Response(dumps(restaurants), mimetype='application/json')
+
+# Retrieve a single restaurant
+@app.route('/api/restaurant/<oid>', methods = ['GET'])
+def get_restaurant(oid):
+    """
+    restaurant Routing
+    """
+    restaurant = dao.get_restaurant(oid)
+    return Response(dumps(restaurant), mimetype='application/json')
+
+# Update a single restaurant
+@app.route('/api/restaurant/<oid>', methods = ['POST'])
+def update_restaurant(oid):
+    restaurant = dao.update_restaurant(oid, request.data)
+    return Response(dumps(restaurant), mimetype='application/json')
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug= True)

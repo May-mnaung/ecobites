@@ -30,149 +30,35 @@
          Gap between grid items: g-4
          Padding top & bottom: py-5
     -->
+  
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-5">
-
-        <div class="col">
-            <!-- onClick="show_details(this): shows details for specific restaurant" -->
-            <div class="card" id="restaurant1" onclick="show_details('restaurant1')">
-                <img src="images/image1.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$30 and under</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
+        {% for restaurant in restaurantsinfo %}
+            <div class="col">
+                <!-- onClick="show_details(this): shows details for specific restaurant" -->
+                <div class="card" id="restaurant1" onclick="show_details('restaurant1')">
+                    <img src="{{restaurant['Image']}}" class="card-img-top" alt="{{restaurant['Name']}}">
+                    <div class="card-body">
+                        <h4 class="card-title"> {{restaurant['Name']}} </h4>
+                        <div class="cuisine text-muted">{{restaurant['Location']}}</div>
+                        <h5 class="price-cat fw-bold mt-3">{{restaurant['Price']}}</h5>
                     </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
+
+                    <!-- reviews -->
+                    <div class="d-flex ms-3 mb-3">
+                        <div class="reviews-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i> <!--half empty star-->
+                            <i class="far fa-star"></i> <!--empty star-->
+                        </div>
+                        <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <img src="images/image2.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$51 and over</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
-                    </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <img src="images/image3.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$30 and under</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
-                    </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <img src="images/image4.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$30 and under</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
-                    </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <img src="images/image5.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$30 and under</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
-                    </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="card">
-                <img src="images/image6.jpg" class="card-img-top" alt="Restaurant Item">
-                <div class="card-body">
-                    <h4 class="card-title">Anchor & James</h4>
-                    <div class="cuisine text-muted">American | Downtown Union Street</div>
-                    <h5 class="price-cat fw-bold mt-3">$30 and under</h5>
-                </div>
-
-                <!-- reviews -->
-                <div class="d-flex ms-3 mb-3">
-                    <div class="reviews-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i> <!--half empty star-->
-                        <i class="far fa-star"></i> <!--empty star-->
-                    </div>
-                    <div class="reviews-num text-muted fs-6">&nbsp;(1897 reviews)</div>
-                </div>
-            </div>
-        </div>
-
-
+            {% endfor %}
     </div>
+
 </div>
 
 
