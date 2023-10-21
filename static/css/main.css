@@ -26,6 +26,14 @@ body{
 } 
 
 /* icons */
+
+.icons-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the icons to the right */
+    padding-right: 15px; /* Add some right padding for spacing */
+}
+
 .bi-box-arrow-right {
     color: #75996D;
     margin-right: 100px;
