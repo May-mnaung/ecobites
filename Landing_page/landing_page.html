@@ -15,12 +15,13 @@
     
 </head>
 
-<body style="background-color:#e6e5d3">
+<body style="background-color:#e6e5d3; margin:auto; padding:auto">
     <!-- navigation bar -->
         <div class = "row display: inline-flex"  id = "nav_bar">
 
             <div class = "col d-flex">
-                <img src = "Images/earth.png" height = "80px" width ="80px">
+                <img src = "Images/earth.png"  id="earth" height="80px";
+                width="80px">
                 <box id ="ecobite">EcoBite</box>
             </div>
             <div class = "col-2 offset-3about">
@@ -30,7 +31,7 @@
                 <a class="nav-link" href="#register">Register</a>
             </div>
             <div class = "col-3">
-                <a class="btn float-right pl-auto ml-auto rounded-pill px-5" href="#" role="button" id="btn" >Login</a>
+                <a class="btn float-right pl-auto ml-auto rounded-pill px-4" href="#" role="button" id="btn" >Login</a>
             </div>
            
         </div>
@@ -39,7 +40,7 @@
     <!-- text infront of image  -->
     <div class = "image-container justify-content-center" style = "display:block">
     
-        <img src= "Images/veggie_bg.png" class = "px-auto; mx-auto">
+        <img src= "Images/veggie_bg.png" class = "px-auto; mx-auto img100">
         <p class="overlay-box px-4 py-5">Eat Healthy With Us</p>
     </div>
 
@@ -56,20 +57,20 @@
                 Why eat healthy
             </div>
             <div class = "row-4  display:flex">
-                <img src="images/health-care.png" width = "180px" height = "180px" style="margin-left: 200px; display: inline-block;">
-                <spam class = "text1" style="padding-right:100px; padding-left:75px; ">
+                <img src="images/health-care.png" width = "180px" height = "180px" class="iconadj1">
+                <spam class = "text1 text1adj" style="padding-right:100px; padding-left:75px; ">
                     Good for mind & body- reduces risk of cancer, health diseases
                 </spam>
             </div>
             <div class = "row-4  display:flex my-5">
-                <img src="images/piechart.png" width = "300px" height = "250px" style="margin-left: 170px; display: inline-block;">
-                <spam class = "text1"  style="padding-right:100px; ">About <spam class = "red">34%</spam> of all human-caused greenhouse gas emissions is linked to food.</spam>
+                <img src="images/piechart.png" width = "300px" height = "250px" class="iconadj2">
+                <spam class = "text1"  style="padding-right:100px; " >About <spam class = "red">34%</spam> of all human-caused greenhouse gas emissions is linked to food.</spam>
             </div>
             <div class = "row justify-content-center title" style="padding-bottom: 8%; padding-top: 8%;">
                 Global temperatures is rising
             </div>
             <div class = "row-4  display:flex" style="padding-bottom: 15%;">
-                <img src="images/global-warming.png" width = "250px" height = "250px" style="margin-left: 200px; display: inline-block;">
+                <img src="images/global-warming.png" width = "250px" height = "250px" class="iconadj1">
                 <spam class = "text1"  style="padding-right:100px;">2022 was the <spam class = "red">6th</spam>-warmest year on record</spam>
             </div>
             <div class = "row justify-content-center title" style="padding-bottom: 3%">What does this entail?</div>
@@ -79,7 +80,7 @@
 
         <div class = "row d-flex greenback py-5" style="column-gap:100px; justify-content: center;">
             <div class = "col col-md-3 justify-content-center" style = "display: grid;">
-                <img src="Images/weather_2480626.png" width="200px" height = "200px" class="icon">
+                <img src="Images/weather_2480626.png" width="200px" height = "200px" class=" icon">
                 <div class="card mt-4" style="height: 30rem; width: 21rem; background-color: #75996d">
                     <div class="card-body">
                       <h1 class = white_title>Extreme weather</h1>
@@ -91,7 +92,7 @@
 
             
             <div class = "col col-md-3 justify-content-center" style = "display: grid;">
-                <img src="Images/forest_10498831.png" width="200px" height = "200px" class="icon">
+                <img src="Images/forest_10498831.png" width="200px" height = "200px" class="icon iconspace">
                 <div class="card mt-4" style="height: 30rem; width: 21rem; background-color: #75996d;">
                     <div class="card-body">
                       <h1 class = white_title>Habitat destruction</h1>
@@ -102,7 +103,7 @@
             </div>
 
             <div class = "col col-md-3  justify-content-center" style = "display: grid;">
-                <img src="Images/sea_2995531.png" width="200px" height = "200px" class="icon">
+                <img src="Images/sea_2995531.png" width="200px" height = "200px" class="icon iconspace">
                 <div class="card mt-4" style="height: 30rem; width: 21rem; background-color: #75996d;">
                     <div class="card-body">
                       <h1 class = white_title>Extreme weather</h1>
@@ -111,26 +112,6 @@
                   </div>     
                 
             </div>
-
-            <!-- <div class = "card-deck d-flex justify-content-around">
-                <div class="card" style="width: 18rem; background-color: #75996d;">
-                    <div class="card-body">
-                      <h1 class = white_title>Extreme weather</h1>
-                      <h4 class="card_text">Global warming results in higher frequency and intensity of droughts, storms heat waves.</h4>
-                    </div>
-                  </div>   
-                <div class="card" style="width: 18rem; background-color: #75996d;">
-                    <div class="card-body">
-                      <h1 class = white_title>Habitat destruction</h1>
-                      <h4 class="card_text">Increased temperature leads to wildfires, melting of glaciers which destroys the environment that creatures reside in.</h4>
-                    </div>
-                  </div>   
-                  <div class="card" style="width: 18rem; background-color: #75996d;">
-                    <div class="card-body">
-                      <h1 class = white_title>Extreme weather</h1>
-                      <h4 class="card_text">As glaciers melt and sea levels rise, beaches are eroded, and land are lost. Low-lying areas  are threatened by risk of flooding.</h4>
-                    </div>
-                  </div>    -->
         
         </div>
 
@@ -156,7 +137,7 @@
         Adopt sustainable habits
     </spam>
     <div class = " justify-content-center">
-        <p class="trans_box">By being more environmentally conscious in our daily life, we can help to reduce the growth of global warming. Every effort counts.</p>
+        <p class="trans_box ">By being more environmentally conscious in our daily life, we can help to reduce the growth of global warming. Every effort counts.</p>
     </div>
 
     <!-- eating affect environment -->
@@ -167,11 +148,11 @@
 
     <div class = "row justify-content-around d-flex">
         <div class = "col col-md-6">
-            <img src = "Images/production_chain.png" style = "width:760px; margin-left:-30px">
+            <img src = "Images/production_chain.png" id="chainpic">
         </div>
 
         <div class = " col-md-4 offset-md-0">
-            <p class="trans_box" style ="margin-left: -10px; margin-top: 10px; margin-right: 15px; font-size:25px ; min-width:450px ;">
+            <p class="trans_box adjbox">
                 Food needs to be grown and processed, transported, distributed, prepared, consumed, and sometimes disposed of. 
                 <br><br><br>Each of these steps creates greenhouse gases that trap the sun's heat and contribute to climate change. 
             </p>
@@ -184,7 +165,7 @@
     </spam>
 
     <div class = "row justify-content-center">
-        <img src="Images/bar_chart.png" style = "width:1000px ; margin-bottom: 90px; ">
+        <img src="Images/bar_chart.png" style = "width:95% ; margin-bottom: 90px; ">
     </div>
 
     <div class = "row d-flex" style="column-gap:75px; justify-content: center;">
@@ -205,8 +186,8 @@
           </div>
 
         <div class = "col col-md-5 justify-content-center" style = "display: grid;">
-            <img src="Images/salad.png" width="200px" height = "200px" class="icon">
-            <div class="card mt-4 px-4" style="height: 45rem; width: 35rem; background-color:rgba(141, 255, 175, 0.277)">
+            <img src="Images/salad.png" width="200px" height = "200px" class="icon iconspace">
+            <div class="card mt-4 px-4 vegcard" style="height: 45rem; width: 35rem; background-color:rgba(141, 255, 175, 0.277)">
                 <div class="card-body">
                     <h4 class = meatvsveg><spam class = "underline">Plant-based foods,</spam>such as fruits and vegetables, whole grains, beans, peas, nuts, and lentils - generally use less energy, land, and water, and have lower greenhouse gas intensities than animal-based foods.</h4>
                 </div>
@@ -225,14 +206,14 @@
         Your effort matters
     </spam>
 
-    <div style="background-color:rgba(255, 255, 255, 0.7); height: 480px; width:1280px; z-index: -1;">
+    <div style="background-color:rgba(255, 255, 255, 0.7); height: 100%; width:100%; z-index: -1;" class="adjback">
         <div class = "col-8 offset-2 d-flex" style="padding-top: 60px; padding-bottom:60px;">
             <img src="Images/10-percent.png"  width="150px" height = "150px" class="icon">
             <p class="text2">By switching out about <spam class = "red">10</spam> percent of a person's daily caloric intake...</p>
     
         </div>
         <div class = "col-8 offset-2 d-flex" style="  padding-bottom:60px;">
-            <img src="Images/discount.png"  width="150px" height = "150px" class="icon">
+            <img src="Images/discount.png"  width="150px" height = "150px" class="icon iconspace">
             <p class="text2">It can cut a person's food-based environmental footprint by over <spam class = "red">30</spam> percent</p>
         
         </div>
@@ -240,56 +221,56 @@
 
     <!-- eat better for the environment -->  
 
-    <div class = "row-2 row-md-1 justify-content-around d-flex my-5 py-5">
-        <div class = "col col-md-6">
+    <div class = "row justify-content-around d-flex my-5 py-5">
+        <div class = "col">
             <img src = "Images/veggie_whitebg.jpg" style = "width:730px;">
         </div>
 
-        <div class = "col col-md-4 ">
-            <p style ="margin-left: 15px; margin-right: 15px; font-size:25px ; width:450px ;">
-                <p class = "bold">Eat better for the environment</p>
+        <div class = "col">
+            <p style ="margin-left: 0px; margin-right: 15px; font-size:25px ; width:450px ;">
+                <p class = "bold" style = "margin-left: 30px; margin-top:50px;">Eat better for the environment</p>
            
-                <p class = "text2" style="margin-left:60px; margin-right:0px">A healthier, more plant-based diet would lead to a healthier planet. Improve your health and help protect the planet at the same time. </p>
+                <p class = "text2" id="improve"> Improve your health and help protect the planet at the same time. <br> Shift to a plant-based diet now!</p>
             </p>
         </div>
     </div>
 
     <!-- support the cause w us -->
     <div style = "margin-left: 300px; margin-right:300px; margin-bottom:130px;">
-        <spam class = "row justify-content-center title pt-5 pb-3 mt-4 mb-4" style="font-size: 50px; margin-bottom:20px" id = "register">
+        <spam class = "row justify-content-center title pt-5 pb-3 mt-4 mb-4 adjtitle1" style="font-size: 50px; margin-bottom:20px" id = "register">
             Support the cause with us.
         </spam>
-        <h4 class = meatvsveg style = "text-align: left;">
-            <spam class = "underline red" style ="font-size: 40px;">Sign up</spam> and gain access to our restaurant listing. </h4>
+        <p id="adjtext">
+            <spam class = "underline red" style ="font-size: 40px; ">Sign up</spam> and gain access to our restaurant listing. </p>
                 <p>
                     <ul class='meatvsveg' style ="text-align: left;">
-                        <li>Find healthy restaurants nearby</li>
-                        <li>Use our filtering system and find options that cater to your preferences</li>
-                        <li>Find more affordable options</li>
-                        <li> Save your favourite restaurants</li>
+                        <li class = "listminwidth">Find healthy restaurants nearby</li>
+                        <li class = "listminwidth">Use our filtering system and find options that cater to your preferences</li>
+                        <li class = "listminwidth">Find more affordable options</li>
+                        <li class = "listminwidth"> Save your favourite restaurants</li>
                     
                     </ul>
                 </p>
     </div>
 
     <!-- join  -->
-    <div class = "text-center" style = "margin-left: 300px; margin-right:300px; margin-bottom:100px;">
-        <spam class = "row justify-content-center title pt-5 pb-3 mt-4 mb-4" style="font-size: 50px; margin-bottom:20px">
+    <div class = "text-center " style = "margin-left: 300px; margin-right:300px; margin-bottom:100px;">
+        <spam class = "row justify-content-center title pt-5 pb-3 mt-4 mb-4 adjtitle3" style="font-size: 50px; margin-bottom:20px">
             Join us!
         </spam>
-        <a class="btn btn-primary rounded-pill" href="#" role="button">Register</a>
+        <a class="btn btn-primary rounded-pill adjbtn " href="#" role="button">Register</a>
     </div>
 
     <!-- footer -->
-    <div style ="background-color: #75996d; width:1280px; height:fit-content">
-        <div class = "row-2 row-md-1 justify-content-around d-flex pt-3">
-            <div class = "col col-md-4">
+    <div style ="background-color: #75996d; width:fit-content; height:fit-content">
+        <div class = "row justify-content-around d-flex pt-3">
+            <div class = "col-12 col-md-4">
                 <p class= "white_title bold" style ="text-align: left; margin-top:0" id = "about">About us</p>
                 <br> 
                 <spam class ="white_title"> names..etc</spam>
             </div>
     
-            <div class = "col col-md-6 ">
+            <div class = "col-12 col-md-6 pr-5 ">
         
                 <p class = "white_title bold" style = "text-align: left; margin-top:0">Find out more from:</p>
                
