@@ -1,1 +1,165 @@
-<h1>TESTING </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link main CSS -->
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/contact.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <title>Contact Us</title>
+    <style>
+        body {
+            background-color: #E6E5D3; 
+        }
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        textarea::placeholder {
+            font-family: "URW Chancery L", cursive;
+            font-style: italic;
+        }
+       
+        textarea {
+            width: 100%;
+            height: 8rem;
+            resize: none;
+        }
+        
+    input {
+        width: 50%;
+        margin-bottom: 1rem;
+        &[type=text]:invalid, [type=email]:invalid {
+        box-shadow: none;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(240, 132, 114, 0.5)' x='0' y='23' width='10' height='1'/></svg>");
+        }
+    }
+    button {
+        padding: 5px 10px;
+        border-radius: 0.25rem;
+        background-color: #75996D;
+        color: white;
+        font-size: 15px;
+        transition: background-color 0.2s;
+        &:hover,:focus {
+            outline: none;
+        background-color: #75996D;
+        }
+    }
+    input[type=text]:focus,
+    input[type=email]:focus,
+    textarea:focus {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='24'><rect fill='rgba(78, 94, 114, 0.3)' x='0' y='23' width='10' height='1'/></svg>");
+        outline: none;
+    }
+
+    .result-message {
+        opacity: 0;
+        transition: all 0.3s 2s;
+        transform: translateY(9rem);
+        z-index: -9999;
+        text-align: center;
+    }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " id="navigationBar">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="restaurants.html">Find Restaurant</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <a href="../favourite,button.html" class="bi bi-heart" style="font-size: 20px;"></a>
+            <a href="#" class="bi bi-box-arrow-right" style="font-size: 20px;"></a>
+        </div>
+    </nav>
+    <div class="wrapper centered">
+    <article class="letter">
+    <div class="side">
+      <h1>Contact us</h1>
+      <p>
+        <textarea id ="message" placeholder="please place your message here c:"></textarea>
+      </p>
+    </div>
+    <div class="side">
+      <p>
+        <input type="text" id ="name" placeholder="Name" >
+      </p>
+      <p>
+        <input type="email"id ="email" placeholder="Email" >
+      </p>
+      <p>
+        <button id="sendLetter" onclick="sendmsg()">Send</button>
+      </p>
+    </div>
+    </article>
+    <div class="envelope front"></div>
+    <div class="envelope back"></div>
+    </div>
+    <p class="result-message">Thank you for your message</p>
+    
+
+    <script>
+        //JS
+        function sendmsg() {
+            //form validation
+            var nameInput = document.getElementById('name');
+            var name = nameInput.value;
+            var emailInput = document.getElementById('email');
+            var email = emailInput.value;
+            var messageTextarea = document.getElementById('message');
+            var msg = messageTextarea.value;
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            var error_msg = '';
+            if (name === '') {
+                error_msg+='Please enter your name.\n'
+            }
+            if (email === '' || !emailRegex.test(email)) {
+                error_msg+='Please enter a valid email address.\n'
+            }
+            if (msg === '') {
+                error_msg+='Please enter your message.'
+            }
+
+            if (error_msg != ''){
+                alert(error_msg)
+                console.log("There's error")
+            }
+            else{
+                document.body.classList.add("sent");
+            }
+            //check
+            console.log(name)
+            console.log(msg)
+            console.log(email)
+            console.log(error_msg)
+            
+        }
+    </script>
+
+
+
+</body>
+
+</html>
