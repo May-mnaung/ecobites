@@ -58,27 +58,31 @@
     font-size: 30px;
     float:right;
     margin-top: 5%;
-    margin-right: 3%;
+    margin-right: 10%;
     box-shadow: 2px 2px 4px rgb(60, 60, 60);  
     justify-content: center;
 }
 
 
+
+
 .image-container {
-    padding-top: 120gpx;
-    display: inline-block;
+    /* display: inline-block; */
     justify-content: center;
     padding-bottom: 15%;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
   }
   
   .image-container img {
     display: block;
-    width: fit-content;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     z-index:0;
-    margin-left: auto;
-    margin-right: auto;
-    
+    object-fit: cover;
+    padding-left:5%;
+    padding-right:5%;
    
   }
   
@@ -86,16 +90,19 @@
     position: relative;  
     background-color: rgb(194, 230, 186,.8);
     color: #fff; 
-    margin-left: 7%;
-    margin-right: 30%;
-    font-size: 70px;
+    font-size: 4rem;
     text-align: left;
     font-family: 'Poppins', sans-serif;
     font-weight: lighter;
     z-index:1;
-    margin-top: -25%;
+    margin-top: -20%;
+    margin-left:5%;
+    margin-right:5%;
     text-shadow: 2px 2px 4px rgb(60, 60, 60);
+    text-wrap:balance
   }
+
+  
 
 ul{
   display: flex;
@@ -307,4 +314,69 @@ ul{
     font-family: 'Poppins', sans-serif;
     text-align: left;
     color:white;
+  }
+
+  /* display adjusted for phones  */
+  @media (max-width: 760px) {
+    /* CSS styles for screens with a width of 768px or less */
+    /* Adjust margins or padding as needed */
+    #nav_bar{
+      background-color: #75996d;
+      padding-top: 20px;
+      padding-bottom:20px;
+      width:auto;
+      min-width:670px;
+      margin-left:0;
+      margin-right:0;
+      box-sizing: border-box;
+      position:fixed;
+      z-index:2;
+
+      
+  }
+    .overlay-box {
+      position: absolute;  
+      background-color: rgb(194, 230, 186,.8);
+      color: #fff; 
+      font-size: 4rem;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-weight: lighter;
+      z-index:1;
+      margin-top: -35%;
+      margin-left: 10%;
+      text-shadow: 2px 2px 4px rgb(60, 60, 60);
+      text-wrap:nowrap;
+     
+    }
+
+    .image-container img {
+        display: block;
+        width:670px;
+        height: 100%;
+        z-index:0;
+        padding-left:10%;
+        padding-right:10%;
+       
+    }
+
+    .about{
+      margin-left:0
+    }
+
+    #ecobite{
+    color:black;
+    text-shadow: 2px 2px 1px rgb(94, 94, 94);
+    font-weight: bold;
+    font-size: 280%;
+    top:1vw;
+    font-family: 'Poppins', sans-serif;
+    position:relative;
+    padding-left:5%
+
+
+
+
+}
+  
   }
