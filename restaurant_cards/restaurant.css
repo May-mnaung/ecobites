@@ -7,7 +7,6 @@
 /* CSS FOR NAVBAR 
    - changes: Made it fixed
    - Z-index for navBar
-     --> css for padding btw fixed navbar & Main-content
 */
 @import "main.scss";
 
@@ -145,7 +144,6 @@ ul{
 }
 
 
-
 /* CSS FOR FILTER */
 *{
     margin: 0;
@@ -168,20 +166,17 @@ ul{
     width: 15%;
     height: 100vh;
     /* position: fixed;
-    left: 0; */    
+    left: 0; */
+
+    
 }
-
-
 
 .contant{
     width: 80%;
     position: absolute;
     right: 60px;
+
 }
-
-
-
-
 
 
 /* CSS FOR RESTAURANT CARDS */
@@ -201,6 +196,3 @@ ul{
     width: 90%;
 }
 
-/* .btn-hover{
-    background-color
-} */
