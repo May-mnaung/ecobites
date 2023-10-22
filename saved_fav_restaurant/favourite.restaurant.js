@@ -40,9 +40,13 @@ axios.get('http://localhost:5000/api/restaurants').then(
         // for loop through all the restaurants to populate the website
         for (let i = 0; i < restaurant.length; i++) {
 
+
+            
             // add a div to the body with the restaurant name
             let div = document.createElement('div')
             div.innerHTML = restaurant[i].Name
+            
+            
             document.body.appendChild(div)
 
             // // add img
