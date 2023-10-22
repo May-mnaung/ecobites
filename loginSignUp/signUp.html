@@ -32,7 +32,7 @@
                             Enter your name
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img src="images/user.png" width="25px" height="25px"></span>
-                                <input type="text" class="form-control bg-light" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control bg-light" id="username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
     
                         </div>
@@ -40,7 +40,7 @@
                             Create a password
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img src="images/icons8-password-50.png" width="25px" height="25px"></span>
-                                <input type="password" class="form-control bg-light" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="password" class="form-control bg-light" id="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
     
                         </div>
@@ -48,7 +48,7 @@
                             Email
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img src="images/envelope.png" width="25px" height="25px"></span>
-                                <input type="text" class="form-control bg-light" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control bg-light" id="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
     
                         </div>
@@ -57,7 +57,7 @@
                             <h6>forgot password?</h6>
                         </div>
                         <div class="form=group">
-                            <button type="button" class="btn btn-success btn-lg w-100">Register now</button>
+                            <button type="button" class="btn btn-success btn-lg w-100" onclick="signup()">Register now</button>
                         </div>
                         <div class="form=group">
                             <div class="ms-5 text-center align-items-center">Already have an account? <span><a href=logIn.html>Login </a></span></div>
@@ -78,6 +78,45 @@
     
             </div>
         </div>
+        <script>
+            //JS
+            function signup() {
+                //form validation
+                console.log("im in!")
+                var username = document.getElementById('username').value;
+                var error_msg = '';
+                var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                var email = document.getElementById('email').value;
+                if (username === '') {
+                    error_msg+='Please enter username.\n'
+                }
+                var password = document.getElementById('password').value;
+                
+                if(password === '' || password.length <= 6)
+                {
+                    error_msg+="Please enter a valid password.\n"
+                }
+                if (email === '' || !emailRegex.test(email)) {
+                    error_msg+='Please enter a valid email address.\n'
+                }
+                if (error_msg != ''){
+                    alert(error_msg)
+                    console.log("There's error")
+                }
+                else{
+                    window.location.href = '../templates/index.html';
+                }
+        
+                
+                //check
+                console.log(name)
+                console.log(msg)
+                console.log(email)
+                console.log(error_msg)
+                
+            }
+        </script>
+        
     
 </body>
 </html>
