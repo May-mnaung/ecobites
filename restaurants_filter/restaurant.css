@@ -6,13 +6,14 @@
 
 /* CSS FOR NAVBAR 
    - changes: Made it fixed
-     --> css for padding btw fixed navbar & Main-content
+   - Z-index for navBar
 */
 @import "main.scss";
 
 #navigationBar
 {
     background-color: #E6E5D3;
+    z-index: 5;
 }
 body{
     background-color: #E6E5D3 !important;
@@ -142,10 +143,6 @@ ul{
     color: grey;
 }
 
-.filter{
-    padding-right: 100px;
-}
-
 
 /* CSS FOR FILTER */
 *{
@@ -154,39 +151,48 @@ ul{
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 983px){
+    .filter-bar {
+        display: none;
+    }
+}
 
-.sidebar{
+.filter-bar-visible {
+    display: block !important;
+
+}
+
+.filter-bar{
     width: 15%;
     height: 100vh;
     /* position: fixed;
     left: 0; */
+
+    
 }
 
-/* THISS */
 .contant{
     width: 80%;
     position: absolute;
     right: 60px;
+
 }
-
-
-
-
 
 
 /* CSS FOR RESTAURANT CARDS */
 .card-img-top{
     width: 100%;
-    height: 250px; 
+    height: 280px; 
     object-fit: cover; /*all images will have the same height*/
 }
 
 
 .card-body{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-/* .btn-hover{
-    background-color
-} */
+.card {
+    width: 90%;
+}
+
