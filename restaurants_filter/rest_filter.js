@@ -41,15 +41,29 @@ axios
       const cardContainer = document.getElementById("card-container");
 
       const cardBox = document.createElement("div");
-      cardBox.className = "card";
+      cardBox.className = "col";
       const card = document.createElement("div");
-      card.className = "rol";
+      card.className = "card";
 
       // Create title and content elements
       const cardImage = document.createElement("img");
       cardImage.src = restaurants[i].Image;
       cardImage.className = "card-img-top";
       cardImage.alt = "restaurant";
+
+      const heartBtn = document.createElement("button");
+      heartBtn.setAttribute("type", "button");
+      heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      filterButton.addEventListener("click", function(){
+        location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+      })
+
+      const heartIcon = document.createElement("i");
+      heartIcon.className = "fas fa-heart";
+      heartBtn.appendChild(heartIcon);
+
+      const cardBody = document.createElement("div"); // All text will be contained within body
+      cardBody.className = "card-body";
 
       const cardTitle = document.createElement("h4");
       cardTitle.className = "card-title";
@@ -60,7 +74,7 @@ axios
       cardLocation.textContent = restaurants[i].Location;
 
       const cardPrice = document.createElement("h5");
-      cardPrice.className = "price-cat fw-bold mt-3";
+      cardPrice.className = "price-cat fw-bold";
       cardPrice.textContent = restaurants[i].Price;
 
       const ratings = restaurants[i].Ratings;
@@ -69,7 +83,7 @@ axios
       console.log(x);
 
       const rateBox = document.createElement("div");
-      rateBox.className = "d-flex ms-3 mb-3";
+      rateBox.className = "d-flex";
 
       const stars = document.createElement("div");
       stars.className = "reviews-stars";
@@ -202,12 +216,16 @@ axios
       }
 
       // Append title and content to the card
+      cardBody.appendChild(cardTitle);
+      cardBody.appendChild(cardLocation);
+      cardBody.appendChild(cardPrice);
+      cardBody.appendChild(rateBox);
+      
       card.appendChild(cardImage);
-      card.appendChild(cardTitle);
-      card.appendChild(cardLocation);
-      card.appendChild(cardPrice);
-      card.appendChild(rateBox);
+      card.appendChild(heartBtn);
+      card.appendChild(cardBody);
       cardBox.appendChild(card);
+      
 
       // Append the card to the card container
       cardContainer.appendChild(cardBox);
