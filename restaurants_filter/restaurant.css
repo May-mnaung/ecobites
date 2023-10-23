@@ -188,11 +188,15 @@ ul{
 
 
 .card-body{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .card {
     width: 90%;
+}
+
+.reviews-stars {
+    color: #f9d71c;
 }
 
