@@ -54,7 +54,7 @@ axios
       const heartBtn = document.createElement("button");
       heartBtn.setAttribute("type", "button");
       heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-      filterButton.addEventListener("click", function(){
+      heartBtn.addEventListener("click", function(){
         location.href = '../saved_fav_restaurant/favourite.restaurant.html';
       })
 
