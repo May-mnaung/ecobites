@@ -205,8 +205,8 @@ ul{
 
 .icon{
   justify-self: center;
-  margin-top:5vw;
-  margin-bottom:0;
+  margin-top:10vw;
+  margin-bottom:10vw;
   max-width: 50%;
   max-height:50%;
 }
@@ -368,7 +368,7 @@ ul{
   }
 
   #adjtext{
-    font-size: 4.5vw;
+    font-size: 3.5vw;
     line-height: 1.5;
     position: relative;
     vertical-align: middle;
@@ -417,7 +417,7 @@ ul{
   
   .listminwidth{
     min-width:5vw;
-    font-size: 3.5vw;
+    font-size: 3vw;
 
   }
 
