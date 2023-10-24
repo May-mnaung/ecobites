@@ -1,7 +1,7 @@
 // favorite restaurant function via axios
 function favoriteRestaurant(oid) {
     {
-        axios.post('http://localhost:5000/api/restaurant/' + oid, {
+        axios.post('http://127.0.0.1:5000/api/restaurant/' + oid, {
             'liked_restaurants': true
         }).then(
             response => {
@@ -17,7 +17,7 @@ function favoriteRestaurant(oid) {
 // unfavorite restaurant function via axios
 function unfavoriteRestaurant(oid) {
     {
-        axios.post('http://localhost:5000/api/restaurant/' + oid, {
+        axios.post('http://127.0.0.1:5000/api/restaurant/' + oid, {
             'liked_restaurants': false
         }).then(
             response => {
@@ -34,12 +34,14 @@ function unfavoriteRestaurant(oid) {
 let restaurant = []
 
 // get restaurants from localhost:5000/api/restaurants
-axios.get('http://localhost:5000/api/restaurants').then(
+axios.get('http://127.0.0.1:5000/api/restaurants').then(
     response => {
         restaurant = response.data
         // for loop through all the restaurants to populate the website
         for (let i = 0; i < restaurant.length; i++) {
 
+
+            
             // add a div to the body with the restaurant name
             let div = document.createElement('div')
             div.innerHTML = restaurant[i].Name

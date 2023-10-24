@@ -7,28 +7,6 @@ app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-# Frontend codes
-
-@app.route('/', methods=['GET'])
-def index():
-    """
-    Render Main Index Page 
-    """
-    return render_template("/index.html")
-
-@app.route('/restaurant', methods=['GET'])
-def restaurant():
-    """
-    Render Restaurant Page
-    """
-    return render_template("/restaurants.html")
-
-@app.route('/contact', methods = ['GET'])
-def contact():
-    """
-    Contact Routing
-    """
-    return render_template("/contact.html")
 
 # Backend codes below
 
