@@ -15,6 +15,7 @@ function favoriteRestaurant(oid) {
 }
 
 // unfavorite restaurant function via axios
+
 function unfavoriteRestaurant(oid) {
     {
         axios.post('http://127.0.0.1:5000/api/restaurant/' + oid, {
@@ -31,7 +32,7 @@ function unfavoriteRestaurant(oid) {
 }
 
 
-let restaurant = []
+
 
 // get restaurants from localhost:5000/api/restaurants
 axios.get('http://127.0.0.1:5000/api/restaurants').then(
