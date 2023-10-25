@@ -2,7 +2,7 @@
 function favoriteRestaurant(oid) {
     {
         axios.post('http://127.0.0.1:5000/api/restaurant/' + oid, {
-            'liked_restaurants': true
+            'fav_restaurant': true
         }).then(
             response => {
                 console.log(response.data)
@@ -18,7 +18,7 @@ function favoriteRestaurant(oid) {
 function unfavoriteRestaurant(oid) {
     {
         axios.post('http://127.0.0.1:5000/api/restaurant/' + oid, {
-            'liked_restaurants': false
+            'fav_restaurant': false
         }).then(
             response => {
                 console.log(response.data)
@@ -55,7 +55,7 @@ axios.get('http://127.0.0.1:5000/api/restaurants').then(
             // add a button to like under the restaurant name
             let button = document.createElement('button')
             button.name = restaurant[i]["_id"]["$oid"]
-            if (restaurant[i].liked_restaurants == false) {
+            if (restaurant[i].fav_restaurant == false) {
                 button.innerHTML = "Favourite"
                 button.onclick = function () {
                     if (button.innerHTML == "Favourite") {
@@ -87,6 +87,33 @@ axios.get('http://127.0.0.1:5000/api/restaurants').then(
         console.log(error)
     }
 )
+
+
+
+// for loop again to retrieve the restaurants who has fav_restauarant: true, extract its particular ID
+axios.get('http://127.0.0.1:5000/api/restaurants').then(
+    response => {
+        restaurant = response.data
+        // for loop through all the restaurants to populate the website
+        for (let i = 0; i < restaurant.length; i++) {
+            if (restaurant[i].fav_restaurant == true){
+                let restaurant_id = restaurant[i]["$oid"]    //tbc for id and oid
+
+            }
+
+
+
+
+        }
+    }
+
+)
+
+
+
+
+
+
 
 
 // axios.post('http://localhost:5000/api/restaurant/6531369c8cc8218aa1aa13ea', {
