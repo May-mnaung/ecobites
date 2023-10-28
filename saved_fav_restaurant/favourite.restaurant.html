@@ -128,3 +128,34 @@ Axios CDN
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
+
+
+
+<!--Change color for like button
+html
+<div class="wrapper">
+    <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
+</div>
+
+Javascirpt
+let heart = document.getElementById('heart');
+heart.addEventListener('click',()=>{
+    if(heart.classList.contains('red')){
+        heart.classList.remove('red');
+        heart.classList.add('white');
+        heart.src = 'whiteHeart.png';
+    }else{
+        heart.classList.remove('white');
+        heart.classList.add('red');
+        heart.src = 'redHeart.png';
+    }
+});
+Share
+Im
+
+
+
+
+
+
+-->
