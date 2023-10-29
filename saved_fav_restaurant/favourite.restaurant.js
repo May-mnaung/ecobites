@@ -93,6 +93,10 @@ axios.get('http://127.0.0.1:5000/api/restaurants').then(
 
 // for loop again to retrieve the restaurants who has fav_restauarant: true
 //var fav_restaurantsnArray = [];
+axios.get('http://127.0.0.1:5000/api/restaurants').then(
+    response => {
+        restaurant = response.data
+        
 for (let i = 0; i < restaurants.length; i++) {
     if (restaurant[i].fav_restaurant == true){
     var title = restaurants[i].Name;

@@ -25,6 +25,9 @@ item.addEventListener("click", () =>{
 
 
 
+
+
+
 // Javscript for DOM manipulation
 let restaurant = [];
 
@@ -54,13 +57,36 @@ axios
       const heartBtn = document.createElement("button");
       heartBtn.setAttribute("type", "button");
       heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      heartBtn
       heartBtn.addEventListener("click", function(){
-        location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+        // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+        if(heartBtn.classList.contains('red')){
+          heartBtn.classList.remove('red');
+          heartBtn.classList.add('white');
+          heartBtn.src = 'whiteHeart.png';
+      }else{
+        heartBtn.classList.remove('white');
+        heartBtn.classList.add('red');
+        heartBtn.src = 'redHeart.png';
+    }
+
       })
+
+
+
+      <div class="wrapper">
+    <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
+</div>
+
+    
 
       const heartIcon = document.createElement("i");
       heartIcon.className = "fas fa-heart";
       heartBtn.appendChild(heartIcon);
+
+
+      //hearticon is the heart inside the circle
+
 
       const cardBody = document.createElement("div"); // All text will be contained within body
       cardBody.className = "card-body";
@@ -243,3 +269,11 @@ axios
   .catch((error) => {
     console.log(error);
   });
+
+
+
+  function change_heart_color(){
+
+  }
+
+  
