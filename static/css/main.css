@@ -4,7 +4,7 @@
 #navigationBar {
   background-color: #a8bfa7;
   z-index: 5;
-  padding: 5px 0; /* Adjust the vertical padding to make the navbar shorter */
+  padding: 3px 0; /* Adjust the vertical padding to make the navbar shorter */
 }
 
 #Logo {
