@@ -55,9 +55,29 @@ axios
       cardImage.alt = "restaurant";
 
       const heartBtn = document.createElement("button");
-      heartBtn.setAttribute("type", "button");
-      heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-      heartBtn
+       //may's orginal code
+      //heartBtn.setAttribute("type", "button");
+      //heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      //heartBtn.addEventListener("click", function(){
+      //location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+
+      const heartIcon = document.createElement("i");
+      heartIcon.className = "fas fa-heart";
+      heartBtn.appendChild(heartIcon);
+
+
+      //hearticon is the heart inside the circle
+
+
+
+
+      //sihua add on
+      const heartBtn = document.createElement("button")
+      const img = document.createElement("img");
+      img.src = 'whiteHeart.png'
+      img.classList.add("red")
+      heartBtn.appendChild(img)
+      documenet.appendChild(button)
       heartBtn.addEventListener("click", function(){
         // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
         if(heartBtn.classList.contains('red')){
@@ -77,16 +97,13 @@ axios
 
       <div class="wrapper">
     <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
-</div>
+    <div></div>
 
     
 
-      const heartIcon = document.createElement("i");
-      heartIcon.className = "fas fa-heart";
-      heartBtn.appendChild(heartIcon);
 
 
-      //hearticon is the heart inside the circle
+     continue may code
 
 
       const cardBody = document.createElement("div"); // All text will be contained within body
