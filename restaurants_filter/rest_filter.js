@@ -1,26 +1,26 @@
 //sihua heart button STYLING
-.heart-button {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  /* Add the desired inline styles here */
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 2px;
-  border-radius: 50%;
-}
+// .heart-button {
+//   background-color: white;
+//   border: 1px solid #ddd;
+//   border-radius: 50%;
+//   width: 30px;
+//   height: 30px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   cursor: pointer;
+//   transition: background-color 0.3s;
+//   /* Add the desired inline styles here */
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   margin: 2px;
+//   border-radius: 50%;
+// }
 
-.heart-button.clicked {
-  background-color: red;
-}
+// .heart-button.clicked {
+//   background-color: red;
+// }
 
 
 
@@ -84,26 +84,32 @@ axios
       // Create title and content elements
       const cardImage = document.createElement("img");
       cardImage.src = restaurants[i].Image;
+
+      //sihua add on this few lines 89-91:
+      cardImage.addEventListener("click", function(){
+       location.href = '../restaurant_cards/card_details.html';
+         })
+
       cardImage.className = "card-img-top";
       cardImage.alt = "restaurant";
 
-      //const heartBtn = document.createElement("button");
+    
 
 
 
-       //may's orginal code
-     // const heartBtn = document.createElement("button")
-    // heartBtn.setAttribute("type", "button");
-     //  heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-     //  heartBtn.addEventListener("click", function(){
-     // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-    //   })
-    //  const heartIcon = document.createElement("i");
-    //  heartIcon.className = "fas fa-heart";
-     // heartBtn.appendChild(heartIcon);
+       //DO NOT TOUCH MAY'S ORIGINAL CODE
+      const heartBtn = document.createElement("button")
+      heartBtn.setAttribute("type", "button");
+      heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      heartBtn.addEventListener("click", function(){
+        location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+      })
+      const heartIcon = document.createElement("i");
+      heartIcon.className = "fas fa-heart";
+      heartBtn.appendChild(heartIcon);
 
 
-      //hearticon is the heart inside the circle
+      
 
 
 
@@ -130,12 +136,7 @@ axios
       //}
 
     // })
-
-
-
-
-
-     //heart new version
+     //Sihua heart new version 1
 
      //const heartBtn_div = document.createElement("div")
      //heartBtn_div.classList.add("heart-button")
@@ -154,34 +155,33 @@ axios
         //    }
        // });
 
-
-        // heart new verison
-        const heartButtonContainer = document.createElement('div');
-        heartButtonContainer.className = 'heart-button';
-        heartButtonContainer.id = 'heartButton';
+        // Sihua heart new verison 2
+        //const heartButtonContainer = document.createElement('div');
+       // heartButtonContainer.className = 'heart-button';
+       // heartButtonContainer.id = 'heartButton';
 
         // Create the heart icon (i element)
-        const heartIcon = document.createElement('i');
-        heartIcon.className = 'fas fa-heart';
+       // const heartIcon = document.createElement('i');
+        //heartIcon.className = 'fas fa-heart';
 
         // Append the heart icon to the heart button container
-        heartButtonContainer.appendChild(heartIcon);
+       // heartButtonContainer.appendChild(heartIcon);
 
         // Append the heart button container to the document body or a parent container
-        document.body.appendChild(heartButtonContainer);
+       // document.body.appendChild(heartButtonContainer);
 
         // Event handling for the heart button
-        const heartButton = document.getElementById('heartButton');
-        let clicked = false;
+       // const heartButton = document.getElementById('heartButton');
+       // let clicked = false;
 
-        heartButton.addEventListener('click', function() {
-            clicked = !clicked;
-            if (clicked) {
-                heartButton.classList.add('clicked');
-            } else {
-                heartButton.classList.remove('clicked');
-            }
-        });
+       // heartButton.addEventListener('click', function() {
+       //     clicked = !clicked;
+        //    if (clicked) {
+        //        heartButton.classList.add('clicked');
+        //    } else {
+         //       heartButton.classList.remove('clicked');
+        //    }
+       // });
 
 
 
