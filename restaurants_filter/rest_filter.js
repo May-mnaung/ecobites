@@ -54,7 +54,7 @@ axios
       cardImage.className = "card-img-top";
       cardImage.alt = "restaurant";
 
-      const heartBtn = document.createElement("button");
+      //const heartBtn = document.createElement("button");
        //may's orginal code
       //heartBtn.setAttribute("type", "button");
       //heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
