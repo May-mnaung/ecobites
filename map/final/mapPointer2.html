@@ -102,6 +102,32 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
+    function getStarRatingHtml(rating) {
+        var fullStars = Math.floor(rating);
+        var hasHalfStar = rating % 1 !== 0; 
+        var starHtml = '';
+
+        for (var i = 0; i < fullStars; i++) {
+            starHtml += '<img src="./star.png" width="15px" height="15px">';
+        }
+
+        if (hasHalfStar) {
+            starHtml += '<img src="./half-star.png" width="15px" height="15px">';
+        }
+
+        var totalStars = 5;
+        var displayedStars = fullStars + (hasHalfStar ? 0.5 : 0);
+        var remainingStars = totalStars - displayedStars;
+
+        for (var i = 1; i <= remainingStars; i++) {
+            starHtml += '<img src="./grey-star.png" width="15px" height="15px">';
+        }
+
+        return starHtml;
+}
+
+        
+
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15, // Adjust the zoom level as needed
@@ -147,26 +173,20 @@
 
                     var remove_cuisine = location.cuisine.replace(/\[|\]/g, '');
                     //Get the star ratings 
-                    
-                    //Star image
-                    var StarStr = "<img src='./star.png' width='15px' height='15px' >";
-                    //repeat based on the rating number 
-                    var reviewNumber = Math.floor(location.ratings)
-                    // console.log(reviewNumber)
-                    var repeatStar = StarStr.repeat(reviewNumber)
+                    var repeatStar = getStarRatingHtml(location.ratings);
                     // Set the content of the info window
                     var content = `
                     <div class="info-card">
                         <img src="${location.res_image}" alt="${location.title}" class="info-image">
                         <div class="info-details">
-                            <p><a href="${location.page}" target="_blank" class="info-title">${location.title}</a></p>
+                            <p><a href="${location.page}" target="_blank" class="info-title">${location.title} ${repeatStar}</a></p>
                             <p class="info-price"><span class="bold">Price:</span> ${location.price}</p>
-                            <p class="info-ratings"><span class="bold">Rating:</span> ${location.ratings} ${repeatStar}</p>
+                            <!--<p class="info-ratings"><span class="bold">Rating:</span></p>-->
                             <p class="info-cuisine"><span class="bold">Food Type:</span> ${remove_cuisine}</p>
                             <p class="info-address"><span class="bold">Address: </span>${location.address} Singapore ${location.postal}</p>
                         </div>
                     </div>
-                    `;
+                    `
 
                     // Add a click event listener to show the info window when the marker is clicked
                     marker.addListener('click', function() {
@@ -259,7 +279,7 @@
 
     <!-- Load the Google Maps JavaScript API with your API key -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-T9te52AnjFsOMZFIj3fZn90moHFfrM0&callback=initMap">
     </script>
 </body>
 </html>
