@@ -17,20 +17,22 @@
     <title>Google Maps Example</title>
     <style>
         /* Specify the dimensions of the map container */
+        /* #e6e5d3 */
+        /* #007BFF */
         #map {
             height: 68vw; /* Adjust the height as needed */
             width: 100%;   /* Adjust the width as needed */
         }
 
         body{
-            background-color: #E6E5D3;
+            background-color: #e6e5d3;
         }
         .info-card {
             display: flex;
-            border: 1px solid #ccc;
+            border: 1px solid #0a0c0b;
             border-radius: 5px;
             padding: 10px;
-            background-color: #fff;
+            background-color: #f8ffdd;
             max-width: 400px; /* Set a fixed maximum width for the card */
         }
 
@@ -45,17 +47,26 @@
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
-            color: #007BFF;
+            color: #154630;
         }
 
         .info-cuisine {
             font-size: 14px;
-            color: #555;
+            color: black;
         }
 
         .info-address {
             font-size: 14px;
-            color: #555;
+            color: black;
+        }
+
+        .info-price{
+            color: black;
+        }
+
+        .bold{
+            color: black;
+            font-weight: bold;
         }
 
     </style>
@@ -126,8 +137,10 @@
                         map: map,
                         title: location.title,
                         icon: {
-                            url:'earth.png',
-                            scaledSize: new google.maps.Size(30, 30),
+                            url:'updatedPoint.png',
+                            // size: new google.maps.Size(90, 90),
+                            scaledSize: new google.maps.Size(43, 43),
+                            
                             
                         }
                     });
@@ -146,11 +159,11 @@
                     <div class="info-card">
                         <img src="${location.res_image}" alt="${location.title}" class="info-image">
                         <div class="info-details">
-                            <a href="${location.page}" target="_blank" class="info-title">${location.title}</a>
-                            <p class="info-price">Price: ${location.price}</p>
-                            <p class="info-ratings">Rating: ${location.ratings} ${repeatStar}</p>
-                            <p class="info-cuisine">Food Type: ${remove_cuisine}</p>
-                            <p class="info-address">Address: ${location.address} Singapore ${location.postal}</p>
+                            <p><a href="${location.page}" target="_blank" class="info-title">${location.title}</a></p>
+                            <p class="info-price"><span class="bold">Price:</span> ${location.price}</p>
+                            <p class="info-ratings"><span class="bold">Rating:</span> ${location.ratings} ${repeatStar}</p>
+                            <p class="info-cuisine"><span class="bold">Food Type:</span> ${remove_cuisine}</p>
+                            <p class="info-address"><span class="bold">Address: </span>${location.address} Singapore ${location.postal}</p>
                         </div>
                     </div>
                     `;
@@ -246,7 +259,7 @@
 
     <!-- Load the Google Maps JavaScript API with your API key -->
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-T9te52AnjFsOMZFIj3fZn90moHFfrM0&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap">
     </script>
 </body>
 </html>
