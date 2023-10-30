@@ -1,4 +1,32 @@
+//sihua heart button STYLING
+.heart-button {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Add the desired inline styles here */
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+  border-radius: 50%;
+}
+
+.heart-button.clicked {
+  background-color: red;
+}
+
+
+
 //  Javascript for FilterBar
+
+
 const filterButton = document.getElementById('filterButton');
 const filterBar = document.getElementById('filter-bar');
 
@@ -22,6 +50,11 @@ item.addEventListener("click", () =>{
     })
 })
 });
+
+
+
+
+
 
 
 
@@ -55,16 +88,19 @@ axios
       cardImage.alt = "restaurant";
 
       //const heartBtn = document.createElement("button");
+
+
+
        //may's orginal code
-      const heartBtn = document.createElement("button")
-      heartBtn.setAttribute("type", "button");
-      heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-      heartBtn.addEventListener("click", function(){
-      location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-      })
-      const heartIcon = document.createElement("i");
-      heartIcon.className = "fas fa-heart";
-      heartBtn.appendChild(heartIcon);
+     // const heartBtn = document.createElement("button")
+    // heartBtn.setAttribute("type", "button");
+     //  heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+     //  heartBtn.addEventListener("click", function(){
+     // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+    //   })
+    //  const heartIcon = document.createElement("i");
+    //  heartIcon.className = "fas fa-heart";
+     // heartBtn.appendChild(heartIcon);
 
 
       //hearticon is the heart inside the circle
@@ -74,31 +110,82 @@ axios
 
       //sihua add on
       //const heartBtn = document.createElement("button")
+      //heartBtn.setAttribute("type", "button");
       //const img = document.createElement("img");
-      //img.src = 'white_heart.png'
-      //img.classList.add("red")
+     // img.src = 'white_heart.png'
+     // heartBtn.className = "top-0 end-0 position-absolute m-2 rounded-pill";
+     // img.classList.add("red")
       //heartBtn.appendChild(img)
-      //documenet.appendChild(button)
+      //documenet.appendChild(button)  (IGNORE)
       //heartBtn.addEventListener("click", function(){
-        // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-       // if(heartBtn.classList.contains('red')){
+        
+      //  if(heartBtn.classList.contains('red')){
        //   heartBtn.classList.remove('red');
        //   heartBtn.classList.add('white');
         //  heartBtn.src = 'white_heart.png';
-     // }else{
+      //}else{
       //  heartBtn.classList.remove('white');
       //  heartBtn.classList.add('red');
       //  heartBtn.src = 'heart.png';
-        
-    //}
+      //}
 
-    //  })
-
+    // })
 
 
-      //<div class="wrapper">
-     //<a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
-    //<div></div>
+
+
+
+     //heart new version
+
+     //const heartBtn_div = document.createElement("div")
+     //heartBtn_div.classList.add("heart-button")
+     //heartBtn.setAttribute("id", "myButton")
+     //const i = document.createElement("i");
+     //i.className = "fas fa-heart";
+     //const heartButton = document.getElementById('myButton');
+      //  let clicked = false;
+
+      //  heartButton.addEventListener('click', function() {
+       //     clicked = !clicked;
+       //     if (clicked) {
+       //         heartButton.classList.add('clicked');
+        //    } else {
+        //        heartButton.classList.remove('clicked');
+        //    }
+       // });
+
+
+        // heart new verison
+        const heartButtonContainer = document.createElement('div');
+        heartButtonContainer.className = 'heart-button';
+        heartButtonContainer.id = 'heartButton';
+
+        // Create the heart icon (i element)
+        const heartIcon = document.createElement('i');
+        heartIcon.className = 'fas fa-heart';
+
+        // Append the heart icon to the heart button container
+        heartButtonContainer.appendChild(heartIcon);
+
+        // Append the heart button container to the document body or a parent container
+        document.body.appendChild(heartButtonContainer);
+
+        // Event handling for the heart button
+        const heartButton = document.getElementById('heartButton');
+        let clicked = false;
+
+        heartButton.addEventListener('click', function() {
+            clicked = !clicked;
+            if (clicked) {
+                heartButton.classList.add('clicked');
+            } else {
+                heartButton.classList.remove('clicked');
+            }
+        });
+
+
+
+     
 
     
 
