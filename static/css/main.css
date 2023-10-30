@@ -1,18 +1,26 @@
 @import "main.scss";
+/* nav bar */
 
-#navigationBar
-{
-    background-color:  #a8bfa7 ;
-    z-index: 5;
+#navigationBar {
+  background-color: #a8bfa7;
+  z-index: 5;
+  padding: 5px 0; /* Adjust the vertical padding to make the navbar shorter */
+}
+
+#Logo {
+  height: 60px; /* Adjust the height of your logo */
+  width: 60px;
+  margin-left: 20px;
 }
 body{
     background-color: #ddf7db !important;
 }
-#Logo
-{
-  height:70px;
-  width: 70px;
-  margin-left: 20px;
+
+@media (max-width: 767px) {
+  #navigationBar.navbar-light .navbar-nav .nav-link {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
 }
 
 .nav-link {
@@ -27,6 +35,13 @@ body{
 .nav-link:active{
     text-decoration: underline; 
 } 
+/* nav bar drop down */
+.dropdown-menu
+{
+  background-color:black; /* Make the dropdown menu transparent */
+  border: none;
+  box-shadow: none;
+}
 
 /* icons */
 
@@ -38,12 +53,12 @@ body{
 }
 
 .bi-box-arrow-right {
-    color: #75996D;
+    color: #496343;
     margin-right: 100px;
    
 }
 .bi-heart {
-    color: #75996D;
+    color: #496343;
     margin-right: 30px;
 }
 

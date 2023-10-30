@@ -29,10 +29,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto nav">
             <li class="nav-item active">
-                <a class="nav-link active" href="index.html" >Home</a>
+                <a class="nav-link active" href="../templates/index.html" >Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../restaurants_filter/rest_filter.html">Find Restaurant</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Find Restaurant
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../restaurants_filter/rest_filter.html">Filter by</a>
+                    <a class="dropdown-item" href="../map/final/mapPointer2.html">Near Me</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
@@ -47,6 +53,8 @@
   <div class="main-content">
     {% block body %} {% endblock %}
   </div>
+  <br>
+  <br>
 </body>
 
 <footer class="site-footer">
