@@ -56,14 +56,15 @@ axios
 
       //const heartBtn = document.createElement("button");
        //may's orginal code
-      //heartBtn.setAttribute("type", "button");
-      //heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-      //heartBtn.addEventListener("click", function(){
-      //location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-
-      //const heartIcon = document.createElement("i");
-      //heartIcon.className = "fas fa-heart";
-      //heartBtn.appendChild(heartIcon);
+      const heartBtn = document.createElement("button")
+      heartBtn.setAttribute("type", "button");
+      heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      heartBtn.addEventListener("click", function(){
+      location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+      })
+      const heartIcon = document.createElement("i");
+      heartIcon.className = "fas fa-heart";
+      heartBtn.appendChild(heartIcon);
 
 
       //hearticon is the heart inside the circle
@@ -72,26 +73,26 @@ axios
 
 
       //sihua add on
-      const heartBtn = document.createElement("button")
-      const img = document.createElement("img");
-      img.src = 'white_heart.png'
-      img.classList.add("red")
-      heartBtn.appendChild(img)
-      documenet.appendChild(button)
-      heartBtn.addEventListener("click", function(){
+      //const heartBtn = document.createElement("button")
+      //const img = document.createElement("img");
+      //img.src = 'white_heart.png'
+      //img.classList.add("red")
+      //heartBtn.appendChild(img)
+      //documenet.appendChild(button)
+      //heartBtn.addEventListener("click", function(){
         // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-        if(heartBtn.classList.contains('red')){
-          heartBtn.classList.remove('red');
-          heartBtn.classList.add('white');
-          heartBtn.src = 'white_heart.png';
-      }else{
-        heartBtn.classList.remove('white');
-        heartBtn.classList.add('red');
-        heartBtn.src = 'heart.png';
+       // if(heartBtn.classList.contains('red')){
+       //   heartBtn.classList.remove('red');
+       //   heartBtn.classList.add('white');
+        //  heartBtn.src = 'white_heart.png';
+     // }else{
+      //  heartBtn.classList.remove('white');
+      //  heartBtn.classList.add('red');
+      //  heartBtn.src = 'heart.png';
         
-    }
+    //}
 
-      })
+    //  })
 
 
 
