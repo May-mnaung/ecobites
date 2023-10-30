@@ -61,9 +61,9 @@ axios
       //heartBtn.addEventListener("click", function(){
       //location.href = '../saved_fav_restaurant/favourite.restaurant.html';
 
-      const heartIcon = document.createElement("i");
-      heartIcon.className = "fas fa-heart";
-      heartBtn.appendChild(heartIcon);
+      //const heartIcon = document.createElement("i");
+      //heartIcon.className = "fas fa-heart";
+      //heartBtn.appendChild(heartIcon);
 
 
       //hearticon is the heart inside the circle
@@ -83,11 +83,11 @@ axios
         if(heartBtn.classList.contains('red')){
           heartBtn.classList.remove('red');
           heartBtn.classList.add('white');
-          heartBtn.src = 'whiteHeart.png';
+          heartBtn.src = 'white_heart.png';
       }else{
         heartBtn.classList.remove('white');
         heartBtn.classList.add('red');
-        heartBtn.src = 'redHeart.png';
+        heartBtn.src = 'heart.png';
         
     }
 
@@ -95,15 +95,15 @@ axios
 
 
 
-      <div class="wrapper">
-    <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
-    <div></div>
+      //<div class="wrapper">
+     //<a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
+    //<div></div>
 
     
 
 
 
-     continue may code
+     //continue may code
 
 
       const cardBody = document.createElement("div"); // All text will be contained within body
