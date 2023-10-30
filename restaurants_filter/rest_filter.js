@@ -68,6 +68,7 @@ axios
         heartBtn.classList.remove('white');
         heartBtn.classList.add('red');
         heartBtn.src = 'redHeart.png';
+        
     }
 
       })
