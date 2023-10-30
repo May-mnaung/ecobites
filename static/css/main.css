@@ -10,7 +10,9 @@ body{
 }
 #Logo
 {
-    width: 27%;
+  height:70px;
+  width: 70px;
+  margin-left: 20px;
 }
 
 .nav-link {
