@@ -46,6 +46,7 @@ Flask needs to know the URL to the database:
 
         Mac users: ```export MONGO_URI=<your_mongo_uri>```
         Windows users: ```set MONGO_URI=<your_mongo_uri>```
+        
 
 To run the application:
          ```flask run```
