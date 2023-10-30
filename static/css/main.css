@@ -2,14 +2,17 @@
 
 #navigationBar
 {
-    background-color: #E6E5D3;
+    background-color:  #a8bfa7 ;
+    z-index: 5;
 }
 body{
-    background-color: #E6E5D3;
+    background-color: #ddf7db !important;
 }
 #Logo
 {
-    width: 27%;
+  height:70px;
+  width: 70px;
+  margin-left: 20px;
 }
 
 .nav-link {
@@ -111,7 +114,7 @@ ul{
 /* footer */
 .site-footer
 {
-  background-color:#E6E5D3;
+  background-color:#ddf7db;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
