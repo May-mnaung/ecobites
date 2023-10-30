@@ -74,7 +74,7 @@ axios
       //sihua add on
       const heartBtn = document.createElement("button")
       const img = document.createElement("img");
-      img.src = 'whiteHeart.png'
+      img.src = 'white_heart.png'
       img.classList.add("red")
       heartBtn.appendChild(img)
       documenet.appendChild(button)
@@ -290,8 +290,5 @@ axios
 
 
 
-  function change_heart_color(){
-
-  }
-
+  
   
