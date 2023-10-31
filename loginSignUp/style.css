@@ -2,3 +2,8 @@
 #green{
     background-color:aqua;
 }
+
+.errors{
+    display: flex;
+    justify-content: space-between;
+}
