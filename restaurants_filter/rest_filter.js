@@ -38,7 +38,7 @@ axios
   .get("http://127.0.0.1:5000/api/restaurants")
   .then((response) => {
     restaurants = response.data;
-
+    console.log(restaurants)
     // for loop through all the restaurants to populate the website
     for (let i = 0; i < restaurants.length; i++) {
 
