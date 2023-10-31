@@ -12,7 +12,13 @@ const root = Vue.createApp({
 
             input_wheight: "25",
             fb_wheight: "40",
-            g_wheight: "30"
+            g_wheight: "30",
+            username_error:"",
+            password_error:"",
+            error_msg:false
+       
+
+
         }
     },
 
@@ -20,20 +26,23 @@ const root = Vue.createApp({
         login(){
             console.log(" [Vue] login() ")
 
-            var error_msg = '';
+            var username_error_msg = '';
+            var pass_error_msg = '';
 
             if (this.username === '') {
-                error_msg+='Please enter username.\n'
+
+                username_error_msg = "<span style='color:red;font-weight:bold'>Please enter username</span>"
             }
 
-                
             if(this.password === '' || this.password.length <= 6){
-                error_msg+="Please enter a valid password."
+                pass_error_msg = "<span style='color:red;font-weight:bold'>Please enter a valid password</span"
             }
         
-            if (error_msg != ''){
-                alert(error_msg)
+            if (username_error_msg != '' || pass_error_msg != ''){
                 console.log("There's error")
+                this.error_msg = true 
+                this.username_error = username_error_msg
+                this.password_error = pass_error_msg
             } else{
                  window.location.href = '../templates/index.html';
             }  

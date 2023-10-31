@@ -5,6 +5,7 @@ font-family:'Poppins', sans-serif;
 margin-left:auto;
 margin-right:auto;
 max-width:100%;
+font-size: 2vw;
 
 }
 
@@ -16,17 +17,18 @@ img{
 
 
 
+
 #nav_bar{
     background-color: #75996d;
-    padding-top: 2%;
-    padding-bottom:2%;
+    padding-top: 1vw;
+    padding-bottom:1vw;
     width:100%;
     margin-left:0;
     margin-right:0;
     box-sizing: border-box;
     position:fixed;
     z-index:2;
-    padding-left:3%
+    padding-left:3vw;
     
 }
 
@@ -36,8 +38,7 @@ img{
     color:white;
     font-weight: lighter;
     text-shadow: 1px 1px 4px rgb(60, 60, 60);
-    font-size: 3vw;
-    margin-top: 1vw;
+    margin-top: 2vw;
     margin-bottom: auto;
     text-decoration: underline;
     
@@ -51,7 +52,7 @@ img{
     color:black;
     text-shadow: 2px 2px 1px rgb(94, 94, 94);
     font-weight: bold;
-    font-size: 4vw;
+    font-size: 3vw;
     top:1vw;
     margin-top:1.5%;
     position:absolute;
@@ -66,13 +67,14 @@ img{
     background-color: #FF7020;
     color:white;
     font-weight:bolder;
-    font-size: 3vw;
+    font-size: 2vw;
     float:right;
-    margin-top: 10%;
+    margin-top: 1vw;
     box-shadow: 2px 2px 4px rgb(60, 60, 60);  
     justify-content: center;
-    padding-left:4vw;
-    padding-right:4vw;
+    padding-left:2.5vw;
+    padding-right:2.5vw;
+  
 }
 
 
@@ -80,7 +82,6 @@ img{
 
 .image-container {
     justify-content: center;
-    padding-bottom: 15%;
     margin-left:auto;
     margin-right:auto;
     width:100%;
@@ -120,17 +121,17 @@ ul{
 
 .title{
   font-weight:bold;
-  font-style: italic;
-  font-size: 5vw;
+  font-size: 3.5vw;
   padding-bottom: 5%;
   max-width:100%;
+  margin-bottom:1vw; 
+  padding-top:10vw
 
   
 
 }
 
 .text1{
-  font-size: 3vw;
   margin-left:40px;
   text-wrap:balance;
   line-height: 1.5;
@@ -144,15 +145,15 @@ ul{
 }
 
 .red{
-  font-size: 5vw;
-  color: red;
+  font-size: 3vw;
   font-weight: 800;
+  color:#FF7020;;
 }
 
 .greenback{
   background-color: #C2E6BA;
-  margin-bottom: 70px;
   width:100%;
+  margin-bottom: 10vw;
 
 
 }
@@ -167,6 +168,7 @@ ul{
 }
 
 .white_title{
+  font-size:3vw;
   color: white;
   font-weight:bolder;
   text-wrap:balance;
@@ -206,9 +208,9 @@ ul{
 .icon{
   justify-self: center;
   margin-top:10vw;
-  margin-bottom:10vw;
-  max-width: 50%;
-  max-height:50%;
+  max-width: 30%;
+  max-height:30%;
+	
 }
 
 .lasticon{
@@ -222,7 +224,7 @@ ul{
 /* (A) SPEECH BOX */
 .speech {
   /* (A1) FONT */
-   font-size: 36px;
+   font-size: 2.5vw;
  
   /* (A2) COLORS */
   color: black;
@@ -267,12 +269,10 @@ ul{
     padding:5vw;
     text-align: center;
     text-wrap: pretty;
-    font-size: 3vw;
     line-height: 1.5;
     margin-left:10%;
     margin-right:10%;
     background-color: rgba(255, 255, 255, 0.7);
-    margin-bottom:90px;
     border-radius: 15px;
     
   }
@@ -285,16 +285,17 @@ ul{
   text-wrap: pretty;
   line-height: 1.5;
   text-align: center;
-  padding-top: 20px;
-  padding-left:20px;
-  padding-right:20px;
+  padding-left: 2vw;
+  padding-right: 2vw;
   display: block;
+  font-size: 2vw;
+  margin-bottom:0
 
 
   }
 
   .text2{
-  font-size: 2.5vw;
+  /* font-size: 2.5vw; */
   margin-left: 20%;
   text-wrap:pretty;
   line-height: 1.5;
@@ -316,12 +317,12 @@ ul{
   font-weight: 800;
   }
 
-  .btn-primary{
-    background-color: #E6BADB;
-    border-color: #E6BADB;
-    width: 80vw;
-    height: 8vw;
-    font-size: 5vw;
+  .btn-secondary{
+    background-color: #FF7020;
+    border-color:#FF7020;
+    width: 40vw;
+    height: 5vw;
+    font-size: 3vw;
     font-weight: bolder;
     padding-top: 0;
     padding-bottom: 2vw;
@@ -332,47 +333,51 @@ ul{
   .links{
     text-align: left;
     color:white;
-    font-size: 2vw;
+    font-size: 1.5vw;
     line-height:2;
   }
 
   .last_title{
     text-align: left;
     color:white;
-    font-size: 2.5vw;
+    font-size: 3vw;
     line-height:2;
     margin-bottom:6vw;
   }
 
   #adjbox{
-    font-size:2.5vw;
+    /* font-size:2vw; */
     margin-left:0;
     margin-right:0;
     padding:2vw;
     margin-bottom:0;
+    margin-top: auto;
+    margin-bottom: auto;
 
   }
 
   .iconadj1{
     margin-left: 10%; 
     display: inline-block;
-    max-width:20%;
+    max-width:10%;
 
   }
 
   .iconadj2{
-    margin-left: 9%; ;
+    margin-left: 8%; ;
     display:inline-block;
-    max-width:25%;
+    max-width:15%;
+    margin-top:2.5vw
   }
 
   #adjtext{
-    font-size: 3.5vw;
+    /* font-size: 3.5vw; */
     line-height: 1.5;
     position: relative;
     vertical-align: middle;
     text-align: center;
     margin-top: 3vw;
+    margin-bottom:3vw
 
   }
 
@@ -385,24 +390,31 @@ ul{
   }
 
   #earth{
-    height:6.5vw;
+    height:6vw;
     margin-left:15%;
-    width:6.5vw;
+    width:6vw;
     max-width:none;
   }
 
   #chatbubble{
-    font-size: 2.5vw; 
+    font-size: 2vw; 
     line-height: 2;
+    font-weight:bold;
+    padding-bottom: 5%;
+    max-width:100%;
+    margin-bottom:1vw; 
+  
+    
   }
 
   h5{
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 
   #twocard{
     width:80vw;
     justify-content: center;
+    margin-top:5vw;
   }
 
   #center{
@@ -412,208 +424,19 @@ ul{
 
   #moveleft{
     margin-left:0;
+    margin-top:5vw
   }
   
   .listminwidth{
     min-width:5vw;
-    font-size: 3vw;
+    /* font-size: 3vw; */
 
   }
 
-  /* display adjusted for phones  */
-  /* CSS styles for screens with a width of 768px or less */
-  /* Adjust margins or padding as needed */
-
-  /* @media (max-width: 390px) { */
-    
-    /* #nav_bar{
-      background-color: #75996d;
-      padding-top: 20px;
-      padding-bottom:20px;
-      width:auto;
-      max-width:670px;
-      min-width:670px;
-      margin-left:0;
-      margin-right:0;
-      box-sizing: border-box;
-      position:fixed;
-      z-index:2;
-      
+  .spacing{
+    margin-top: 10vw;
   }
 
-  .nav-link{
-    font-size: 1.5rem;
-    margin-top: 30px;
-    margin-left:-30px;
-    
-}
-
-    .overlay-box {
-      position: absolute;  
-      background-color: rgb(194, 230, 186,.8);
-      color: #fff; 
-      font-size: 2rem;
-      text-align: left;
-      font-weight: lighter;
-      z-index:1;
-      margin-top: -22%;
-      margin-left: 10%;
-      text-shadow: 2px 2px 4px rgb(60, 60, 60);
-      text-wrap:nowrap;
-     
-    }
-
-    .image-container img {
-        display: block;
-        width:670px;
-        height: 100%;
-        z-index:0;
-        padding:0;
-     
-       
-    }
-
-    .about{
-      margin-left:0
-    }
-
-    #ecobite{
-    color:black;
-    text-shadow: 2px 2px 1px rgb(94, 94, 94);
-    font-weight: bold;
-    font-size: 280%;
-    top:1vw;
-    position:relative;
-    padding-left:5%;
-
-}
-    
-    .iconspace{
-      margin-top: 50px;
-    }
-
-    .vegcard{
-      max-height:20rem;
-    }
-
-    .adjtitle1{
-      min-width:600px;
-      margin-left:-270px;
-      text-align: center;
-    }
-
   
 
-    .listminwidth{
-      min-width:400px;
-      margin-left:-200px
   
-    }
-
-    .adjtitle3{
-      margin-left:-80px;
-      min-width:200px;
-    }
-
-    .adjbtn{
-      margin-left:-230px;
-      max-width:500px;
-    }
-   
-
-    .adjback{
-      padding-right: 100%;
-      min-width:650px
-
-
-    }
-
-    .adjbox{
-      margin-left:20px;
-
-    }
-
-    .iconadj1{
-      max-height:130px;
-      max-width:130px;
-      margin-left: 100px;
-    }
-
-    .iconadj2{
-      margin-left:90px;
-      display:inline-block;
-      max-height:130px;
-      max-width:150px;
-      margin-right:0;
-    }
-
-    .text1adj{
-      margin-left:-30px;
-    }
-
-    .text1{
-      margin-right:0
-    }
-
-    img{
-      max-width:600px;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .img100{
-      width:100%;
-      min-width:670px;
-      padding-top:90px;
-    }
-
-    #btn{
-      font-size: 20px;
-      float:right;
-      margin-top: 15%;
-      margin-right:5%;
-      margin-left:5%;
-      padding-right:2px;
-      padding-left:2px;
-
-
-    }
-
-    #earth{
-      margin: 2%;
-    }
-
-    #ecobite{
-      margin-left:-3%;
-      margin-right:1%;
-      margin-top:3%;
-    }
-
-    .text2{
-      max-width: 300px;
-      text-align: left;
-      
-    }
-
-    
-
-    #adjtext{
-      text-align: left;  
-      margin-left: -200px;
-      min-width:500px;
-
-    }
-
-    #improve{
-      margin-left:100px;
-      text-align: center;
-    }
-
-    #chainpic{
-      width:760px; 
-      margin-left:30px;
-    }
-
-
-  
-  } */

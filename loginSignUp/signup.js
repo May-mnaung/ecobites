@@ -14,36 +14,55 @@ const root = Vue.createApp({
 
             input_wheight: "25",
             fb_wheight: "40",
-            g_wheight: "30"
+            g_wheight: "30",
+            username_error:"",
+            password_error:"",
+            email_error:"",
+            error_msg: false
+
+
+
+      
         
         }
     },
 
     methods: {
-        signup(){
-            console.log("im in!")
-            var error_msg = ''
+       signup(){
+        console.log("yayy")
+        var username_error_msg = '';
+        var pass_error_msg = '';
+        var email_error_msg = '';
 
-            if(this.username === ''){
-                error_msg +='Please enter username.\n'
-            }
-
-            if(this.password === '' || password.length <= 6){
-                error_msg+="Please enter a valid password.\n"
-            }
-
-            if (this.email === '' || !emailRegex.test(email)) {
-                error_msg+='Please enter a valid email address.\n'
-            }
-
-            if(error_msg != ''){
-                alert(error_msg)
-                console.log("There's error")
-            } else{
-                window.location.href = '../templates/index.html';
-            }
+        if(this.username === ''){
+            username_error_msg = "<span style='color:red;font-weight:bold'>Please enter username</span>"
+        
 
         }
+
+        if(this.password === '' || password.length <= 6){
+            pass_error_msg = "<span style='color:red;font-weight:bold'>Please enter a valid password</span>"
+        }
+
+        if (this.email === '' || !emailRegex.test(email)) {
+            email_error_msg = "<span style='color:red;font-weight:bold'>Please enter a valid email address</span>"
+        }
+
+        if(username_error_msg != '' || pass_error_msg != '' || email_error_msg != ''){
+      
+            console.log("There's error")
+            this.error_msg = true
+            this.username_error = username_error_msg
+            this.password_error = pass_error_msg
+            this.email_error = email_error_msg
+         
+
+        } else{
+            window.location.href = '../templates/index.html';
+        }
+
+
+       }
     }
 })
 
