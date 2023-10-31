@@ -16,6 +16,39 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <!-- Adjust image height -->
+
+<!--sihua styling-->
+<style>
+
+
+.heart-button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    /display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px;
+    border-radius: 50%;
+ }
+    
+.heart-button.clicked {
+    background-color: red;
+}
+    
+
+</style>
+
+
+
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top ps-3" id="navigationBar">
         <a class="navbar-brand d-flex align-items-center" href="#">

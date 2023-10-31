@@ -58,41 +58,81 @@ axios
         // Create title and content elements
         const cardImage = document.createElement("img");
         cardImage.src = restaurants[i].Image;
+
+        //sihua add on this few lines 62-65:
+        cardImage.addEventListener("click", function(){
+          location.href = '../restaurant_cards/card_details.html';
+            })
+
         cardImage.className = "card-img-top";
         cardImage.alt = "restaurant";
 
-        const heartBtn = document.createElement("button");
-        heartBtn.setAttribute("type", "button");
-        heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
-        heartBtn
-        heartBtn.addEventListener("click", function(){
-          // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
-          if(heartBtn.classList.contains('red')){
-            heartBtn.classList.remove('red');
-            heartBtn.classList.add('white');
-            heartBtn.src = 'whiteHeart.png';
-        }else{
-          heartBtn.classList.remove('white');
-          heartBtn.classList.add('red');
-          heartBtn.src = 'redHeart.png';
-      }
-
-        })
 
 
+         //DO NOT TOUCH MAY'S ORIGINAL CODE
+      //   const heartBtn = document.createElement("button");
+      //   heartBtn.setAttribute("type", "button");
+      //   heartBtn.className = "btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill";
+      //   heartBtn
+      //   heartBtn.addEventListener("click", function(){
+      //     // location.href = '../saved_fav_restaurant/favourite.restaurant.html';
+      //     if(heartBtn.classList.contains('red')){
+      //       heartBtn.classList.remove('red');
+      //       heartBtn.classList.add('white');
+      //       heartBtn.src = 'whiteHeart.png';
+      //   }else{
+      //     heartBtn.classList.remove('white');
+      //     heartBtn.classList.add('red');
+      //     heartBtn.src = 'redHeart.png';
+      // }
+
+      //   })
+
+
+        // const heartIcon = document.createElement("i");
+        // heartIcon.className = "fas fa-heart";
+        // heartBtn.appendChild(heartIcon);
 
 
 
-      
 
-        const heartIcon = document.createElement("i");
-        heartIcon.className = "fas fa-heart";
-        heartBtn.appendChild(heartIcon);
+       // hearticon is the heart inside the circle
 
 
-        //hearticon is the heart inside the circle
 
 
+       //sihua code
+        const heartButtonContainer = document.createElement('div');
+        heartButtonContainer.className = 'heart-button';
+        heartButtonContainer.id = 'heartButton';
+
+       // Create the heart icon (i element)
+        const heartIcon = document.createElement('i');
+        heartIcon.className = 'fas fa-heart';
+
+        //Append the heart icon to the heart button container
+        heartButtonContainer.appendChild(heartIcon);
+
+        //Append the heart button container to the document body or a parent container
+       //document.body.appendChild(heartButtonContainer);  (remove this)
+
+        //Event handling for the heart button
+        const heartButton = document.getElementById('heartButton');
+        let clicked = false;
+
+         heartButton.addEventListener('click', function() {
+            clicked = !clicked;
+            if (clicked) {
+               heartButton.classList.add('clicked');
+            } else {
+               heartButton.classList.remove('clicked');
+            }
+          });
+
+
+
+
+        //continue May code
         const cardBody = document.createElement("div"); // All text will be contained within body
         cardBody.className = "card-body";
 
