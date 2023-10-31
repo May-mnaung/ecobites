@@ -297,9 +297,30 @@ axios
         card.appendChild(cardBody);
         cardBox.appendChild(card);
         
+        const heartButton = document.getElementById('heartButton');
+        // let clicked = false;
 
+        //  heartButtonContainer.addEventListener('click', function() {
+        //     clicked = !clicked;
+        //     if (clicked) {
+        //        heartButton.classList.add('clicked');
+        //     } else {
+        //        heartButton.classList.remove('clicked');
+        //     }
+        //   });
+
+         // const heartButton = document.getElementById('heartButton');
+          //let clicked = false;
+          heartButton.addEventListener('click', function() {
+            if (this.classList.contains("clicked")) {
+              this.classList.remove('clicked');
+            } else {
+              this.classList.add('clicked');
+            }
+           } )
         // Append the card to the card container
         cardContainer.appendChild(cardBox);
+
 
     }
   })
@@ -318,6 +339,9 @@ submitForm.addEventListener("click", handleSubmit);
 
 // Function to display selected value on screen
 function handleSubmit(event) {
+  
+}
+
   // Avoid page refresh
   event.preventDefault();
   const cardBox = document.getElementById("card-container");
@@ -334,7 +358,7 @@ function handleSubmit(event) {
           const cardContainer = document.createElement("div");
           cardContainer.className = "row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5";
           cardContainer.id = "card-container";
-
+        
 
 
           const cardBox = document.createElement("div");
@@ -538,27 +562,18 @@ function handleSubmit(event) {
           cardBox.appendChild(card);
 
 
+        
 
-        const heartButton = document.getElementById('heartButton');
-        let clicked = false;
+  }
+      
+         
 
-         heartButtonContainer.addEventListener('click', function() {
-            clicked = !clicked;
-            if (clicked) {
-               heartButton.classList.add('clicked');
-            } else {
-               heartButton.classList.remove('clicked');
-            }
-          });
-
-          
-
-
-        }
+        
+}
 
 
 
-      }
+      
 
       
 
@@ -571,13 +586,12 @@ function handleSubmit(event) {
 
 
 
-    }
-  });
+    
+  
   // // Display the selected checkboxes on screen 
   // var cartString = selectedOptions.join(", ");
   // displayCart.innerText = `You have selected: ${cartString}`;
 
 
-}
   
   
