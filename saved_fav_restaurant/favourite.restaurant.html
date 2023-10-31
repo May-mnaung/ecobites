@@ -13,6 +13,10 @@
     <!-- Font Awesome Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Include Vue.js and Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </head>
 <body>
     <!-- NAVBAR 
@@ -114,6 +118,16 @@
         </div>
 
 
+        <!-- SIHUA CODE" DISPLAY OF LIKED REST USING VUEJS-->
+        <div id="app">
+            <h1>Restaurants I Like</h1>
+            <ul>
+              <li v-for="restaurant in likedRestaurants" :key="restaurant.id">
+                {{ restaurant.name }}
+              </li>
+            </ul>
+          </div>
+
 
     
 
@@ -125,7 +139,15 @@ Axios CDN
 -->
 
 </body>
-<script src="favourite.restaurant.js"></script>
+<script src="favourite.restaurant.js">
+
+
+
+
+
+
+    
+</script>
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -133,33 +155,3 @@ Axios CDN
 
 
 
-<!--Change color for like button
-html in rest_filter html
-
-<div class="wrapper">
-    <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
-</div>
-
-Javascirpt
-function()
-let heart = document.getElementById('heart');
-heart.addEventListener('click',()=>{
-    if(heart.classList.contains('red')){
-        heart.classList.remove('red');
-        heart.classList.add('white');
-        heart.src = 'whiteHeart.png';
-    }else{
-        heart.classList.remove('white');
-        heart.classList.add('red');
-        heart.src = 'redHeart.png';
-    }
-});
-Share
-Im
-
-
-
-
-
-
--->
