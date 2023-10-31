@@ -542,7 +542,7 @@ function handleSubmit(event) {
         const heartButton = document.getElementById('heartButton');
         let clicked = false;
 
-         heartButton.addEventListener('click', function() {
+         heartButtonContainer.addEventListener('click', function() {
             clicked = !clicked;
             if (clicked) {
                heartButton.classList.add('clicked');
