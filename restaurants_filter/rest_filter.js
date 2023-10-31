@@ -168,7 +168,7 @@ axios
        // heartButtonContainer.appendChild(heartIcon);
 
         // Append the heart button container to the document body or a parent container
-       // document.body.appendChild(heartButtonContainer);
+       // document.body.appendChild(heartButtonContainer);  (remove this)
 
         // Event handling for the heart button
        // const heartButton = document.getElementById('heartButton');
