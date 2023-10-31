@@ -117,17 +117,17 @@ axios
        //document.body.appendChild(heartButtonContainer);  (remove this)
 
         //Event handling for the heart button
-        const heartButton = document.getElementById('heartButton');
-        let clicked = false;
+        // const heartButton = document.getElementById('heartButton');
+        // let clicked = false;
 
-         heartButton.addEventListener('click', function() {
-            clicked = !clicked;
-            if (clicked) {
-               heartButton.classList.add('clicked');
-            } else {
-               heartButton.classList.remove('clicked');
-            }
-          });
+        //  heartButton.addEventListener('click', function() {
+        //     clicked = !clicked;
+        //     if (clicked) {
+        //        heartButton.classList.add('clicked');
+        //     } else {
+        //        heartButton.classList.remove('clicked');
+        //     }
+        //   });
 
 
 
@@ -293,7 +293,7 @@ axios
         cardBody.appendChild(rateBox);
         
         card.appendChild(cardImage);
-        card.appendChild(heartBtn);
+        card.appendChild(heartButtonContainer);
         card.appendChild(cardBody);
         cardBox.appendChild(card);
         
@@ -536,10 +536,22 @@ function handleSubmit(event) {
           card.appendChild(heartBtn);
           card.appendChild(cardBody);
           cardBox.appendChild(card);
-          
 
-          // Append the card to the card container
-          cardContainer.appendChild(cardBox);
+
+
+        const heartButton = document.getElementById('heartButton');
+        let clicked = false;
+
+         heartButton.addEventListener('click', function() {
+            clicked = !clicked;
+            if (clicked) {
+               heartButton.classList.add('clicked');
+            } else {
+               heartButton.classList.remove('clicked');
+            }
+          });
+
+          
 
 
         }
