@@ -23,7 +23,7 @@ item.addEventListener("click", () =>{
     })
 })
 });
-
+//===================yt:filtering note======================
 //code for submit btn
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submitFilter");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+//=====================filtering note end===============
 
 // Javscript for DOM manipulation
 let restaurants = [];
