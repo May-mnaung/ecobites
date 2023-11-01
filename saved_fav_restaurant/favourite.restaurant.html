@@ -64,17 +64,48 @@
             </div>
         </div>
 
+      <!--
+
         <div id="display_rest">
-            <h1></h1>
+        <h1></h1>
            
-            </h1>
-            <ul>
-                <li v-for="restaurant in likedRestaurants">
-                    {{ restaurant.Name }}<br>
-                </li>
-            </ul>
+    </h1>
+    <ul>
+        <li v-for="restaurant in likedRestaurants">
+            {{ restaurant.Name }}<br>
+        </li>
+    </ul>
+</div>
+</div>
+       
+        
+      -->   
+
+
+
+    <div class="main-content">
+        <!-- Your content here -->
+        <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
+            <div v-for="restaurant in likedRestaurants" :key="restaurant._id.$oid" class="col">
+                <div class="card">
+                    <img :src="restaurant.Image" class="card-img-top" alt="restaurant" @click="redirectToDetails(restaurant)">
+                    <div class="heart-button" @click="toggleFavorite(restaurant)">
+                        <i class="fas fa-heart" :class="{ clicked: restaurant.fav_restaurant }"></i>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ restaurant.Name }}</h4>
+                        <div class="cuisine text-muted">{{ restaurant.Location }}</div>
+                        <h5 class="price-cat fw-bold">{{ restaurant.Price }}</h5>
+                        <div class="d-flex reviews-stars">
+                            <div v-for="star in restaurant.stars" :key="star" class="fas fa-star"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
 
     <script>
         Vue.createApp({
@@ -91,6 +122,15 @@
                     .catch(error => {
                         console.error('Error fetching data:', error);
                     });
+            },
+            methods:{
+                toggleFavorite(restaurant) {
+                    restaurant.fav_restaurant = !restaurant.fav_restaurant;
+                },
+
+                redirectToDetails(restaurant){
+                    location.href = '../restaurant_cards/card_details.html';
+                }
             }
         }).mount("#display_rest");
     </script>
