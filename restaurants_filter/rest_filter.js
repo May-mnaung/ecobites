@@ -212,11 +212,6 @@ axios
         //   });
 
 
-
-
-      
-
-
         //continue May code
         const cardBody = document.createElement("div"); // All text will be contained within body
         cardBody.className = "card-body";
@@ -661,22 +656,6 @@ axios
 // }
 
 
-
-      
-
-      
-
-
-
-
-
-
-
-
-
-
-    
-  
 //   // // Display the selected checkboxes on screen 
 //   // var cartString = selectedOptions.join(", ");
 //   // displayCart.innerText = `You have selected: ${cartString}`;
