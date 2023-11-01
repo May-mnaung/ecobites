@@ -110,7 +110,7 @@
                             <div v-for="restaurant in likedRestaurants" :key="restaurant._id.$oid" class="col">
                                 <div class="card">
                                     <img :src="restaurant.Image" class="card-img-top" alt="restaurant" @click="redirectToDetails(restaurant)">
-                                    <img :src="restaurant.Image" class="card-img-top" alt="restaurant">
+                                 
                                     <!-- Add the heart button container and icon -->
                                     <div class="heart-button" @click="toggleFavorite(restaurant)" :class="{ clicked: restaurant.fav_restaurant }">
                                         <i class="fas fa-heart"></i>
@@ -119,6 +119,10 @@
 
 
 
+
+                                    <div v-if="reviewIs5(restaurant.ratings)"></div>
+                                    {{ stars_5 }}
+                                    </div>
 
 
                         <div class="card-body">
@@ -140,6 +144,8 @@
             data() {
                 return {
                     likedRestaurants: []
+                    
+
                 }
             },
             created() {
@@ -152,12 +158,28 @@
                     })
                     .catch(error => {
                         console.error('Error fetching data:', error);
+
                     });
             },
             methods: {
               toggleFavorite(restaurant) {
              
                     restaurant.fav_restaurant = !restaurant.fav_restaurant;
+                    
+                    rest_id = restaurant["_id"]["$oid"]
+                    axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
+            'fav_restaurant': false
+        }).then(
+            response => {
+                console.log(response.data)
+            }
+        ).catch(
+            error => {
+                console.log(error)
+            })
+
+        //         }
+        //     }
                 },
                 redirectToDetails(restaurant) {
                     location.href = '../restaurant_cards/card_details.html';

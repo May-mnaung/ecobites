@@ -156,7 +156,7 @@ axios
        //sihua code
         const heartButtonContainer = document.createElement('div');
         heartButtonContainer.className = 'heart-button';
-        heartButtonContainer.id = 'heartButton';
+        heartButtonContainer.id = restaurants[i]["_id"]["$oid"];
 
        // Create the heart icon (i element)
         const heartIcon = document.createElement('i');
@@ -166,6 +166,7 @@ axios
         heartButtonContainer.appendChild(heartIcon);
       
        
+   
         heartButtonContainer.addEventListener('click', function() {
           if (this.classList.contains("clicked")) {
            
@@ -176,16 +177,18 @@ axios
             this.classList.remove('clicked');
             
             
-          //  axios.post('http://127.0.0.1:5000/api/restaurant/' + _id + $oid, {
-          //     restaurants[i].fav_restaurant= false
-          // }).then(
-          //     response => {
-          //         console.log(response.data)
-          //     }
-          // ).catch(
-          //     error => {
-          //         console.log(error)
-          //     })
+           axios.post('http://127.0.0.1:5000/api/restaurant/' + this.id, {
+              fav_restaurant: false
+          }).then(
+              response => {
+                  console.log(response.data)
+              }
+          ).catch(
+              error => {
+                  console.log(error)
+              })
+
+          
 
 
 
@@ -194,6 +197,20 @@ axios
 
           } else {
             this.classList.add('clicked');
+             
+            
+           axios.post('http://127.0.0.1:5000/api/restaurant/' + this.id, {
+              fav_restaurant: true
+          }).then(
+              response => {
+                  console.log(response.data)
+              }
+          ).catch(
+              error => {
+                  console.log(error)
+              })
+
+
             
             restaurants[i].fav_restaurant= true
           }
@@ -246,10 +263,16 @@ axios
 
         const checkedone = document.createElement("div");
         checkedone.className = "fas fa-star";
+        checkedone.id = "1star"
         const checkedtwo = document.createElement("div");
         checkedtwo.className = "fas fa-star";
+        checkedone.id = "2star"
         const checkedthree = document.createElement("div");
         checkedthree.className = "fas fa-star";
+        checkedthree.id = "3star"
+        checkedthree.addEventListener("click", {
+          filter(3)
+        })
         const checkedfour = document.createElement("div");
         checkedfour.className = "fas fa-star";
         const checkedfive = document.createElement("div");
