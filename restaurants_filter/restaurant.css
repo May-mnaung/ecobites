@@ -1,13 +1,10 @@
-/* CSS for MAIN CONTENT: Placing padding btw fixed NavBar & Main-content*/
+/* CSS for MAIN CONTENT*/
 .main-content {
     padding-top: 80px; 
 }
 
 
-/* CSS FOR NAVBAR 
-   - changes: Made it fixed
-   - Z-index for navBar
-*/
+/* CSS FOR NAVBAR */
 @import "main.scss";
 
 #navigationBar
@@ -124,10 +121,7 @@ ul{
 .filter-bar{
     width: 15%;
     height: 100vh;
-    /* position: fixed;
-    left: 0; */
 
-    
 }
 
 .contant{
@@ -142,7 +136,7 @@ ul{
 .card-img-top{
     width: 100%;
     height: 280px; 
-    object-fit: cover; /*all images will have the same height*/
+    object-fit: cover;
 }
 
 
@@ -159,3 +153,16 @@ ul{
     color: #f9d71c;
 }
 
+.card-title {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow:hidden
+}
+
+.cuisine {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow:hidden
+}

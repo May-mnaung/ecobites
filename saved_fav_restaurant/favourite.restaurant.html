@@ -1,26 +1,22 @@
 <!DOCTYPE html>
+<html>
 <head>
-
     <title>Document</title>
     <link rel="stylesheet" href="restaurant.css">
-    <!-- Bootstrap CSS -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    <!-- Font Awesome Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Vue.js from CDN -->
+    <script src="https://unpkg.com/vue@next"></script>
 
+    <!-- Axios from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
 </head>
 <body>
-    <!-- NAVBAR 
-        - changes: fixed-top, ps-3
-    -->
-
     
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="navigationBar">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navigationBar">
         <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
         </a>
@@ -30,7 +26,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="index.html" >Home</a>
+                    <a class ="nav-link active" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="restaurants.html">Find Restaurant</a>
@@ -46,10 +42,7 @@
         </div>
     </nav>
 
-
     <div class="main-content">
-
-            <!-- Row: Filter, clear filters, found results -->
         <div class="d-flex justify-content-start ms-5" id="more-info">
             <div>
                 Filter
@@ -63,103 +56,83 @@
             </div>
         </div>
 
-       <!-- <div class="row mb-4">
-
-            <div class="d-flex justify-content-between">
-                <div class="filter">
-                    Filter
-                </div>
-
-                <div class="text-secondary">
-                    <button type="button" class="refresh-button">
-                        <i class="fas fa-rotate-right"></i>
-                    </button>
-                    Clear filters
-                </div>
-
-            </div>
-
-        </div> -->
-
-        
         <div class="col-md-8">
             <div class="contant px-3">
-
-                <!-- Responsive cards -->
                 <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
-                            
-                    <!-- <div class="col">
-                        <div class="card" id="restaurant1" onclick="show_details('restaurant1')">
-                            <img src="images/image1.jpg" class="card-img-top" alt="restaurant">
-                            
-                            <button type="button" class="btn btn-danger top-0 end-0 position-absolute m-2 rounded-pill"
-                                onclick="location.href = '../saved_fav_restaurant/favourite.restaurant.html';">
-                                <i class="fas fa-heart"></i>
-                            </button>
-        
-                            <div class="card-body">
-                                <h4 class="card-title">Anchor & James</h4>
-                                <div class="cuisine text-muted">American | Downtown Union Street</div>
-                            </div>
-                        </div>
-                    </div> -->
-
-
+                    <!-- Cards will be displayed here -->
                 </div>
-
-
-
-
             </div>
         </div>
 
+      <!--
 
-
-    
-
-
-
-<!--
-Axios CDN 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
--->
-
-</body>
-<script src="favourite.restaurant.js"></script>
-
-<!-- Bootstrap JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</html>
-
-
-
-<!--Change color for like button
-html in rest_filter html
-
-<div class="wrapper">
-    <a class="a-heart" href="#"><img src="redHeart.png" id="heart" class="red"></a>
+        <div id="display_rest">
+        <h1></h1>
+           
+    </h1>
+    <ul>
+        <li v-for="restaurant in likedRestaurants">
+            {{ restaurant.Name }}<br>
+        </li>
+    </ul>
 </div>
-
-Javascirpt
-function()
-let heart = document.getElementById('heart');
-heart.addEventListener('click',()=>{
-    if(heart.classList.contains('red')){
-        heart.classList.remove('red');
-        heart.classList.add('white');
-        heart.src = 'whiteHeart.png';
-    }else{
-        heart.classList.remove('white');
-        heart.classList.add('red');
-        heart.src = 'redHeart.png';
-    }
-});
-Share
-Im
+</div>
+       
+        
+      -->   
 
 
 
+    <div class="main-content">
+        <!-- Your content here -->
+        <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
+            <div v-for="restaurant in likedRestaurants" :key="restaurant._id.$oid" class="col">
+                <div class="card">
+                    <img :src="restaurant.Image" class="card-img-top" alt="restaurant" @click="redirectToDetails(restaurant)">
+                    <div class="heart-button" @click="toggleFavorite(restaurant)">
+                        <i class="fas fa-heart" :class="{ clicked: restaurant.fav_restaurant }"></i>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ restaurant.Name }}</h4>
+                        <div class="cuisine text-muted">{{ restaurant.Location }}</div>
+                        <h5 class="price-cat fw-bold">{{ restaurant.Price }}</h5>
+                        <div class="d-flex reviews-stars">
+                            <div v-for="star in restaurant.stars" :key="star" class="fas fa-star"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
--->
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    likedRestaurants: []
+                }
+            },
+            created() {
+                axios.get('http://127.0.0.1:5000/api/restaurants')
+                    .then(response => {
+                        this.likedRestaurants = response.data.filter(restaurant => restaurant.fav_restaurant === false);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            },
+            methods:{
+                toggleFavorite(restaurant) {
+                    restaurant.fav_restaurant = !restaurant.fav_restaurant;
+                },
+
+                redirectToDetails(restaurant){
+                    location.href = '../restaurant_cards/card_details.html';
+                }
+            }
+        }).mount("#display_rest");
+    </script>
+</body>
+</html>

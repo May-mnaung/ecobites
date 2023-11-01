@@ -11,13 +11,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <body class="container2" style="background-color: #E6E5D3">
+    <body class="container2" style="background-color: #ddf7db">
     
         <div class="container"> 
             <div class="row"> 
                 <div class="col"></div> 
                 <div class="col-6 jumbotron text-center"> 
-                    <h1>Sign Up</h1>
+                    <h1><img src="/ecobites/static/images/earth.png" class="mr-2" id="Logo" alt="Logo" height="50px" width="50px">      Sign up</h1>
                     <p></p>
                 </div> 
                 <div class="col"></div>     
@@ -30,7 +30,12 @@
                 <div class="col-6">
                     <form>
                         <div class="form-group">
-                            Enter a username
+                            <div class="errors">
+                                <span>Enter a username</span>
+                                <span v-if="error_msg"  v-html="username_error"></span>
+                            </div>
+                            <!-- <div v-html="username_error"></div> -->
+               
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img v-bind:src="username_src" :width="input_wheight" :height="input_wheight"></span>
                                 <input type="text" class="form-control bg-light" v-model="username" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -38,7 +43,12 @@
     
                         </div>
                         <div class="form-group">
-                            Create a password
+                         
+                            <div class="errors">
+                                <span>Create a password</span> <span v-if="error_msg" v-html="password_error"></span>
+
+                            </div> 
+                       
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img v-bind:src="password_src" :width="input_wheight" :height="input_wheight"></span>
                                 <input type="password" class="form-control bg-light" v-model="password" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -46,7 +56,10 @@
     
                         </div>
                         <div class="form-group">
-                            Email
+                            <div class="errors">
+                                <span>Enter an email</span>
+                                <span v-if="error_msg" v-html="email_error"></span>
+                            </div>
                             <div class="input-group mb-3 w-100">
                                 <span class="input-group-text bg-light" id="inputGroup-sizing-default"><img v-bind:src="email_src" :width="input_wheight" :height="input_wheight"></span>
                                 <input type="text" class="form-control bg-light" v-model="email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -56,7 +69,7 @@
                         
           
                         <div class="form=group">
-                            <button type="button" class="btn btn-success btn-lg w-100" v-on:click="signup()">Register now</button>
+                            <button type="button" class="btn btn-success btn-lg w-100" v-on:click="signup">Register now</button>
                         </div>
                         <div class="form=group">
                             <div class="ms-5 text-center align-items-center">Already have an account? <span><a href=logIn.html>Login </a></span></div>

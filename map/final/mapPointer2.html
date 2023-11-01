@@ -17,8 +17,7 @@
     <title>Google Maps Example</title>
     <style>
         /* Specify the dimensions of the map container */
-        /* #e6e5d3 */
-        /* #007BFF */
+
         #map {
             height: 68vw; /* Adjust the height as needed */
             width: 100%;   /* Adjust the width as needed */
@@ -69,6 +68,7 @@
             font-weight: bold;
         }
 
+
     </style>
 </head>
 <body>
@@ -81,16 +81,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
-                <li class="nav-item active">
-                    <a class="nav-link active" href="../../templates/index.html" >Home</a>
+                <li class="nav-item ">
+                    <a class="nav-link " href="../../templates/index.html" >Home</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="active nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="../../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Find Restaurant
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../../Restaurants_filter/rest_filter.html">Filter by</a>
-                        <a class="dropdown-item" href="../map/final/mapPointer2.html">Near Me</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-color">
+                        <a class="dropdown-item" href="../../Restaurants_filter/rest_filter.html" id="dropdown-item">Filter by</a>
+                        <!-- <a class="dropdown-item" href="../map/final/mapPointer2.html">Near Me</a> -->
                     </div>
                 </li>
                 <li class="nav-item">
@@ -185,9 +185,10 @@
                     <div class="info-card">
                         <img src="${location.res_image}" alt="${location.title}" class="info-image">
                         <div class="info-details">
-                            <p><a href="${location.page}" target="_blank" class="info-title">${location.title} ${repeatStar}</a></p>
+                            <p><a href="${location.page}" target="_blank" class="info-title">${location.title} </a></p>
+                      
+                            <p class="info-ratings"><span class="bold">Rating:${repeatStar}</span></p>
                             <p class="info-price"><span class="bold">Price:</span> ${location.price}</p>
-                            <!--<p class="info-ratings"><span class="bold">Rating:</span></p>-->
                             <p class="info-cuisine"><span class="bold">Food Type:</span> ${remove_cuisine}</p>
                             <p class="info-address"><span class="bold">Address: </span>${location.address} Singapore ${location.postal}</p>
                         </div>

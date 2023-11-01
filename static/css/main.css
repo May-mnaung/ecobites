@@ -4,9 +4,24 @@
 #navigationBar {
   background-color: #a8bfa7;
   z-index: 5;
-  padding: 5px 0; /* Adjust the vertical padding to make the navbar shorter */
+  padding: 3px 0; /* Adjust the vertical padding to make the navbar shorter */
 }
 
+/*Drop down css*/
+#dropdown-color{
+  background-color: #a8bfa7;
+
+}
+
+#dropdown-color a:hover,
+#dropdown-color a:focus{
+  background-color: transparent;
+  color: #333; /* Set the desired text color */
+}
+
+#dropdown-color a.active{
+  background-color:#a8bfa7; 
+}
 #Logo {
   height: 60px; /* Adjust the height of your logo */
   width: 60px;
@@ -42,6 +57,9 @@ body{
   border: none;
   box-shadow: none;
 }
+
+
+
 
 /* icons */
 

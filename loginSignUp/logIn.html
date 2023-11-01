@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body class="container" style="background-color: #E6E5D3">
+<body class="container" style="background-color: #ddf7db">
     
     <div class="container"> 
+  
         <div class="row"> 
             <div class="col"></div> 
             <div class="col-6 jumbotron text-center"> 
-                <h1>Log in </h1>
+        
+                <h1><img src="/ecobites/static/images/earth.png" class="mr-2" id="Logo" alt="Logo" height="50px" width="50px">      Log in </h1>
                 <p></p>
             </div> 
             <div class="col"></div>     
@@ -28,7 +30,11 @@
             <div class="col"></div>
             <div class="col-6">
                 <form>
-                    <div clas="form-group">
+                    <div class="form-group">
+                        <div class="errors">
+                            <span>Username</span>
+                            <span v-if="error_msg" v-html="username_error"></span>
+                        </div>
                         <div class="input-group mb-3 w-100">
                             <span class="input-group-text" id="inputGroup-sizing-default"><img v-bind:src="username_src" :width="input_wheight" :height="input_wheight"/></span>
                             <input type="text" v-model="username" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -36,6 +42,10 @@
 
                     </div>
                     <div class="form-group">
+                        <div class="errors">
+                            <span>Password</span>
+                            <span v-if="error_msg" v-html="password_error"></span>
+                        </div>
                         <div class="input-group mb-3 w-100">
                             <span class="input-group-text" id="inputGroup-sizing-default"><img v-bind:src="password_src" :width="input_wheight" :height="input_wheight"></span>
                             <input type="password" v-model="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -50,12 +60,6 @@
                         <button type="button" class="btn btn-success btn-lg w-100" v-on:click="login()">Log in</button>
                         <div class="ms-5 text-center align-items-center">Don't have an account? <span><a href=signUp.html>Sign up </a></span></div>
 
-                    </div>
-                    <div class="form-group">
-                        <hr>
-                        <button type="button" v-on:click="facebook_login()"class="btn btn-primary btn-lg w-100"><span><img v-bind:src="facebook_src" :width="fb_wheight" :height="fb_wheight"></span>  Login with facebook</button>
-                        <br>
-                        <button type="button" v-on:click="google_login()" class="btn btn-light btn-lg w-100"><span><img v-bind:src="google_src" :width="g_wheight" :height="g_wheight"></span>     Login with google</button>
                     </div>
                 </form>
 
