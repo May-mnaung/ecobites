@@ -84,6 +84,12 @@
   opacity: 1;
   right: 0;
 }
+#submitFilter:disabled {
+  background-color: #ccc; /* Change the background color to gray */
+  cursor: not-allowed; /* Change the cursor to 'not-allowed' */
+  opacity: 0.6; /* Change the opacity to make it visually dimmed */
+  pointer-events: none; /* Disable pointer events */
+}
 
 
 </style>
@@ -215,15 +221,15 @@
                         <div class="ratings">
                             <h6>Restaurant ratings</h6>
                             <div class="star">
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
+                                <a href="#" id="one-star" class="bi-star-fill"></a>
+                                <a href="#" id="two-star" class="bi-star-fill"></a>
+                                <a href="#" id="three-star" class="bi-star-fill"></a>
+                                <a href="#" id="four-star" class="bi-star-fill"></a>
+                                <a href="#" id="five-star" class="bi-star-fill"></a>
                             </div>
                         </div> 
                     </div>
-                    <button class="button" style="vertical-align:middle"><span>Filter</span></button>
+                    <button id="submitFilter" class="button" style="vertical-align:middle"disabled><span>Submit</span></button>
                 </form>
             </div>
         </div>

@@ -12,7 +12,6 @@ filterButton.addEventListener('click', function () {
 
 
 
-
 var stars = document.querySelectorAll('.star a');
 stars.forEach((item, index1) => {
 item.addEventListener("click", () =>{
@@ -25,6 +24,54 @@ item.addEventListener("click", () =>{
 })
 });
 
+//code for submit btn
+document.addEventListener("DOMContentLoaded", function () {
+  const submitButton = document.getElementById("submitFilter");
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  function updateSubmitButton() {
+    const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
+    submitButton.disabled = !atLeastOneChecked;
+  }
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", updateSubmitButton);
+  });
+
+  // Initial call to set the submit button state
+  updateSubmitButton();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get references to the submit button, clear filter button, and all checkboxes
+  const submitButton = document.getElementById("submitFilter");
+  const clearFilterButton = document.querySelector(".refresh-button");
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+  // Function to check if at least one checkbox is checked
+  function updateSubmitButton() {
+    const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
+    submitButton.disabled = !atLeastOneChecked;
+  }
+
+  // Add an event listener to each checkbox
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", updateSubmitButton);
+  });
+
+  // Event listener for the "Clear Filter" button
+  clearFilterButton.addEventListener("click", function () {
+    // Uncheck all checkboxes
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
+
+    // Trigger the updateSubmitButton function to recheck the button state
+    updateSubmitButton();
+  });
+
+  // Initial call to set the submit button state
+  updateSubmitButton();
+});
 
 
 
