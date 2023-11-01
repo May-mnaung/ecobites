@@ -1,6 +1,7 @@
 //  Javascript for FilterBar
 const filterButton = document.getElementById('filterButton');
 const filterBar = document.getElementById('filter-bar');
+const cardContainer = document.getElementById('card-container');
 
 filterButton.addEventListener('click', function () {
     console.log(window.innerWidth);
@@ -9,8 +10,10 @@ filterButton.addEventListener('click', function () {
         filterBar.classList.toggle('filter-bar-visible');
         if (filterBar.classList.contains('filter-bar-visible')) {
           filterBar.style.width = '100%';
+          cardContainer.style.display = 'none';
       } else {
-          filterBar.style.width = ''; 
+          filterBar.style.width = '';
+          cardContainer.style.display = ''; 
       }
     }
 });
