@@ -5,7 +5,7 @@ font-family:'Poppins', sans-serif;
 margin-left:auto;
 margin-right:auto;
 max-width:100%;
-font-size: 2vw;
+font-size: 1.5vw;
 
 }
 
@@ -112,12 +112,43 @@ hr{
       text-align: left;
       font-weight: lighter;
       z-index:1;
-      margin-top: -22%;
+      margin-top: -15%;
       margin-left: 10%;
       text-shadow: 2px 2px 4px rgb(60, 60, 60);
       text-wrap:nowrap;
       padding:3%;
   }
+
+  .overlay-box2 {
+    position: absolute;  
+    background-color: rgba(255, 255, 255);
+    color: black;  
+    text-align: left; 
+    z-index:1;
+    margin-top: -17%;
+    margin-left: 10%;
+    padding-bottom:3%;
+    padding-left:4%;
+    padding-right:4%;
+    padding-top:2%;
+    max-width: 40%;
+}
+
+#box_title{
+  font-weight: bold;
+  font-size: 2vw;
+  text-wrap:nowrap;
+  margin-bottom:2vw
+
+
+}
+
+
+#box_text{
+  font-size:1vw;
+  text-wrap:pretty;
+
+}
 
   
 
@@ -429,24 +460,19 @@ ul{
     margin-top:5vw
   }
   
-  .listminwidth{
-    min-width:5vw;
-    /* font-size: 3vw; */
-
-  }
 
   .spacing{
     margin-top: 10vw;
   }
 
   .carousel{
-    width: 90%;
+    width: 60%;
     height: auto;
     
   }
 
   .carousel_text{
-    text-shadow: 2px 2px 4px rgb(41, 41, 41);  
+    text-shadow: 2px 2px 4px rgb(7, 7, 7);  
     text-wrap:pretty;
 
 
@@ -456,7 +482,7 @@ ul{
   .carousel_title{
     text-transform: capitalize;
     font-weight:bolder;
-    text-shadow: 2px 2px 4px rgb(60, 60, 60);  
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);  
     font-size:larger
 
 
@@ -512,15 +538,41 @@ ul{
   margin-right:3vw
 }
 
+.listicon{
+  width:5vw;
+  height:5vw;
+
+}
+
+.list_text{
+  padding-left:2vw;
+}
+
+
+/* 
 .first{
-  list-style-image: url('images/healthy-heart.png');
-  margin-left: 30px;
+  list-style-type: none; /* Remove the default marker */
+  
+/* padding: 0;
+  
+}
+
+
+.first li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  background: url('Images/healthy-heart.png') center center no-repeat;
+  
   }
+
+
   
   
 .second{
   list-style-image: url('images/preference.png');
   margin-left: 30px;
+  background-size: 30%;
   }
 
   
@@ -538,13 +590,13 @@ ul{
 li{
   padding-left:3vw;
   vertical-align: middle;
+  position:relative
 }
-  
+   */
 
 
 
-  
-  
-  
 
+  
+  
   
