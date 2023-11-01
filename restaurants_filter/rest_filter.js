@@ -4,9 +4,14 @@ const filterBar = document.getElementById('filter-bar');
 
 filterButton.addEventListener('click', function () {
     console.log(window.innerWidth);
-    if (window.innerWidth <= 1043) { // for 983 px
+    if (window.innerWidth <= 1209) { // for 983 px
         // Toggle a class to show/hide the filter-bar
         filterBar.classList.toggle('filter-bar-visible');
+        if (filterBar.classList.contains('filter-bar-visible')) {
+          filterBar.style.width = '100%';
+      } else {
+          filterBar.style.width = ''; 
+      }
     }
 });
 
