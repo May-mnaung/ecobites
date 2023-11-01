@@ -102,14 +102,25 @@
     <div id="display_rest">
         <div class ="main-content">
             <!-- Your content here -->
-            <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
-                <div v-for="restaurant in likedRestaurants" :key="restaurant._id.$oid" class="col">
-                    <div class="card">
-                        <img :src="restaurant.Image" class="card-img-top" alt="restaurant">
-                        <!-- Add the heart button container and icon -->
-                        <div class="heart-button" @click="toggleFavorite(restaurant)" :class="{ clicked: restaurant.fav_restaurant }">
-                            <i class="fas fa-heart"></i>
-                        </div>
+             
+                   
+
+
+                        <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
+                            <div v-for="restaurant in likedRestaurants" :key="restaurant._id.$oid" class="col">
+                                <div class="card">
+                                    <img :src="restaurant.Image" class="card-img-top" alt="restaurant" @click="redirectToDetails(restaurant)">
+                                    <img :src="restaurant.Image" class="card-img-top" alt="restaurant">
+                                    <!-- Add the heart button container and icon -->
+                                    <div class="heart-button" @click="toggleFavorite(restaurant)" :class="{ clicked: restaurant.fav_restaurant }">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+
+
+
+
+
+
                         <div class="card-body">
                             <h4 class="card-title">{{ restaurant.Name }}</h4>
                             <div class="cuisine text-muted">{{ restaurant.Location }}</div>
@@ -136,6 +147,7 @@
                 axios.get('http://127.0.0.1:5000/api/restaurants')
                     .then(response => {
                         this.likedRestaurants = response.data.filter(restaurant => restaurant.fav_restaurant === true);
+
                         //change it to false when u unclick
                     })
                     .catch(error => {
@@ -143,11 +155,32 @@
                     });
             },
             methods: {
-                toggleFavorite(restaurant) {
+              toggleFavorite(restaurant) {
+             
                     restaurant.fav_restaurant = !restaurant.fav_restaurant;
+                },
+                redirectToDetails(restaurant) {
+                    location.href = '../restaurant_cards/card_details.html';
                 }
             }
+        //             rest_id = restaurant["_id"]["$oid"]
+        //             axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
+        //     'fav__restaurants': false
+        // }).then(
+        //     response => {
+        //         console.log(response.data)
+        //     }
+        // ).catch(
+        //     error => {
+        //         console.log(error)
+        //     })
+
+        //         }
+        //     }
         }).mount("#display_rest");
     </script>
 </body>
 </html>
+
+
+

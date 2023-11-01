@@ -20,7 +20,7 @@ def get_restaurants():
     return Response(dumps(restaurants), mimetype='application/json')
 
 # Retrieve a single restaurant
-@app.route('/api/restaurant/<_id>/<oid>', methods = ['GET'])
+@app.route('/api/restaurant/<oid>', methods = ['GET'])
 def get_restaurant(oid):
     """
     restaurant Routing
@@ -30,7 +30,7 @@ def get_restaurant(oid):
 
 # Update a single restaurant  
 #original ta vertion is @app.route('/api/restaurant/<oid>',
-@app.route('/api/restaurant/<_id>/<oid>', methods = ['POST'])
+@app.route('/api/restaurant/<oid>', methods = ['POST'])
 def update_restaurant(oid):
     restaurant = dao.update_restaurant(oid, request.data)
     return Response(dumps(restaurant), mimetype='application/json')
