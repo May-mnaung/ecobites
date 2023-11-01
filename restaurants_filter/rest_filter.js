@@ -157,7 +157,7 @@ axios
         cardTitle.textContent = restaurants[i].Name;
 
         const cardLocation = document.createElement("div");
-        cardLocation.className = "cuisine text-muted";
+        cardLocation.className = "location text-muted";
         cardLocation.textContent = restaurants[i].Location;
 
         const cardPrice = document.createElement("h5");
@@ -425,7 +425,7 @@ axios
 //           cardTitle.textContent = restaurants[i].Name;
 
 //           const cardLocation = document.createElement("div");
-//           cardLocation.className = "cuisine text-muted";
+//           cardLocation.className = "location text-muted";
 //           cardLocation.textContent = restaurants[i].Location;
 
 //           const cardPrice = document.createElement("h5");
