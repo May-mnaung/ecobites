@@ -4,7 +4,7 @@
 
     <title>Document</title>
     <link rel="stylesheet" href="restaurant.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../static/css/main.css">
     <!-- Bootstrap CSS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -45,7 +45,52 @@
 .heart-button.clicked {
     background-color: red;
 }
-    
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgb(94, 150, 116);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#submitFilter:disabled {
+  background-color: #ccc; /* Change the background color to gray */
+  cursor: not-allowed; /* Change the cursor to 'not-allowed' */
+  opacity: 0.6; /* Change the opacity to make it visually dimmed */
+  pointer-events: none; /* Disable pointer events */
+}
+
 
 </style>
 
@@ -63,10 +108,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
                 <li class="nav-item ">
-                    <a class="nav-link " href="../../templates/index.html" >Home</a>
+                    <a class="nav-link " href="../templates/index.html" >Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Find Restaurant
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-color">
@@ -75,7 +120,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
+                    <a class="nav-link" href="../templates/contact.html">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -176,27 +221,24 @@
                         <div class="ratings">
                             <h6>Restaurant ratings</h6>
                             <div class="star">
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
-                                <a href="#" class="bi-star-fill"></a>
+                                <a href="#" id="one-star" class="bi-star-fill"></a>
+                                <a href="#" id="two-star" class="bi-star-fill"></a>
+                                <a href="#" id="three-star" class="bi-star-fill"></a>
+                                <a href="#" id="four-star" class="bi-star-fill"></a>
+                                <a href="#" id="five-star" class="bi-star-fill"></a>
                             </div>
                         </div> 
                     </div>
-                    <button id="submit-filter" type="submit">Submit</button>
+                    <button id="submitFilter" class="button" style="vertical-align:middle"disabled><span>Submit</span></button>
                 </form>
             </div>
         </div>
-
         <div id="display-cart"></div>
 
         <div class="col-md-8">
             <div id="restaurants" class="contant px-3">
-
                 <!-- Responsive cards -->
-                <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">
-                            
+                <div id="card-container" class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 g-5">     
                     <!-- <div class="col">
                         <div class="card" id="restaurant1" onclick="show_details('restaurant1')">
                             <img src="images/image1.jpg" class="card-img-top" alt="restaurant">
@@ -205,34 +247,16 @@
                                 onclick="location.href = '../saved_fav_restaurant/favourite.restaurant.html';">
                                 <i class="fas fa-heart"></i>
                             </button>
-
-
                             my heart html code goes here  
-
-
-
-
-
-
-        
                             <div class="card-body">
                                 <h4 class="card-title">Anchor & James</h4>
                                 <div class="cuisine text-muted">American | Downtown Union Street</div>
                             </div>
                         </div>
                     </div> -->
-
-
                 </div>
-
-
-
-
             </div>
         </div>
-
-
-
     </div>
 
     
