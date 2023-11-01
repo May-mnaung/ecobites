@@ -278,9 +278,9 @@ axios
         const checkedthree = document.createElement("div");
         checkedthree.className = "fas fa-star";
         checkedthree.id = "3star"
-        checkedthree.addEventListener("click", {
-          filter(3)
-        })
+        // checkedthree.addEventListener("click", {
+        //   filter(3)
+        // })
         const checkedfour = document.createElement("div");
         checkedfour.className = "fas fa-star";
         const checkedfive = document.createElement("div");
