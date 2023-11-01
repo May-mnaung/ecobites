@@ -116,9 +116,14 @@ axios
        
         heartButtonContainer.addEventListener('click', function() {
           if (this.classList.contains("clicked")) {
+           
+            restaurants[i].fav_restaurant=false
+
+
             this.classList.remove('clicked');
           } else {
             this.classList.add('clicked');
+            restaurants[i].fav_restaurant= true
           }
          } )
       // Append the card to the card container
@@ -138,6 +143,7 @@ axios
         //        heartButton.classList.remove('clicked');
         //     }
         //   });
+
 
 
 
