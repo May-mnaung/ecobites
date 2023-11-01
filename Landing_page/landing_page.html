@@ -15,7 +15,7 @@
     
 </head>
 
-<body style="background-color:#e6e5d3; margin:auto; padding:auto">
+<body style="background-color: #e6e5d3; margin:auto; padding:auto">
     <!-- navigation bar -->
         <div class = "row display: inline-flex"  id = "nav_bar">
 
@@ -29,10 +29,10 @@
                 <a class="nav-link" href="#about">About</a>
             </div>
             <div class = "col-4">
-                <a class="nav-link" href="loginSignUp\signUp.html">Register</a>
+                <a class="nav-link" href="../loginSignUp/signUp.html">Register</a>
             </div>
             <div class = "col-1">
-                <a class="btn float-right rounded-pill" href="loginSignUp\logIn.html" role="button" id="btn" >Login</a>
+                <a class="btn float-right rounded-pill" href="../loginSignUp/logIn.html" role="button" id="btn" >Login</a>
             </div>
            
         </div>
@@ -64,7 +64,7 @@
                 </spam>
             </div>
             <div class = "row-4  display:flex my-5">
-                <img src="images/piechart.png" class="iconadj2">
+                <img src="images/piechart.PNG" class="iconadj2">
                 <spam class = "text1" >About <spam class = "red">34%</spam> of all human-caused greenhouse gas emissions is linked to food.</spam>
             </div>
             <div class = "row justify-content-center title" style="padding-bottom: 5vw; padding-top: 5vw; ">
@@ -72,14 +72,69 @@
             </div>
             <div class = "row-4  display:flex">
                 <img src="images/global-warming.png" class="iconadj1" style ="margin-left:15%">
-                <spam class = "text1" style="padding-left:5% ">2022 was the <spam class = "red">6th</spam>-warmest year on record</spam>
+                <spam class = "text1">2022 was the <spam class = "red">6th</spam>-warmest year on record</spam>
             </div>
             <div class = "row justify-content-center title" style="padding-bottom: 3%">What does this entail?</div>
 
 
     <!-- green section  -->
 
-        <div class = "row d-flex greenback pb-5" style="column-gap:8.5rem; justify-content: center; ">
+    <div class="d-flex box justify-content-center" style ="margin-bottom:10vw">
+
+        <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+
+            <div class="carousel-inner ">
+
+                <div class="carousel-item active">
+                    <img src="Images/extreme_weather.jpg" class="d-block w-100">
+                    <div class="carousel-caption d-md-block">
+                        <h3 class = "carousel_title">Extreme weather</h3>
+                        <p class = "carousel_text">Global warming results in higher frequency and intensity of droughts, storms heat waves.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Images/habitat.jpg" class="d-block w-100">
+                    <div class="carousel-caption  d-md-block">
+                        <h3 class = "carousel_title">Habitat destruction</h3>
+                        <p class = "carousel_text">Increased temperature leads to wildfires, melting of glaciers which destroys the environment that creatures reside in.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Images/sea.jpg" class="d-block w-100">
+                    <div class="carousel-caption d-md-block">
+                        <h3 class = "carousel_title">Rising sea levels</h3>
+                        <p class = "carousel_text">As glaciers melt and sea levels rise, beaches and low-rising land are threatened by risk of flooding.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            
+        </div>
+
+    </div>
+
+    
+
+        <!-- <div class = "row d-flex greenback pb-5" style="column-gap:8.5rem; justify-content: center; ">
             <div class = "col col-md-3 justify-content-center" style = "display: grid; ">
                 <img src="Images/weather_2480626.png"  class=" icon">
                 <div class="card">
@@ -107,14 +162,12 @@
                 <img src="Images/sea_2995531.png"  class="icon iconspace">
                 <div class="card">
                     <div class="card-body">
-                      <h1 class = white_title>Extreme weather</h1>
+                      <h1 class = white_title>Rising sea levels</h1>
                       <h4 class="card_text">As glaciers melt and sea levels rise, beaches are eroded, and land are lost. Low-lying areas  are threatened by risk of flooding.</h4>
                     </div>
-                  </div>     
-                
-            </div>
-        
-        </div>
+                  </div>        
+            </div>    
+        </div> -->
 
     <!-- quote -->
     <div class="speech bottom">
@@ -129,7 +182,7 @@
         What we can do to help:
     </spam>
     <div class = "row justify-content-center">
-        <img src="Images/3Rs.jpg" style = "margin-bottom: 5vw; width:80%">
+        <img src="Images/3Rs.jpg" style = "width:80%">
     </div>
     
 
@@ -153,7 +206,7 @@
         </div>
 
         <div class = " col-md-5">
-            <p class="trans_box" id = "adjbox">
+            <p class="trans_box" id = "adjbox" style = "font-size:2vw">
                 Food needs to be grown and processed, transported, distributed, prepared, consumed, and sometimes disposed of. 
                 <br><br><br>Each of these steps creates greenhouse gases that trap the sun's heat and contribute to climate change. 
             </p>
@@ -245,7 +298,7 @@
         <p id="adjtext">
             <spam class = "underline red" >Sign up</spam> and gain access to our restaurant listing. </p>
                 <p>
-                    <ul class='meatvsveg' style ="text-align: left; font-size:2vw">
+                    <ul class='meatvsveg' style ="text-align: left; font-size:2vw; line-height:2;">
                         <li class = "listminwidth">Find healthy restaurants nearby</li>
                         <li class = "listminwidth">Use our filtering system and find options that cater to your preferences</li>
                         <li class = "listminwidth">Find more affordable options</li>
@@ -260,11 +313,11 @@
         <p class = "row justify-content-center title" style="margin-bottom:0; margin-left:1px; font-size:3.5vw" >
             Join our community
         </p>
-        <a class="btn btn-secondary rounded-pill " href="loginSignUp\signUp.html" role="button">Register Now!</a>
+        <a class="btn btn-secondary rounded-pill " href="../loginSignUp/signUp.html" role="button">Register Now!</a>
     </div>
 
     <!-- footer -->
-    <div style ="background-color: #75996d; width:100%;">
+    <!-- <div style ="background-color: #75996d; width:100%;">
         <div class = "row justify-content-around d-flex pt-3">
             <div class = "col-12 col-md-4">
                 <p class= "white_title bold" style ="text-align: left; margin-top:0">About us</p>
@@ -301,7 +354,69 @@
             </div>
         </div>
 
+    </div> -->
+
+    <!-- about us -->
+    <hr>
+    <div class = "row justify-content-around d-flex pt-3">
+        <div class = "col-12 col-md-4">
+            <p class= " bold" style ="text-align: left; margin-top:0">About us</p>
+            <br> 
+            <p class =" bold" style ="text-align: left; margin-top:0"> names..etc</p>
+        </div>
     </div>
+
+    <!-- links -->
+    <hr>
+    <div class = "row d-flex" style = "background-color: #e6e5d3;">
+        
+        <p class = "bold  bottom_section_spacing d-flex" style = "text-align: left; margin-top:0 ; ">Find out more</p>
+       
+            
+            <div class = 'col-5   bottom_section_spacing'>
+                <spam class = "last_title">Food and Climate Change</spam><br>
+                <a href="https://www.un.org/en/climatechange/science/climate-issues/food#:~:text=Food%20needs%20to%20be%20grown,emissions%20is%20linked%20to%20food." class = "links">Learn more about healthy diets and its environmental impacts from United Nations</a><br/>
+            </div>
+
+            <div class = 'col-5   bottom_section_spacing'>
+                <spam class = "last_title">Impacts of eating habits</spam><br>
+                <a href="https://www.nationalgeographic.com/environment/article/how-small-changes-to-our-diet-can-benefit-the-planet" class = "links">Find out how changes to your eating habits can benefit the planet</a><br/>
+            </div>
+
+            <div class = 'col-5  bottom_section_spacing'>
+                <spam class = "last_title">Eat better for the planet</spam><br>
+                <a href="https://www.wwf.org.uk/betterbasket" class = "links">Learn about sustainable eating and responsible food choices</a><br/>
+            </div>
+
+            <div class = 'col-5  bottom_section_spacing'>
+                <spam class = "last_title">Tips for sustainable eating</spam><br>
+                <a href="https://www.everydayhealth.com/diet-nutrition/tips-to-make-your-eating-habits-more-sustainable/" class = "links">Small adjustments that can make your diet more sustainable</a><br/>
+
+            </div>
+
+            
+            
+
+            <!-- <a href="https://www.nationalgeographic.com/environment/article/how-small-changes-to-our-diet-can-benefit-the-planet" class = "links">How small changes to our diet can benefit the planet (nationalgeographic.com)</a><br/> -->
+
+            <!-- <a href="https://www.conservation.org/blog/news-spotlight-how-does-your-diet-affect-the-environment" class = "links">News spotlight: How does your diet affect the environment? (conservation.org)</a><br/> -->
+
+            <!-- <a href="https://www.wwf.org.uk/betterbasket" class = "links">Eight tips to eat more sustainably | WWF</a><br/> -->
+
+            <!-- <a href="https://www.hsph.harvard.edu/nutritionsource/2015/06/17/5-tips-for-sustainable-eating/" class = "links">5 tips for sustainable eating | The Nutrition Source | Harvard T.H. Chan School of Public Health</a><br/> -->
+<!-- 
+            <a href="https://www.everydayhealth.com/diet-nutrition/tips-to-make-your-eating-habits-more-sustainable/" class = "links">7 Tips to Make Your Eating Habits More Sustainable (everydayhealth.com)</a><br/><br/> -->
+        <hr>
+        <p class = " bold  bottom_section_spacing d-flex" style = "text-align: left; margin-top:0 ; margin-top:3vw ">Donate for the cause</p>
+            <a href="https://wwf.panda.org/support_wwf/" class = "links bottom_section_spacing">Support WWF | WWF (panda.org)</a><br/>
+            <a href="https://www.conservation.org/singapore" class = "links bottom_section_spacing">Conservation International Singapore</a><br/>
+
+            
+        </p>
+     
+    </div>
+</div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
