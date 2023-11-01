@@ -117,12 +117,31 @@ axios
         heartButtonContainer.addEventListener('click', function() {
           if (this.classList.contains("clicked")) {
            
-            restaurants[i].fav_restaurant=false
+            
 
 
             this.classList.remove('clicked');
+            
+            
+           axios.post('http://127.0.0.1:5000/api/restaurant/' + _id + $oid, {
+              restaurants[i].fav_restaurant= false
+          }).then(
+              response => {
+                  console.log(response.data)
+              }
+          ).catch(
+              error => {
+                  console.log(error)
+              })
+
+
+
+      
+
+
           } else {
             this.classList.add('clicked');
+            
             restaurants[i].fav_restaurant= true
           }
          } )
@@ -146,6 +165,8 @@ axios
 
 
 
+
+      
 
 
         //continue May code
