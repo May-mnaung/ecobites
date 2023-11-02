@@ -4,6 +4,9 @@
 #navigationBar {
   background-color: #a8bfa7;
   z-index: 5;
+  font-size: 22px;
+  color: black;
+  font-weight: bold;
   padding: 3px 0; /* Adjust the vertical padding to make the navbar shorter */
 }
 
