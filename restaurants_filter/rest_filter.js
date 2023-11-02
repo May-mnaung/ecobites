@@ -43,6 +43,31 @@ item.addEventListener("click", () =>{
 let filter_restaurants = [];
 let submitButtonClicked = false; // Flag to track whether the "Submit" button has been clicked
 
+//Rating
+let lastSelectedRating = null; // Variable to store the last selected rating
+const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
+ratingCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const selectedRating = parseFloat(checkbox.getAttribute("value"));
+        if (selectedRating === lastSelectedRating) {
+            // Deselect the rating
+            lastSelectedRating = null;
+            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+        } else {
+            // Select the rating
+            lastSelectedRating = selectedRating;
+            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+        }
+        updateSelectedRatings(); // Update the selectedRatings array
+    });
+});
+
+// Function to update the selectedRatings array
+function updateSelectedRatings() {
+    selectedRatings = lastSelectedRating !== null ? [lastSelectedRating] : [];
+    filterAndDisplayResults(); // Call the filtering function when ratings change
+}
 // Function to fetch data from the server
 function fetchData() {
   axios
@@ -55,7 +80,6 @@ function fetchData() {
       console.error("Error fetching data: ", error);
     });
 }
-
 // Function to filter and display results based on selected filters
 function filterAndDisplayResults() {
   if (!submitButtonClicked) {
@@ -64,14 +88,19 @@ function filterAndDisplayResults() {
   
   const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(checkbox => checkbox.value);
   const selectedCuisines = Array.from(document.querySelectorAll('input[name="cuisine"]:checked')).map(checkbox => checkbox.id);
+  // Get the selected star ratings
+  const selectedMinimumRating = lastSelectedRating !== null ? [lastSelectedRating] : [];
   console.log("Selected cuisines: " + selectedCuisines);
   console.log("Selected prices: " + selectedPrices);
+  console.log("Selected ratings: " + selectedRatings);
 
   // Filter the data based on selected filters
   const filteredRestaurants = filter_restaurants.filter((restaurant) => {
     if (
       (selectedPrices.length === 0 || selectedPrices.includes(restaurant.Price)) &&
-      (selectedCuisines.length === 0 || selectedCuisines.includes(restaurant.Cuisine_Foodtype))
+      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine)))
+      &&
+        restaurant.Ratings >= selectedMinimumRating 
     ) {
       return true;
     }
@@ -110,7 +139,8 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      location.href = '../restaurant_cards/card_details.html';
+      rest_id = filteredRestaurants[i]["_id"]["$oid"]
+      location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
         })
 
     cardImage.className = "card-img-top";
@@ -421,7 +451,8 @@ axios
 
         //sihua add on this few lines 62-65:
         cardImage.addEventListener("click", function(){
-          location.href = '../restaurant_cards/card_details.html';
+          rest_id = restaurants[i]["_id"]["$oid"]
+          location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
             })
 
         cardImage.className = "card-img-top";
