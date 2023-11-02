@@ -19,8 +19,9 @@
         /* Specify the dimensions of the map container */
 
         #map {
-            height: 68vw; /* Adjust the height as needed */
-            width: 100%;   /* Adjust the width as needed */
+           /* Adjust the width as needed */
+            height: 100vh;
+            width: 100%;
         }
 
         body{
@@ -81,19 +82,16 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
-                <li class="nav-item ">
-                    <a class="nav-link " href="../../templates/index.html" >Home</a>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="../../templates/index.html" >Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Find Restaurant
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-color">
-                        <a class="dropdown-item" href="../../Restaurants_filter/rest_filter.html" id="dropdown-item">Filter by</a>
-                        <!-- <a class="dropdown-item" href="../map/final/mapPointer2.html">Near Me</a> -->
-                    </div>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="../../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="../../map/final/mapPointer2.html" >Restaurant Nearby</a>
+                </li>
+                <li class="nav-item active mx-4">
                     <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
                 </li>
             </ul>
@@ -221,12 +219,14 @@
                             map: map,
                             title: 'Your Location',
                             icon: {
-                                path: google.maps.SymbolPath.CIRCLE, // Use a circle symbol
-                                scale: 8, // Adjust the size of the dot
-                                fillColor: 'red', // Set the fill color (blue)
-                                fillOpacity: 1, // Set the fill opacity (fully opaque)
-                                strokeWeight: 1,
-                                strokeColor: 'white'
+                                url:'location2.png',
+                                scaledSize: new google.maps.Size(100, 100)
+                                // path: google.maps.SymbolPath.CIRCLE, // Use a circle symbol
+                                // scale: 8, // Adjust the size of the dot
+                                // fillColor: 'red', // Set the fill color (blue)
+                                // fillOpacity: 1, // Set the fill opacity (fully opaque)
+                                // strokeWeight: 1,
+                                // strokeColor: 'white'
                             }
                         });
                     }, function() {
@@ -258,12 +258,14 @@
                     map: map,
                     title: 'Your Location',
                     icon: {
-                        path: google.maps.SymbolPath.CIRCLE, // Use a circle symbol
-                        scale: 8, // Adjust the size of the dot
-                        fillColor: 'red', // Set the fill color (blue)
-                        fillOpacity: 1, // Set the fill opacity (fully opaque)
-                        strokeWeight: 1,
-                        strokeColor: 'white'
+                        url:'placeholder.png',
+                        scaledSize: new google.maps.Size(43, 43),
+                        // path: google.maps.SymbolPath.CIRCLE, // Use a circle symbol
+                        // scale: 8, // Adjust the size of the dot
+                        // fillColor: 'red', // Set the fill color (blue)
+                        // fillOpacity: 1, // Set the fill opacity (fully opaque)
+                        // strokeWeight: 1,
+                        // strokeColor: 'white'
                     }
                 });
             } else {

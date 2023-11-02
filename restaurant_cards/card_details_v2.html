@@ -23,20 +23,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="../templates/index.html" >Home</a>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="" >Home</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="../restaurants_filter/rest_filter.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Find Restaurant
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="../restaurants_filter/rest_filter.html">Filter by</a>
-                        <a class="dropdown-item" href="../map/final/mapPointer2.html">Near Me</a>
-                    </div>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="../../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../templates/contact.html">Contact Us</a>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link active" href="../../map/final/mapPointer2.html" >Restaurant Nearby</a>
+                </li>
+                <li class="nav-item active mx-4">
+                    <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -83,18 +80,18 @@
 
                     <div class="col-sm-12 col-lg-6" id="catDetails">
                         <div class="categories">
-                            <div class="vegan d-flex">
+                            <div v-if="is_vegan()" class="vegan d-flex">
                                 <div class="iconborder">
                                     <i class="fa-solid fa-seedling fa-xl"></i>
                                 </div>
-                                <p class="pt-2 ps-2">Vegan</p>
+                                <p class="pt-2 ps-2"> vegan </p>
                             </div>
                 
-                            <div class="vegetarian d-flex ">
+                            <div v-if="is_vegetarian()" class="vegetarian d-flex ">
                                 <div class="iconborder">
                                     <i class="fa-solid fa-seedling fa-xl"></i>
                                 </div>
-                                <p class="pt-2 ps-2">Vegetarian</p>
+                                <p class="pt-2 ps-2"> vegetarian </p>
                             </div>
                 
                             <!-- Retrieve property : "Cuisine_Foodtype" -->
@@ -158,6 +155,17 @@
             },
 
             methods: {
+                is_vegan() {
+                    if (this.foodType.toLowerCase().includes('vegan')) {
+                        return this.foodType.toLowerCase().includes('vegan');
+                    }
+                },
+                is_vegetarian(){
+                    if (this.foodType.toLowerCase().includes('vegetarian')) {
+                        return this.foodType.toLowerCase().includes('vegetarian');
+
+                    }
+                }
 
 
             }
