@@ -118,10 +118,11 @@ div{
     margin-top: 1vw;
     box-shadow: 2px 2px 4px rgb(60, 60, 60);  
     justify-content: center;
-    padding-left:2.5vw;
-    padding-right:2.5vw;
+    padding-left:4vw;
+    padding-right:4vw;
     padding-top:1vw;
     padding-bottom:1vw;
+    margin-right:3vw;
   
 }
 
@@ -169,8 +170,8 @@ div{
     color: black;  
     text-align: left; 
     z-index:1;
-    margin-top: -17%;
-    margin-left: 10%;
+    margin-top: -14.4%;
+    margin-left: 20%;
     padding-bottom:3%;
     padding-left:4%;
     padding-right:4%;
@@ -180,7 +181,7 @@ div{
 
 #box_title{
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 1.75vw;
   text-wrap:nowrap;
   margin-bottom:2vw
 
@@ -188,7 +189,7 @@ div{
 }
 
 
-#box_text{
+#box-text{
   font-size:1vw;
   text-wrap:pretty;
 
@@ -420,7 +421,7 @@ ul{
   }
 
   .bold{
-  font-size: 2.5vw;
+  font-size: 2vw;
   text-wrap:pretty;
   line-height: 1.5;
   position: relative;
@@ -503,15 +504,16 @@ ul{
   }
 
   #earth{
-    height:6vw;
-    margin-left:15%;
-    width:6vw;
+    height:7vw;
+    margin-left:3vw;
+    width:7vw;
     max-width:none;
+    margin-right:3vw
   }
 
   #smallearth{
-    height:4vw;
-    width:4vw;
+    height:7vw;
+    width:7vw;
     min-width:4vw;
     min-height:4vw;
 
@@ -690,20 +692,19 @@ ul{
 }
 .social-icons li.title
 {
-  margin-right:15px;
+  margin-right:3vw;
   text-transform:uppercase;
   color:#96a2b2;
   font-weight:700;
-  font-size:13px
+  font-size:5vw;
 }
 .social-icons a{
   background-color:#75996d;
   color:white;
-  font-size:28px;
+  font-size:3vw;
   display:inline-block;
-  line-height:44px;
-  width:44px;
-  height:44px;
+  width:4vw;
+  height:4vw;
   text-align:center;
   border-radius:100%;
   -webkit-transition:all .2s linear;
@@ -715,13 +716,7 @@ ul{
   color:#fff;
   background-color:#29aafe
 }
-.social-icons.size-sm a
-{
-  line-height:34px;
-  height:34px;
-  width:34px;
-  font-size:14px
-}
+
 .social-icons a.facebook:hover
 {
   background-color:#3b5998
@@ -754,9 +749,37 @@ ul{
 }
 
 .copyright-text{
-  font-size:0.75vw;
+  font-size:1vw;
 }
 
+#navigationBar
+{
+    background-color:#75996D ;
+    z-index: 5;
+    width:100%;
+}
+
+#Logo
+{
+    width: 27%;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none; /* Remove the default underline */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.nav-link:active{
+    text-decoration: underline; 
+} 
+
+.link_description{
+  font-size:1.25vw
+}
 
 
 
