@@ -385,7 +385,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateSubmitButton();
 });
   
-
 //=====================filtering note end===============
 
 // Javscript for DOM manipulation
@@ -642,5 +641,4 @@ axios
   .catch((error) => {
     console.log(error);
   });
-
 
