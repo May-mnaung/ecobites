@@ -119,10 +119,10 @@
 
 
 
-
+<!-- 
                                     <div v-if="reviewIs5(restaurant.ratings)"></div>
                                     {{ stars_5 }}
-                                    </div>
+                                    </div> -->
 
 
                         <div class="card-body">
@@ -182,7 +182,11 @@
         //     }
                 },
                 redirectToDetails(restaurant) {
-                    location.href = '../restaurant_cards/card_details.html';
+                //    location.href = '../restaurant_cards/card_details.html';
+
+                   rest_id = restaurant["_id"]["$oid"]
+                  location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
+
                 }
             }
         //             rest_id = restaurant["_id"]["$oid"]
