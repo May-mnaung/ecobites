@@ -1,73 +1,8 @@
-//  Javascript for FilterBar
-const filterButton = document.getElementById('filterButton');
-const filterBar = document.getElementById('filter-bar');
-const cardContainer = document.getElementById('card-container');
-
-filterButton.addEventListener('click', function () {
-    console.log(window.innerWidth);
-    if (window.innerWidth <= 1209) { // for 983 px
-        // Toggle a class to show/hide the filter-bar
-        filterBar.classList.toggle('filter-bar-visible');
-        if (filterBar.classList.contains('filter-bar-visible')) {
-          filterBar.style.width = '100%';
-          cardContainer.style.display = 'none';
-      } else {
-          filterBar.style.width = '';
-          cardContainer.style.display = ''; 
-      }
-    }
-});
-
-const toTop = document.querySelector(".to-top");
-
-window.addEventListener("scroll", () => {
-  if (window.pageYOffset > 100) {
-    toTop.classList.add("active");
-  } else {
-    toTop.classList.remove("active");
-  }
-});
-
-var stars = document.querySelectorAll('.star a');
-stars.forEach((item, index1) => {
-item.addEventListener("click", () =>{
-    stars.forEach((star,index2) => {
-        console.log(index2)
-        index1 >= index2 ? star.classList.add('active') : star.classList.remove('active')
-
-    })
-})
-});
 //===================yt:filtering note======================
 // JavaScript for DOM manipulation
 let filter_restaurants = [];
 let submitButtonClicked = false; // Flag to track whether the "Submit" button has been clicked
 
-//EventListner and functions of rating
-let lastSelectedRating = null; // Variable to store the last selected rating
-const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
-ratingCheckboxes.forEach((checkbox) => {
-    checkbox.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-        const selectedRating = parseFloat(checkbox.getAttribute("value"));
-        if (selectedRating === lastSelectedRating) {
-            // Deselect the rating
-            lastSelectedRating = null;
-            checkbox.classList.remove("selected");
-        } else {
-            // Select the rating
-            lastSelectedRating = selectedRating;
-            checkbox.classList.add("selected");
-        }
-        updateSelectedRatings(); // Update the selectedRatings array
-    });
-});
-
-// Function to update the selectedRatings array
-function updateSelectedRatings() {
-    selectedRatings = lastSelectedRating !== null ? [lastSelectedRating] : [];
-    filterAndDisplayResults(); // Call the filtering function when ratings change
-}
 // Function to fetch data from the server
 function fetchData() {
   axios
@@ -80,6 +15,7 @@ function fetchData() {
       console.error("Error fetching data: ", error);
     });
 }
+
 // Function to filter and display results based on selected filters
 function filterAndDisplayResults() {
   if (!submitButtonClicked) {
@@ -88,19 +24,14 @@ function filterAndDisplayResults() {
   
   const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(checkbox => checkbox.value);
   const selectedCuisines = Array.from(document.querySelectorAll('input[name="cuisine"]:checked')).map(checkbox => checkbox.id);
-  // Get the selected star ratings
-  const selectedMinimumRating = lastSelectedRating !== null ? [lastSelectedRating] : [];
   console.log("Selected cuisines: " + selectedCuisines);
   console.log("Selected prices: " + selectedPrices);
-  console.log("Selected ratings: " + selectedRatings);
 
   // Filter the data based on selected filters
   const filteredRestaurants = filter_restaurants.filter((restaurant) => {
     if (
       (selectedPrices.length === 0 || selectedPrices.includes(restaurant.Price)) &&
       (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine)))
-      &&
-        restaurant.Ratings >= selectedMinimumRating 
     ) {
       return true;
     }
@@ -123,7 +54,9 @@ function filterAndDisplayResults() {
   for (let i = 0; i < filteredRestaurants.length; i++) {
 
     // add a div to the body with the restaurant name
+
     const cardContainer = document.getElementById("card-container");
+
     const cardBox = document.createElement("div");
     cardBox.className = "col";
     cardBox.id = "item-card";
@@ -137,8 +70,7 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      rest_id = filteredRestaurants[i]["_id"]["$oid"]
-      location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
+      location.href = '../restaurant_cards/card_details.html';
         })
 
     cardImage.className = "card-img-top";
@@ -379,16 +311,15 @@ submitButton.addEventListener("click", function(event) {
 // Initial call to fetch data and display results
 fetchData();
 
-
 //code for refresh button
 document.addEventListener("DOMContentLoaded", function () {
-
+  // Get references to the submit button, clear filter button, and all checkboxes
+  const submitButton = document.getElementById("submitFilter");
   const clearFilterButton = document.querySelector(".refresh-button");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   // Function to check if at least one checkbox is checked
   function updateSubmitButton() {
-    const submitButton = document.getElementById("submitFilter");
     const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
     submitButton.disabled = !atLeastOneChecked;
   }
@@ -398,28 +329,15 @@ document.addEventListener("DOMContentLoaded", function () {
     checkbox.addEventListener("change", updateSubmitButton);
   });
 
-  // Event listener for the "Clear Filter" button
+ // Event listener for the "Clear Filter" button
   clearFilterButton.addEventListener("click", function () {
-  // Uncheck all checkboxes
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = false;
-  });
-   // Clear the selected minimum rating
-   lastSelectedRating = null;
-   stars.forEach((star, index) => {
-    star.classList.remove("bi-star-fill");
-    star.innerHTML = `<a href="#" name="ratings" value="${index + 1}" class="bi-star-fill"></a>`;
-});
-   
+    // Uncheck all checkboxes
+    checkboxes.forEach((checkbox) => {
+      checkbox.checked = false;
+    });
 
-   // Uncheck the star ratings by removing the "selected" class
-   document.querySelectorAll('.star a[name="ratings"]').forEach((star) => {
-       star.classList.remove("selected");
-   });
-  
-  //Disabled the submit button
-  updateSubmitButton();
   // Clear the error message
+  const errorMessageContainer = document.getElementById("error-message");
   errorMessageContainer.textContent = "";
 
   // Call filterAndDisplayResults to display all restaurants
@@ -432,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   
 
-//=====================filtering code end===============
+//=====================filtering note end===============
 
 // Javscript for DOM manipulation
 let restaurants = [];
