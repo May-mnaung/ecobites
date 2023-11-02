@@ -103,7 +103,7 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      location.href = '../restaurant_cards/card_details_v2.html';
+      location.href = '../restaurant_cards/card_details.html';
         })
 
     cardImage.className = "card-img-top";
@@ -377,14 +377,14 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.checked = false;
     });
 
-    // Trigger the updateSubmitButton function to recheck the button state
-    updateSubmitButton();
+    
   });
 
   // Initial call to set the submit button state
   updateSubmitButton();
 });
   
+
 //=====================filtering note end===============
 
 // Javscript for DOM manipulation
@@ -641,4 +641,3 @@ axios
   .catch((error) => {
     console.log(error);
   });
-
