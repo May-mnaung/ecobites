@@ -43,7 +43,7 @@ item.addEventListener("click", () =>{
 let filter_restaurants = [];
 let submitButtonClicked = false; // Flag to track whether the "Submit" button has been clicked
 
-//Rating
+//EventListner and functions of rating
 let lastSelectedRating = null; // Variable to store the last selected rating
 const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
 ratingCheckboxes.forEach((checkbox) => {
@@ -53,11 +53,11 @@ ratingCheckboxes.forEach((checkbox) => {
         if (selectedRating === lastSelectedRating) {
             // Deselect the rating
             lastSelectedRating = null;
-            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.remove("selected");
         } else {
             // Select the rating
             lastSelectedRating = selectedRating;
-            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.add("selected");
         }
         updateSelectedRatings(); // Update the selectedRatings array
     });
@@ -123,9 +123,7 @@ function filterAndDisplayResults() {
   for (let i = 0; i < filteredRestaurants.length; i++) {
 
     // add a div to the body with the restaurant name
-
     const cardContainer = document.getElementById("card-container");
-
     const cardBox = document.createElement("div");
     cardBox.className = "col";
     cardBox.id = "item-card";
@@ -381,15 +379,16 @@ submitButton.addEventListener("click", function(event) {
 // Initial call to fetch data and display results
 fetchData();
 
+
 //code for refresh button
 document.addEventListener("DOMContentLoaded", function () {
-  // Get references to the submit button, clear filter button, and all checkboxes
-  const submitButton = document.getElementById("submitFilter");
+
   const clearFilterButton = document.querySelector(".refresh-button");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   // Function to check if at least one checkbox is checked
   function updateSubmitButton() {
+    const submitButton = document.getElementById("submitFilter");
     const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
     submitButton.disabled = !atLeastOneChecked;
   }
@@ -399,15 +398,28 @@ document.addEventListener("DOMContentLoaded", function () {
     checkbox.addEventListener("change", updateSubmitButton);
   });
 
- // Event listener for the "Clear Filter" button
+  // Event listener for the "Clear Filter" button
   clearFilterButton.addEventListener("click", function () {
-    // Uncheck all checkboxes
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = false;
-    });
+  // Uncheck all checkboxes
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = false;
+  });
+   // Clear the selected minimum rating
+   lastSelectedRating = null;
+   stars.forEach((star, index) => {
+    star.classList.remove("bi-star-fill");
+    star.innerHTML = `<a href="#" name="ratings" value="${index + 1}" class="bi-star-fill"></a>`;
+});
+   
 
+   // Uncheck the star ratings by removing the "selected" class
+   document.querySelectorAll('.star a[name="ratings"]').forEach((star) => {
+       star.classList.remove("selected");
+   });
+  
+  //Disabled the submit button
+  updateSubmitButton();
   // Clear the error message
-  const errorMessageContainer = document.getElementById("error-message");
   errorMessageContainer.textContent = "";
 
   // Call filterAndDisplayResults to display all restaurants
@@ -420,7 +432,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   
 
-//=====================filtering note end===============
+//=====================filtering code end===============
 
 // Javscript for DOM manipulation
 let restaurants = [];
@@ -437,7 +449,6 @@ axios
             // add a div to the body with the restaurant name
 
         const cardContainer = document.getElementById("card-container");
-
         const cardBox = document.createElement("div");
         cardBox.className = "col";
         cardBox.id = "item-card";
