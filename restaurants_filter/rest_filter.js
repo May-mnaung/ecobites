@@ -379,17 +379,16 @@ submitButton.addEventListener("click", function(event) {
 // Initial call to fetch data and display results
 fetchData();
 
-//code to clear stars
 
 //code for refresh button
 document.addEventListener("DOMContentLoaded", function () {
-  // Get references to the submit button, clear filter button, and all checkboxes
-  const submitButton = document.getElementById("submitFilter");
+
   const clearFilterButton = document.querySelector(".refresh-button");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
   // Function to check if at least one checkbox is checked
   function updateSubmitButton() {
+    const submitButton = document.getElementById("submitFilter");
     const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
     submitButton.disabled = !atLeastOneChecked;
   }
@@ -407,13 +406,19 @@ document.addEventListener("DOMContentLoaded", function () {
   });
    // Clear the selected minimum rating
    lastSelectedRating = null;
+   stars.forEach((star, index) => {
+    star.classList.remove("bi-star-fill");
+    star.innerHTML = `<a href="#" name="ratings" value="${index + 1}" class="bi-star-fill"></a>`;
+});
    
 
    // Uncheck the star ratings by removing the "selected" class
    document.querySelectorAll('.star a[name="ratings"]').forEach((star) => {
        star.classList.remove("selected");
    });
-
+  
+  //Disabled the submit button
+  updateSubmitButton();
   // Clear the error message
   errorMessageContainer.textContent = "";
 
@@ -444,7 +449,6 @@ axios
             // add a div to the body with the restaurant name
 
         const cardContainer = document.getElementById("card-container");
-
         const cardBox = document.createElement("div");
         cardBox.className = "col";
         cardBox.id = "item-card";
