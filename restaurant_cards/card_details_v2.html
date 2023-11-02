@@ -10,6 +10,8 @@
             <!-- Display the restaurant details here using Vue.js -->
             <h1>Restaurant Details</h1>
             <p>Restaurant ID: {{ restaurantId }}</p>
+            <p>Image: {{restaurant.Image}}</p>
+            <p>Name::{{restaurant.Name}}</p>
         </div>
     </div>
 
@@ -25,6 +27,7 @@
             data() {
                 return {
                     restaurantId: restaurantId,
+                    restaurant :null
                 };
             },
             created() {
