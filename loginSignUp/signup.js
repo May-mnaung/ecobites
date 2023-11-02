@@ -39,7 +39,7 @@ const root = Vue.createApp({
     methods: {
        signup(){
 
-        window.location.href = '../templates/index.html';
+        window.location.href = 'logIn.html';
 
        }
     }
