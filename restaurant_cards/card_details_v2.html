@@ -110,7 +110,7 @@
                         <!-- Retrieve property : "Details" -->
                         <div class="align-self-center more-details pt-5 mb-5">
                             <h2 class="fw-bolder mb-3">Details:</h2>
-                            <h3>{{ restaurant.Location}}</h3>
+                            <h3>{{ restaurant.Location }}</h3>
                             <div class="d-flex">
                                 <a :href="restaurant.page_link" id="website" class="me-5">View website</a>
                                 
@@ -149,7 +149,7 @@
                     .then(response => {
                         this.restaurant = response.data;
                         this.foodType = response.data.Cuisine_Foodtype;
-                        console.log(this.foodType)
+                        console.log(this.foodType);
                         
                     })
                     .catch(error => {
@@ -158,13 +158,6 @@
             },
 
             methods: {
-                is_vegetarian(foodType){
-
-                    if(this.restaurant.length > 1){
-                        console.log(this.restaurant.length);
-                        this.vegan
-                    }
-                }
 
 
             }
