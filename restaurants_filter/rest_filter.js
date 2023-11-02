@@ -103,7 +103,7 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      location.href = '../restaurant_cards/card_details.html';
+      location.href = '../restaurant_cards/card_details_v2.html';
         })
 
     cardImage.className = "card-img-top";
