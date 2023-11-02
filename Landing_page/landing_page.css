@@ -34,6 +34,22 @@ hr.no-margin {
   border-top: 1px solid #000; /* You can style the hr line as needed */
 }
 
+
+.us { 
+  display: flex; 
+  flex-direction: row; 
+  color: #226615;
+  font-size: 2vw;
+} 
+
+.us:before, .us:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 1.5px solid #226615;
+  opacity: 30%;
+  margin: auto;
+}
+
 div{
   max-width:100%
 }
@@ -220,7 +236,7 @@ ul{
   text-wrap: pretty;
   line-height: 1.75;
   text-align: center;
-  padding-left: 2vw;
+  margin-right:8vw;
   padding-right: 2vw;
   font-size: 1.5vw;
   margin-bottom:0;
@@ -404,7 +420,6 @@ ul{
 
   .bold{
   font-size: 2.5vw;
-  margin-left: 3vw;
   text-wrap:pretty;
   line-height: 1.5;
   position: relative;
@@ -418,7 +433,7 @@ ul{
     background-color: #FF7020;
     border-color:#FF7020;
     width: 50vw;
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-weight: bolder;
     padding-top: 0;
     max-width:100%;
@@ -431,6 +446,7 @@ ul{
     font-size: 1.5vw;
     text-decoration: none;
     text-wrap:pretty;
+    
   }
 
   .last_title{
@@ -553,13 +569,12 @@ ul{
   }
 
   .bottom_section_spacing{
-    margin-left:5%;
+    margin-left:0;
 
   }
 
   .tbspace{
     margin-top:5vw;
-    margin-bottom:5vw;
     
   }
 
@@ -579,6 +594,7 @@ ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-wrap:nowrap
 }
 
   .arrow-button::after {
@@ -599,7 +615,8 @@ ul{
 
 .col-edit{
   margin-left:3vw;
-  margin-right:3vw
+  margin-right:3vw;
+  margin-bottom:5vw;
 }
 
 .listicon{
@@ -628,11 +645,29 @@ ul{
 
 }
 
-
-
-
-
+.about_text{
+  color: #226615; 
+  font-size:1.25vw; 
 
   
+}
+
+.photo{
+  width:10vw; 
+  height:10vw; 
+  border-radius:50%;
+  margin-bottom:0.5vw
+}
+
+.about{
+  margin-bottom: 2vw;
+  margin-top:2vw;
+}
+
+
+
+
+
+
   
   
