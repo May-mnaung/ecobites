@@ -71,7 +71,7 @@ function filterAndDisplayResults() {
   const filteredRestaurants = filter_restaurants.filter((restaurant) => {
     if (
       (selectedPrices.length === 0 || selectedPrices.includes(restaurant.Price)) &&
-      (selectedCuisines.length === 0 || selectedCuisines.includes(restaurant.Cuisine_Foodtype))
+      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine)))
     ) {
       return true;
     }
