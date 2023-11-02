@@ -37,7 +37,7 @@ const root = Vue.createApp({
     },
     methods:{
         login(){
-            window.location.href = '../templates/index.html'
+            window.location.href = '../restaurants_filter/rest_filter.html'
         }
     }
     //I will delete this part once everyone confirm they are okay with it 
