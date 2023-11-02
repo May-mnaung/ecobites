@@ -82,6 +82,13 @@ function filterAndDisplayResults() {
   // Clear existing results
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = '';
+  const errorMessageContainer = document.getElementById("error-message");
+  if (filteredRestaurants.length === 0) {
+    // Display error message
+    errorMessageContainer.textContent = " Sorry, no restaurants match your criteria.";
+  } else {
+    // Clear error message
+    errorMessageContainer.textContent = "";
 
   // Loop through filtered restaurants to populate the website
   for (let i = 0; i < filteredRestaurants.length; i++) {
@@ -134,7 +141,6 @@ function filterAndDisplayResults() {
           })
       } else {
         this.classList.add('clicked');
-        
         
       axios.post('http://127.0.0.1:5000/api/restaurant/' + this.id, {
           fav_restaurant: true
@@ -321,6 +327,7 @@ function filterAndDisplayResults() {
 
 
     }
+  }
 }
 
 // Add event listeners to your checkboxes to call filterAndDisplayResults
@@ -344,14 +351,6 @@ submitButton.addEventListener("click", function(event) {
 // Initial call to fetch data and display results
 fetchData();
 
-
-
-   
-
-
-
-
-
 //code for refresh button
 document.addEventListener("DOMContentLoaded", function () {
   // Get references to the submit button, clear filter button, and all checkboxes
@@ -370,15 +369,21 @@ document.addEventListener("DOMContentLoaded", function () {
     checkbox.addEventListener("change", updateSubmitButton);
   });
 
-  // Event listener for the "Clear Filter" button
+ // Event listener for the "Clear Filter" button
   clearFilterButton.addEventListener("click", function () {
     // Uncheck all checkboxes
     checkboxes.forEach((checkbox) => {
       checkbox.checked = false;
     });
 
-    
-  });
+  // Clear the error message
+  const errorMessageContainer = document.getElementById("error-message");
+  errorMessageContainer.textContent = "";
+
+  // Call filterAndDisplayResults to display all restaurants
+  submitButtonClicked = true;
+  filterAndDisplayResults();
+});
 
   // Initial call to set the submit button state
   updateSubmitButton();
