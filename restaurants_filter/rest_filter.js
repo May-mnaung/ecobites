@@ -50,6 +50,34 @@ function fetchData() {
       console.error("Error fetching data: ", error);
     });
 }
+// Define a function to check if a restaurant's rating is at least the selected star rating
+let lastSelectedRating = null; // Variable to store the last selected rating
+
+const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
+ratingCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const selectedRating = parseFloat(checkbox.getAttribute("value"));
+
+        if (selectedRating === lastSelectedRating) {
+            // Deselect the rating
+            lastSelectedRating = null;
+            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+        } else {
+            // Select the rating
+            lastSelectedRating = selectedRating;
+            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+        }
+
+        updateSelectedRatings(); // Update the selectedRatings array
+    });
+});
+
+// Function to update the selectedRatings array
+function updateSelectedRatings() {
+    selectedRatings = lastSelectedRating !== null ? [lastSelectedRating] : [];
+    filterAndDisplayResults(); // Call the filtering function when ratings change
+}
 
 // Function to filter and display results based on selected filters
 function filterAndDisplayResults() {
@@ -59,6 +87,7 @@ function filterAndDisplayResults() {
   
   const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(checkbox => checkbox.value);
   const selectedCuisines = Array.from(document.querySelectorAll('input[name="cuisine"]:checked')).map(checkbox => checkbox.id);
+  const selectedMinimumRating = lastSelectedRating !== null ? parseFloat(lastSelectedRating) : 0;
   console.log("Selected cuisines: " + selectedCuisines);
   console.log("Selected prices: " + selectedPrices);
 
@@ -66,7 +95,8 @@ function filterAndDisplayResults() {
   const filteredRestaurants = filter_restaurants.filter((restaurant) => {
     if (
       (selectedPrices.length === 0 || selectedPrices.includes(restaurant.Price)) &&
-      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine)))
+      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine))) &&
+      restaurant.Ratings >= selectedMinimumRating // Filter based on the minimum rating
     ) {
       return true;
     }
@@ -371,21 +401,18 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.checked = false;
     });
 
-  // Clear the error message
-  const errorMessageContainer = document.getElementById("error-message");
-  errorMessageContainer.textContent = "";
-
-  
-
 
   // Call filterAndDisplayResults to display all restaurants
   submitButtonClicked = true;
   submitButton.disabled = true;
+  
   filterAndDisplayResults();
+  
 });
 
+
   // Initial call to set the submit button state
- // updateSubmitButton();
+ updateSubmitButton();
 });
   
 
