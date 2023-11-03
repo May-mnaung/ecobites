@@ -150,6 +150,7 @@ function filterAndDisplayResults() {
 
     //Append the heart icon to the heart button container
     heartButtonContainer.appendChild(heartIcon);
+    heartButtonContainer.style = "margin-top: 10px; margin-right: 10px";
     heartButtonContainer.addEventListener('click', function() {
       if (this.classList.contains("clicked")) {
         this.classList.remove('clicked');
@@ -446,7 +447,6 @@ axios
         const cardImage = document.createElement("img");
         cardImage.src = restaurants[i].Image;
 
-        //sihua add on this few lines 62-65:
         cardImage.addEventListener("click", function(){
           rest_id = restaurants[i]["_id"]["$oid"]
           location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
@@ -465,6 +465,7 @@ axios
 
         //Append the heart icon to the heart button container
         heartButtonContainer.appendChild(heartIcon);
+        heartButtonContainer.style = "margin-top: 10px; margin-right: 10px";
         heartButtonContainer.addEventListener('click', function() {
           if (this.classList.contains("clicked")) {
             this.classList.remove('clicked');
