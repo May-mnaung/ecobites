@@ -12,6 +12,8 @@
 
     <!-- Axios from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="ta_help.js">
     
 
 
@@ -119,19 +121,50 @@
 
 
 
+
+                           
+
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ restaurant.Name }}</h4>
+                                        <div class="cuisine text-muted">{{ restaurant.Location }}</div>
+                                        <h5 class="price-cat fw-bold">{{ restaurant.Price }}</h5>
+                                         <!-- <div class="d-flex reviews-stars">
+                                            <div v-for="star in restaurant.stars" :key="star" class="fas fa-star">
+                                                <span v-html="generateStarRating(restaurant.Ratings)"></span>
+                                            </div>
+                                        </div>  -->
+
+
+                                        <div v-if="reviewIs5(restaurant.ratings)"></div>
+                                        {{ stars_5 }}
+                                        </div>
+    
 <!-- 
-                                    <div v-if="reviewIs5(restaurant.ratings)"></div>
-                                    {{ stars_5 }}
-                                    </div> -->
 
 
-                        <div class="card-body">
-                            <h4 class="card-title">{{ restaurant.Name }}</h4>
-                            <div class="cuisine text-muted">{{ restaurant.Location }}</div>
-                            <h5 class="price-cat fw-bold">{{ restaurant.Price }}</h5>
-                            <div class="d-flex reviews-stars">
-                                <div v-for="star in restaurant.stars" :key="star" class="fas fa-star"></div>
-                            </div>
+
+                                        <div class="d-flex reviews-stars">
+                                            <span v-html="generateStarRating(restaurant.Ratings)"></span>
+                                        </div>  -->
+
+
+                                        //stars that is linked to fav_rest2 vue.html
+
+const stars_5 = `<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>`
+const stars_45 = `<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star-half"></div>`
+
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -140,7 +173,7 @@
     </div>
 
     <script>
-        Vue.createApp({
+        const cal = Vue.createApp({
             data() {
                 return {
                     likedRestaurants: []
@@ -168,27 +201,80 @@
                     
                     rest_id = restaurant["_id"]["$oid"]
                     axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
-            'fav_restaurant': false
-        }).then(
-            response => {
-                console.log(response.data)
-            }
-        ).catch(
-            error => {
-                console.log(error)
-            })
-
-        //         }
-        //     }
-                },
+                        'fav_restaurant': false
+                    }).then(
+                        response => {
+                            console.log(response.data)
+                        }
+                    ).catch(
+                        error => {
+                            console.log(error)
+                        })
+             },
+            
                 redirectToDetails(restaurant) {
                 //    location.href = '../restaurant_cards/card_details.html';
 
                    rest_id = restaurant["_id"]["$oid"]
                   location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
 
+                },
+                // generateStarRating(restaurant.Ratings) {
+                // // Define star symbols
+                // const checkedStar = '★';
+                // const halfStar = '½';
+                // const uncheckedStar = '☆';
+
+                // // Calculate the number of full stars and whether to display a half star
+                // const fullStars = Math.floor(rating);
+                // const hasHalfStar = rating % 1 !== 0;
+
+                // let starRating = '';
+
+                // // Add full stars
+                // for (let i = 0; i < fullStars; i++) {
+                //     starRating += checkedStar;
+                // }
+
+                // // Add half star if needed
+                // if (hasHalfStar) {
+                //     starRating += halfStar;
+                // }
+
+                // // Add remaining empty stars
+                // const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+                // for (let i = 0; i < emptyStars; i++) {
+                //     starRating += uncheckedStar;
+                // }
+
+                // return starRating;
+                // }
+
+                reviewIs5(restaurant.ratings){
+                    if (ratings <0.5){
+                        display(stars_0)
+                    }
+                    else if (ratings <1){
+                        display(stars_05)
+                    }
+
+                    reviewIs5(rating){
+                        if ratings == 5{
+                            return True
+                        }
+                        else {
+                            return False
+                        }
+                    }
+
                 }
             }
+
+                
+        //     return starRating;
+        // },
+ 
+            
         //             rest_id = restaurant["_id"]["$oid"]
         //             axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
         //     'fav__restaurants': false
@@ -203,7 +289,32 @@
 
         //         }
         //     }
-        }).mount("#display_rest");
+        })
+
+
+        cal.component("stars-display",{
+            props:['']
+            const stars_45 = `<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star"></div>
+<div class="fas fa-star-half"></div>`
+
+
+
+
+
+
+
+        })
+        
+        
+        
+        
+        
+        
+        
+        .mount("#display_rest");
     </script>
 </body>
 </html>
