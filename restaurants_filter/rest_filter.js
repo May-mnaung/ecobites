@@ -1,3 +1,38 @@
+//  Javascript for FilterBar
+const filterButton = document.getElementById('filterButton');
+const filterBar = document.getElementById('filter-bar');
+const cardContainer = document.getElementById('card-container');
+filterButton.addEventListener('click', function () {
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 1209) { // for 983 px
+        // Toggle a class to show/hide the filter-bar
+        filterBar.classList.toggle('filter-bar-visible');
+        if (filterBar.classList.contains('filter-bar-visible')) {
+          filterBar.style.width = '100%';
+          cardContainer.style.display = 'none';
+      } else {
+          filterBar.style.width = '';
+          cardContainer.style.display = ''; 
+      }
+    }
+});
+const toTop = document.querySelector(".to-top");
+window.addEventListener("scroll", () => {
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
+  }
+});
+var stars = document.querySelectorAll('.star a');
+stars.forEach((item, index1) => {
+item.addEventListener("click", () =>{
+    stars.forEach((star,index2) => {
+        console.log(index2)
+        index1 >= index2 ? star.classList.add('active') : star.classList.remove('active')
+    })
+})
+});
 //===================yt:filtering note======================
 // JavaScript for DOM manipulation
 let filter_restaurants = [];
@@ -340,13 +375,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const errorMessageContainer = document.getElementById("error-message");
   errorMessageContainer.textContent = "";
 
+  
+
+
   // Call filterAndDisplayResults to display all restaurants
   submitButtonClicked = true;
+  submitButton.disabled = true;
   filterAndDisplayResults();
 });
 
   // Initial call to set the submit button state
-  updateSubmitButton();
+ // updateSubmitButton();
 });
   
 
