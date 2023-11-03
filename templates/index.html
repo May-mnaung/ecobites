@@ -8,14 +8,86 @@
   <meta name="author" content="May Myat Noe Aung">
   <!-- Link main CSS -->
   <link rel="stylesheet" href="../static/css/main.css">
-  <!-- Latest compiled and minified CSS -->
+
+  <!-- Responsive Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <title>Ecobites - Web Application</title>
+  <title>Home</title>
+  <style>
+    body {
+      background-image: url('images/back12.jpg');
+      background-size: cover; /* Adjust the size of the background image */
+      background-position: center; /* Adjust the position of the background image */
+      
+}
+    .testimonial-slider {
+    padding: 2em 2em 3em;
+  }
+  .testimonial-title {
+    color:rgb(22, 65, 36); 
+  }
+  .testimonial-title h2 {
+    padding-left: 0.2em;
+  }
+  .card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    height: 100%;
+  }
+  .card-title{
+    color: #9CD8B0;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #455e4d;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    top: 60%;
+    transform: translateY(-50%);
+  }
+  .fixed-image {
+    width: 300px; /* Set your desired width */
+    height: 250px; /* Set your desired height */
+    object-fit: cover; /* This ensures the image covers the fixed dimensions */
+  }
+
+  @media (min-width: 576px) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 50%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+  }
+  @media (min-width: 768px) {
+    .carousel-inner {
+      padding: 1em;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 1;
+      position: absolute;
+      left: 1em;
+      top: 90%;
+      transform: translateY(-50%);
+    }
+    .carousel-control-next {
+      left: 5em;
+    }
+  }
+
+  
+  </style>
 </head>
 
 <body>
@@ -30,13 +102,13 @@
         <ul class="navbar-nav ml-auto nav">
 
           <li class="nav-item active mx-4">
-            <a class="nav-link active" href="" >Home</a>
+            <a class="nav-link active" href="../templates/index.html" >Home</a>
         </li>
         <li class="nav-item active mx-4">
-            <a class="nav-link active" href="../../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
+            <a class="nav-link" href="../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
         </li>
         <li class="nav-item active mx-4">
-            <a class="nav-link active" href="../../map/final/mapPointer2.html" >Restaurant Nearby</a>
+            <a class="nav-link" href="../map/final/mapPointer2.html" >Restaurant Nearby</a>
         </li>
         <li class="nav-item active mx-4">
             <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
@@ -44,17 +116,142 @@
       </ul>
     </div>
     <div class="icons-container">
-        <a href="../favourite,button.html" class="bi bi-heart" style="font-size: 20px;"></a>
+        <a href="../saved_fav_restaurant/fav_rest_ver2.html" class="bi bi-heart" style="font-size: 20px;"></a>
         <a href="../Landing_page/landing_page.html" class="bi bi-box-arrow-right" style="font-size: 20px;"></a>
     </div>
 </nav>
-  <div class="main-content">
-    {% block body %} {% endblock %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="testimonial-slider">
+  <div id="carouselExampleControls" class="carousel carousel-dark">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="testimonial-title">
+            <i class="bi bi-quote display-1"></i>
+            <h2 class="fw-bold display-2">What's new today?</h2>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="col-md-8">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://cdn.foodadvisor.com.sg/1/400/tccrg/30278q30t6689612721o1869172/elemen-harbourfront-centre.jpg" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Elemen</h5>
+                  <p class="card-text">
+                    Members receive $35 worth
+                    of e-vouchers & elePoints!</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://www.capitaland.com/content/dam/capitaland-sites/singapore/shop/malls/westgate/tenants/982%20x%20818%20IMAGE%20copy.jpg.transform/cap-midres/image.jpg" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Greendot</h5>
+                  <p class="card-text">Students and seniors can enjoy our all-time favourites at ONLY $6.90!for 
+                    Signature Bento Set or Specialty Noodle </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://thewholekitchen.com.sg/cdn/shop/files/the-whole-kitchen-Gluten-Free-Christmas-Fruit-Cake-2_750x.jpg?v=1696989298" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">The Whole Kitchen</h5>
+                  <p class="card-text">
+                    Preorder now and get 10% Early bird savings available till 31st October
+                   </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://kindkones.com/cdn/shop/products/brownie-sundae.jpg?v=1657259546" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Kind Kones</h5>
+                  <p class="card-text">Enjoy exclusive Brownie Sundae Kit for $13.90</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://assets-metrostyle.abs-cbn.com/prod/metrostyle/attachments/fc52288e-d354-4796-963a-df52893a0ee2_saladstop%20new%20signatures%20samyo%20sunrise,%20fu-silly%20me,%20habibi,%20taco%20loco.jpg" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">SaladStop!</h5>
+                  <p class="card-text">Bring Your Own Cup
+                    Get $0.80 off smoothies or hot beverages/p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="card">
+                <div class="img-wrapper"><img src="https://burpple.imgix.net/foods/1687420963_review_image1971027_original.?w=400&h=400&fit=crop&q=80&auto=format" class="d-block w-100 fixed-image" alt="..."> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Project Acai</h5>
+                  <p class="card-text">Get a free Medium Açaí Bowl during your birthday month!.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <br>
-  <br>
-</body>
+</div>
+<br>
+<br>
+<br>
+<br>
 
+</body>
+<script>
+  var multipleCardCarousel = document.querySelector("#carouselExampleControls");
+
+if (window.matchMedia("(min-width: 576px)").matches) {
+  var carousel = new bootstrap.Carousel(multipleCardCarousel, {
+    interval: false
+  });
+  var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+  var cardWidth = $(".carousel-item").width();
+  var scrollPosition = 0;
+  $("#carouselExampleControls .carousel-control-next").on("click", function () {
+    if (scrollPosition < carouselWidth - cardWidth * 3) {
+      scrollPosition += cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+  $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+    if (scrollPosition > 0) {
+      scrollPosition -= cardWidth;
+      $("#carouselExampleControls .carousel-inner").animate(
+        { scrollLeft: scrollPosition },
+        600
+      );
+    }
+  });
+} else {
+  $(multipleCardCarousel).addClass("slide");
+}
+
+</script>
+<script src="https://unpkg.com/vue@next"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <footer class="site-footer">
     <div class="container">
       <div class="row">
@@ -64,12 +261,9 @@
         </div>
 
         <div class="col-xs-6 col-md-3">
-          <h6>Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="idk">About Us</a></li>
-            <li><a href="idk">Contact Us</a></li>
-            <li><a href="idk">Privacy Policy</a></li>
-          </ul>
+          <h6>Locate us</h6>
+          <p> School Of Information System 1, 81 Victoria St, Singapore 188065</p>
+          
         </div>
       </div>
       <hr>

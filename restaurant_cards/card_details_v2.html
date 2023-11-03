@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navigationBar">
+    <nav class="navbar navbar-expand-lg navbar-light" id="navigationBar">
         <a class="navbar-brand d-flex align-items-center" href="../templates/index.html">
             <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
         </a>
@@ -24,82 +24,60 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="" >Home</a>
+                    <a class="nav-link" href="../templates/index.html" >Home</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="../../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
+                    <a class="nav-link" href="../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="../../map/final/mapPointer2.html" >Restaurant Nearby</a>
+                    <a class="nav-link" href="../map/mapPointer2.html" >Restaurant Nearby</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
+                    <a class="nav-link" href="../templates/contact.html">Contact Us</a>
                 </li>
             </ul>
         </div>
         <div class="icons-container">
-            <a href="../favourite,button.html" class="bi bi-heart" style="font-size: 20px;"></a>
+            <a href="../saved_fav_restaurant/fav_rest_ver2.html" class="bi bi-heart" style="font-size: 20px;"></a>
             <a href="../Landing_page/landing_page.html" class="bi bi-box-arrow-right" style="font-size: 20px;"></a>
         </div>
     </nav>
 
     <!-- PAGE CONTENTS -->
     <div class="main-content" id="restaurant-details">
-        <div class="d-flex justify-content-start">
-            <!-- Retrieve MongoDB property "Name"-->
-            <h1 class="resName me-3">
-                {{ restaurant.Name }}
-            </h1>
-    
-            <!-- Retrieve property : "Ratings" -->
-            <div class="d-flex justify-content-center rating">
-                <div class="star bi-star-fill"></div>
-                <div class="ratingNum ps-2 pt-2">
-                    {{ restaurant.Ratings }}
-                </div>
-            </div>
-        </div>
-    
-        <div class="row">
-            <!-- Retrieve property : "Price" -->
-           <div class="price justify-content-end ">
-               <h1>{{ restaurant.Price }}</h1>
-           </div>
-       </div>
-    
-    
-            <div class="row d-flex align-items-center">
-                <!-- <div class="d-flex justify-content-between"> -->
-                    <div class="col-sm-12 col-lg-6">
-                        <div class="image-wrapped">
-                            <img src="restaurant_image_background.png" class="base-image">
-                            <img :src="restaurant.Image" class="overlay-image">
-                        </div>
-                    </div>
+        <title-component
+            v-bind:name="restaurant.Name"
+            v-bind:ratings="restaurant.Ratings"
+            v-bind:price="restaurant.Price">
+        </title-component>
 
+            <div class="row d-flex align-items-center">
+                <image-component
+                    v-bind:image="restaurant.Image">
+                </image-component>
 
                     <div class="col-sm-12 col-lg-6" id="catDetails">
                         <div class="categories">
                             <div v-if="is_vegan()" class="vegan d-flex">
                                 <div class="iconborder">
-                                    <i class="fa-solid fa-seedling fa-xl"></i>
+                                    <i class="fa-brands fa-envira fa-xl"></i>
                                 </div>
-                                <p class="pt-2 ps-2"> vegan </p>
+                                <p class="pt-2 ps-2"> {{ vegan }} </p>
                             </div>
                 
                             <div v-if="is_vegetarian()" class="vegetarian d-flex ">
                                 <div class="iconborder">
                                     <i class="fa-solid fa-seedling fa-xl"></i>
                                 </div>
-                                <p class="pt-2 ps-2"> vegetarian </p>
+                                <p class="pt-2 ps-2"> {{ vegetarian }} </p>
                             </div>
                 
                             <!-- Retrieve property : "Cuisine_Foodtype" -->
-                            <div class=" cuisine d-flex">
+                            <div v-if="has_cuisines()" class=" cuisine d-flex">
                                 <div class="iconborder">
                                     <i class="fa-solid fa-utensils fa-xl" style="color: #19191a;"></i>
                                 </div>
-                                <p class="pt-2 ps-2">Cuisine: Chinese, Vietnamese</p> <!-- Cuisine: { }-->
+                                <p class="pt-2 ps-2">Cuisine: {{ cuisines }}</p> <!-- Cuisine: { }-->
                             </div>
                         </div>
                     
@@ -117,59 +95,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
 
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    <script>
-        // Parse the restaurant ID from the query parameter
-        const params = new URLSearchParams(location.search);
-        const restaurantId = params.get("id");
-       
-        Vue.createApp({
-            data() {
-                return {
-                    restaurantId: restaurantId,
-                    restaurant: null, // An object
-                    foodType: ""
-                };
-            },
-            created() {
-                // Fetch detailed restaurant information using Axios
-                // You can make an Axios request to your API here to get restaurant details.
-                // Example:
-                axios.get(`http://localhost:5000/api/restaurant/${restaurantId}`)
-                    .then(response => {
-                        this.restaurant = response.data;
-                        this.foodType = response.data.Cuisine_Foodtype;
-                        console.log(this.foodType);
-                        
-                    })
-                    .catch(error => {
-                        console.error('Error fetching restaurant details:', error);
-                    });
-            },
-
-            methods: {
-                is_vegan() {
-                    if (this.foodType.toLowerCase().includes('vegan')) {
-                        return this.foodType.toLowerCase().includes('vegan');
-                    }
-                },
-                is_vegetarian(){
-                    if (this.foodType.toLowerCase().includes('vegetarian')) {
-                        return this.foodType.toLowerCase().includes('vegetarian');
-
-                    }
-                }
-
-
-            }
-        }).mount("#restaurant-details");
-    </script>
+    <script src="card_details.js"></script>
 </body>
 </html>
