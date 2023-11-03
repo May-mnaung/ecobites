@@ -12,6 +12,7 @@ const root = Vue.createApp({
             vegan: "",
             vegetarian: "",
             cuisines: "",
+            fav_restaurant: "",
         };
     },
     created() {
@@ -21,7 +22,9 @@ const root = Vue.createApp({
         axios.get(`http://localhost:5000/api/restaurant/${restaurantId}`)
             .then(response => {
                 this.restaurant = response.data;
+                console.log(response.data);
                 this.foodType = response.data.Cuisine_Foodtype;
+                this.restaurant.fav_restaurant;
                 
                 
             })
@@ -61,6 +64,22 @@ const root = Vue.createApp({
                 console.log(this.cuisines);
                 return true
             }
+        },
+
+
+        addFavourites() {
+            console.log("=== You're in addFavourites() ===")    
+              axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
+                  fav_restaurant: true
+              }).then(
+                  response => {
+                      console.log(response.data)
+                  }
+              ).catch(
+                  error => {
+                      console.log(error)
+                  })
+                  this.restaurant.fav_restaurant= true
         }
     }
 })
