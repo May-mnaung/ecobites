@@ -5,20 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>landing_page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    
     <link rel = 'stylesheet' href = "landing_page.css">
 
     <!-- #font poppins  -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 
-    <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         
    
     
@@ -28,7 +23,7 @@
     <!-- navigation bar -->
     
     
-        <div class = "row display: inline-flex"  id = "nav_bar">
+        <!-- <div class = "row display: inline-flex"  id = "nav_bar">
 
             <div class = "col-1">
                 <img src = "Images/earth.png"  id="earth">
@@ -37,16 +32,56 @@
                 <spam id ="ecobite">EcoBite</spam>
             </div>
             <div class = "col-2">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="#">HOME</a>
             </div>
             <div class = "col-4">
-                <a class="nav-link" href="../loginSignUp/signUp.html">Sign Up</a>
+                <a class="nav-link" href="../loginSignUp/signUp.html">SIGN UP</a>
             </div>
             <div class = "col-1">
-                <a class="btn float-right rounded-pill" href="../loginSignUp/logIn.html" role="button" id="btn" >Login</a>
+                <a class="btn float-right rounded-pill" href="../loginSignUp/logIn.html" role="button" id="btn" >LOGIN</a>
             </div>
            
-        </div>
+        </div> -->
+
+        <nav class="navbar navbar-expand navbar-light fixed-top" id="navigationBar">
+            <a class="navbar-brand d-flex align-items-center" href="../templates/index.html">
+                <img src="../static/images/icon.PNG" id="earth">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href=# id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            EcoBites
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropdown-color">
+            
+                            <a class="dropdown-item" href=#>Home</a>
+                            <a class="dropdown-item" href='#join'>Join us</a>
+                            <a class="dropdown-item" href='#us'>Creators</a>
+                            <a class="dropdown-item" href='#resources'>More resources</a>
+                            <a class="dropdown-item" href='#about'>About</a>
+                        </div>
+                    </li>
+                    <li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../loginSignUp/signUp.html">Sign Up</a>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class = "col-1">
+                <a class="btn" href="../loginSignUp/logIn.html" role="button" id="btn" >LOGIN</a>
+            </div>
+
+            
+        </nav>
+    
+        
 
 
           
@@ -72,7 +107,7 @@
             <img src="Images/goodforhealth.jpg" style ="width:30vw; height:20vw; margin-left:10vw" class = "d-block">
         </div>
         <div class = 'col-6 d-flex align-items-center'>
-            <spam class = "first_text">Good for mind & body- reduces risk of cancer, health diseases</spam>
+            <spam class = "first_text">Good for mind & body - reduces risk of cancer, health diseases</spam>
         </div>
                 
     </div>
@@ -230,18 +265,18 @@
 
     <!-- barchart -->
     <div class = "container">
-        <img src="Images/bar_chart.png" style = "width:100% ; margin-bottom: 5vw; "  class="mx-auto d-block px-auto" >
+        <img src="Images/bar_chart.png" style = "width:70% ; margin-bottom: 5vw; "  class="mx-auto d-block px-auto" >
     </div>
 
      <!-- veggies vs meat -->
 
-    <div class = "row d-flex spacing px-auto mx-auto ">
-        <div class = "col-6 px-auto mx-auto justify-content-center align-items-center">
+    <div class = "row d-flex spacing px-auto mx-auto px-5">
+        <div class = "col-5 px-auto mx-auto justify-content-center align-items-center">
             <img src = "Images/raw-meat.jpg" style ="height: 25vw; width:35vw" class="mx-auto d-block">
             <p class = "bold" style = "margin-top:3vw">Animal-based foods</p>
                <spam class = 'meatvsveg'>Generally associated with the high greenhouse gas emissions.</spam>
         </div>           
-         <div class = "col-6 px-auto mx-auto justify-content-center align-items-center">         
+         <div class = "col-5 px-auto mx-auto justify-content-center align-items-center">         
             <img src = "Images/Fruits-and-Vegetables.jpg"  style ="height: 25vw; width:35vw" class="mx-auto d-block">    
             <p class = "bold" style = "margin-top:3vw">Plant-based foods</p>
             <spam class = 'meatvsveg'>Generally use less energy, land, and water, and have lower greenhouse gas intensities.</spam>      
@@ -287,7 +322,7 @@
 
     <div class = "row justify-content-around d-flex spacing">
         <div class = "col col-md-6 px-auto mx-auto">
-            <img src = "Images/carbon_footprint.jpg">
+            <img src = "Images/carbon_footprint.jpg" style = "width:70%" class="d-block mx-auto">
         </div>
 
         <div class = "col col-md-5 py-auto my-auto" style = "padding-right:5vw">
@@ -311,16 +346,16 @@
 
     <div class = "image-container justify-content-center" style ="margin-top:8vw">
     
-        <img src= "Images/eat better for environment.jpeg" class= "px-auto mx-auto" style="width:90%">
-        <p class="overlay-box2"><spam id = "box_title">Eat better for the environment</spam><br><br>
+        <img src= "Images/eat better for environment.jpeg" class= "px-auto mx-auto" style="width:70%; height:70%">
+        <p class="overlay-box2"  id= "join"><spam id = "box_title">Eat better for the environment</spam><br><br>
             <spam id ="box-text">Improve your health and protect the environment at the same time by shifting to a plant-based diet.</spam>
         </p>
     </div>
 
 
     <!-- support the cause w us -->
-    <div class="row d-flex"style = "margin-left: 10%; margin-right:1.5%; margin-top:8vw">
-        <spam class = "title col-6 py-0 my-0">
+    <div class="row d-flex"style = "margin-left: 10%; margin-right:1.5%; margin-top:8vw" >
+        <spam class = "title col-6 py-0 my-0" >
             SUPPORT THE CAUSE WITH US.
         </spam>
         <p class = "col-6 offset-2" id="adjtext">
@@ -343,7 +378,7 @@
         <div class = "row d-flex" style ="margin-top: 5vw;">
             <div class = 'col-6'>
                 <img src="Images/hand.png" class = 'listicon'>
-                <spam class = "list_text">Find more affordable options</spam>         
+                <spam class = "list_text">Find restaurants based on your budget</spam>         
             </div>
             <div class = 'col-5'>
                 <img src="Images/empty_heart.png" class = 'listicon' style = "margin-left:1vw; width:4vw;height:4vw">
@@ -359,14 +394,14 @@
         <p class = "row justify-content-center title" style="margin-bottom:0; margin-left:1px; padding-bottom:1vw; font-size:2vw; padding-top:3vw;">
             Join Our Community Now!
         </p>
-        <a class="btn btn-secondary" href="../loginSignUp/signUp.html" role="button">Sign Up</a>
+        <a class="btn btn-secondary" href="../loginSignUp/signUp.html" role="button"  id ='us'>Sign Up</a>
     </div>
 
 
     <!-- about us -->
     <hr>
-    <div class="row d-flex mx-auto" style = "margin-bottom:5vw; margin-top:5vw">
-        <spam class = "title col-6 pt-0 my-0" style ="padding-bottom:3vw">
+    <div class="row d-flex mx-auto" style = "margin-bottom:5vw; margin-top:5vw" >
+        <spam class = "title col-6 pt-0 my-0" style ="padding-bottom:3vw; margin-left:2vw">
             The Team</spam>
         <spam class ="us">&nbsp;&nbsp;IS216-G1T7&nbsp;&nbsp;</spam>
 
@@ -398,8 +433,8 @@
                 <spam class ="about_text">Yuting Zheng</spam>
             </div>  
 
-            <div class = 'col-6 col-md-4 text-center about'>
-                <img src="Images/sihua.jpg" class = "mx-auto d-block photo">
+            <div class = 'col-6 col-md-4 text-center about'  id = "resources">
+                <img src="Images/sihua_bby.jpg" class = "mx-auto d-block photo">
                 <spam class ="about_text">Sihua Wang </spam>
             </div>                  
         </div>
@@ -418,31 +453,32 @@
     </div> -->
 
     <!-- links -->
-    <hr class = "coloured">
+    <hr class = "coloured" >
 
-    <div class = "tbspace">
+    <div class = "tbspace" >
         
-        <p class = "bold bottom_section_spacing" style = "margin-top:0 ; padding-bottom:2vw;">Find out more</p>
+        <p class = "bold bottom_section_spacing" style = "margin-top:0 ; padding-bottom:2vw;" >Find out more</p>
         <div style ="margin-right:1.5vw">
             <div class = "row justify-content-center">
-                <div class = 'col-md-2 col-5 bottom_section_spacing col-edit'>
+                <div class = 'col-md-2 col-5 bottom_section_spacing col-edit' >
                     <spam class = "last_title" onclick="window.location.href='https://www.un.org/en/climatechange/science/climate-issues/food#:~:text=Food%20needs%20to%20be%20grown,emissions%20is%20linked%20to%20food.'" >FOOD AND CLIMATE CHANGE</spam><br>
-                    Learn more about healthy diets and its environmental impacts from United Nations</a><br/>
+                    <spam class = "link_description">Learn more about healthy diets and its environmental impacts from United Nations</spam></a><br/>
                 </div>
     
                 <div class = 'col-md-2 col-5 bottom_section_spacing col-edit'>
                     <spam class = "last_title" onclick="window.location.href='https://www.nationalgeographic.com/environment/article/how-small-changes-to-our-diet-can-benefit-the-planet'">IMPACTS OF EATING HABITS</spam><br>
-                    Find out how changes to your eating habits can benefit the planet</a><br/>
+                    <spam class = "link_description">Find out how changes to your eating habits can benefit the planet</spam></a><br/>
                 </div>
     
                 <div class = 'col-md-2 col-5 bottom_section_spacing col-edit'>
-                    <spam class = "last_title" onclick="window.location.href='https://www.wwf.org.uk/betterbasket'">EAT BETTER FOR THE PLANET</spam><br>
-                    Learn about sustainable eating and responsible food choices</a><br/>
+                    <spam class = "last_title" onclick="window.location.href='https://www.wwf.org.uk/betterbasket'">EAT BETTER FOR THE PLANET</spam><br><spam class = "link_description">Learn about sustainable eating and responsible food choices</spam>
+                    </a><br/>
                 </div>
     
                 <div class = 'col-md-2 col-5 bottom_section_spacing col-edit'>
                     <spam class = "last_title" onclick="window.location.href='https://www.everydayhealth.com/diet-nutrition/tips-to-make-your-eating-habits-more-sustainable/'">TIPS FOR SUSTAINABLE EATING</spam><br>
-                   Small adjustments that can make your diet more sustainable</a><br/>
+                    <spam class = "link_description">Small adjustments that can make your diet more sustainable</spam>
+                </a><br/>
     
                 </div>
     
@@ -456,10 +492,9 @@
         </p>
      
     </div>
-    <hr class = "coloured">
-    <div style = "max-width:100%" box-sizing: content-box;>
-        <div class = "row tbspace text-center justify-content-center" style = "max-width: 100%;">
-            <p class = " bold bottom_section_spacing mx-0, px-0" style = "margin-top:0 ; margin-top:3vw; margin-right:0 ">Donate for the cause</p>
+    <div style = "max-width:100%" box-sizing: content-box; >
+        <div class = "row text-center justify-content-center" style = "max-width: 100%;">
+            <p class = " bold bottom_section_spacing mx-0, px-0" style = "margin-top:0 ; margin-left: 6vw">Donate for the cause</p>
             <!-- <p class ="bottom_section_spacing">Support a local charity</p> -->
             <a class="btn btn-success arrow-button" href="https://www.giving.sg/organisation/profile/ce79efe6-0979-49f2-b763-d7396751de31" role="button">Donate now </a>
             <br>
@@ -469,41 +504,53 @@
     
     </div>
 
-
     
-<h1> Footer</h1>
-  <!-- Site footer -->
-  <footer class="site-footer">
+    
+    <footer class="site-footer" style = "margin-top:8vw">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>About</h6>
-          <p class="text-justify">EcoBites is your destination for healthier eating and a more vibrant lifestyle. We're on a mission to connect you with restaurants that prioritize nutritious options, making it easy for you to make better food choices. Choose EcoBites to embark on your journey towards a healthier, tastier life.</p>
-        </div>
+    <hr>
+        <div class="row" style = "margin-top:3vw">
+            <div class="col-12 col-md-2" >
+                <img src = "Images/earth.png" id="smallearth" class="d-block mx-auto">
+            </div>
 
-        <div class="col-xs-6 col-md-3">
-          <h6>Locate us</h6>
-          <p> School Of Information System 1, 81 Victoria St, Singapore 188065</p>
-          
+            <div class="col-6 offset-1 col-md-2 offset-md-0">
+                <spam class = "footer">Locate us</spam>
+                <p class = "footer"> School Of Information System 1, 81 Victoria St, Singapore 188065</p>
+                
+            </div>
+
+            <div class="col-3 col-md-2">
+                <div style ="width:100%">
+                    <ul class="social-icons">
+                        &nbsp;
+                          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                          &nbsp;
+                          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                          &nbsp;
+                          <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                          &nbsp;
+                          <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                        </ul>
+                </div>
+                
+              </div>
+
+            <div class="col-12 col-md-4 offset-1 offset-md-2">
+            <spam class = "footer">About</spam>
+            <p class = "footer">EcoBites is your destination for healthier eating and a more vibrant lifestyle. We're on a mission to connect you with restaurants that prioritize nutritious options, making it easy for you to make better food choices. Choose EcoBites to embark on your journey towards a healthier, tastier life.</p>
+            </div>
+
+           
         </div>
-      </div>
       <hr>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
-       <a href="#">EcoBites</a>.
+        <div class="px-auto mx-auto text-center"  id = "about">
+          <p class="copyright-text" >Copyright &copy; 2023 All Rights Reserved by 
+       <a href="#">EcoBites</a>
           </p>
-        </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
-          </ul>
         </div>
       </div>
     </div>

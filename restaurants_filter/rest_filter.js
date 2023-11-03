@@ -2,7 +2,6 @@
 const filterButton = document.getElementById('filterButton');
 const filterBar = document.getElementById('filter-bar');
 const cardContainer = document.getElementById('card-container');
-
 filterButton.addEventListener('click', function () {
     console.log(window.innerWidth);
     if (window.innerWidth <= 1209) { // for 983 px
@@ -17,9 +16,7 @@ filterButton.addEventListener('click', function () {
       }
     }
 });
-
 const toTop = document.querySelector(".to-top");
-
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 100) {
     toTop.classList.add("active");
@@ -27,14 +24,12 @@ window.addEventListener("scroll", () => {
     toTop.classList.remove("active");
   }
 });
-
 var stars = document.querySelectorAll('.star a');
 stars.forEach((item, index1) => {
 item.addEventListener("click", () =>{
     stars.forEach((star,index2) => {
         console.log(index2)
         index1 >= index2 ? star.classList.add('active') : star.classList.remove('active')
-
     })
 })
 });
@@ -55,6 +50,34 @@ function fetchData() {
       console.error("Error fetching data: ", error);
     });
 }
+// Define a function to check if a restaurant's rating is at least the selected star rating
+let lastSelectedRating = null; // Variable to store the last selected rating
+
+const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
+ratingCheckboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const selectedRating = parseFloat(checkbox.getAttribute("value"));
+
+        if (selectedRating === lastSelectedRating) {
+            // Deselect the rating
+            lastSelectedRating = null;
+            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+        } else {
+            // Select the rating
+            lastSelectedRating = selectedRating;
+            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+        }
+
+        updateSelectedRatings(); // Update the selectedRatings array
+    });
+});
+
+// Function to update the selectedRatings array
+function updateSelectedRatings() {
+    selectedRatings = lastSelectedRating !== null ? [lastSelectedRating] : [];
+    filterAndDisplayResults(); // Call the filtering function when ratings change
+}
 
 // Function to filter and display results based on selected filters
 function filterAndDisplayResults() {
@@ -64,6 +87,7 @@ function filterAndDisplayResults() {
   
   const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(checkbox => checkbox.value);
   const selectedCuisines = Array.from(document.querySelectorAll('input[name="cuisine"]:checked')).map(checkbox => checkbox.id);
+  const selectedMinimumRating = lastSelectedRating !== null ? parseFloat(lastSelectedRating) : 0;
   console.log("Selected cuisines: " + selectedCuisines);
   console.log("Selected prices: " + selectedPrices);
 
@@ -71,7 +95,8 @@ function filterAndDisplayResults() {
   const filteredRestaurants = filter_restaurants.filter((restaurant) => {
     if (
       (selectedPrices.length === 0 || selectedPrices.includes(restaurant.Price)) &&
-      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine)))
+      (selectedCuisines.length === 0 || selectedCuisines.some(cuisine => restaurant.Cuisine_Foodtype.includes(cuisine))) &&
+      restaurant.Ratings >= selectedMinimumRating // Filter based on the minimum rating
     ) {
       return true;
     }
@@ -83,12 +108,11 @@ function filterAndDisplayResults() {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = '';
   const errorMessageContainer = document.getElementById("error-message");
+  errorMessageContainer.innerHTML='';
   if (filteredRestaurants.length === 0) {
     // Display error message
-    errorMessageContainer.textContent = " Sorry, no restaurants match your criteria.";
+    errorMessageContainer.textContent = " Opps...Seems like there's no restaurants match your criteria ";
   } else {
-    // Clear error message
-    errorMessageContainer.textContent = "";
 
   // Loop through filtered restaurants to populate the website
   for (let i = 0; i < filteredRestaurants.length; i++) {
@@ -376,17 +400,21 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.checked = false;
     });
 
-  // Clear the error message
-  const errorMessageContainer = document.getElementById("error-message");
-  errorMessageContainer.textContent = "";
 
+
+  lastSelectedRating = null;
+
+  // Disable the submit button
+  submitButton.disabled = true;
   // Call filterAndDisplayResults to display all restaurants
   submitButtonClicked = true;
   filterAndDisplayResults();
+  
 });
 
+
   // Initial call to set the submit button state
-  updateSubmitButton();
+ updateSubmitButton();
 });
   
 
@@ -407,7 +435,6 @@ axios
             // add a div to the body with the restaurant name
 
         const cardContainer = document.getElementById("card-container");
-
         const cardBox = document.createElement("div");
         cardBox.className = "col";
         cardBox.id = "item-card";
@@ -421,7 +448,8 @@ axios
 
         //sihua add on this few lines 62-65:
         cardImage.addEventListener("click", function(){
-          location.href = '../restaurant_cards/card_details.html';
+          rest_id = restaurants[i]["_id"]["$oid"]
+          location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
             })
 
         cardImage.className = "card-img-top";
