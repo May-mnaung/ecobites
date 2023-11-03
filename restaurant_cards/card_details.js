@@ -1,3 +1,5 @@
+// If no in favourites list, display add to favourites
+
 const params = new URLSearchParams(location.search);
 const restaurantId = params.get("id");
 
