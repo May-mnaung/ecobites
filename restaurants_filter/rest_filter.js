@@ -108,12 +108,11 @@ function filterAndDisplayResults() {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = '';
   const errorMessageContainer = document.getElementById("error-message");
+  errorMessageContainer.innerHTML='';
   if (filteredRestaurants.length === 0) {
     // Display error message
-    errorMessageContainer.textContent = " Sorry, no restaurants match your criteria.";
+    errorMessageContainer.textContent = " Opps...Seems like there's no restaurants match your criteria ";
   } else {
-    // Clear error message
-    errorMessageContainer.textContent = "";
 
   // Loop through filtered restaurants to populate the website
   for (let i = 0; i < filteredRestaurants.length; i++) {
@@ -402,10 +401,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+
+  lastSelectedRating = null;
+
+  // Disable the submit button
+  submitButton.disabled = true;
   // Call filterAndDisplayResults to display all restaurants
   submitButtonClicked = true;
-  submitButton.disabled = true;
-  
   filterAndDisplayResults();
   
 });
