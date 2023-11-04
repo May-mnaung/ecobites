@@ -89,13 +89,21 @@
                             <div class="d-flex">
                                 <a :href="restaurant.page_link" id="website" class="me-5">View website</a>
                                 
+                                <div class="heart-button">
+                                    <!-- If true: Remove -->
+                                    <button v-if="favRestaurant" type="button" v-on:click="toggleFavorite()" id="favourites">
+                                        Remove from Favorites
+                                        <i class="fa-solid fa-xmark ps-2" style="color: red"></i>
+                                    </button> 
+                
+                                    <!-- If false: Add -->
+                                    <button v-else type="button" v-on:click="toggleFavorite()" id="favourites">
+                                        Add to Favorites
+                                        <i class="fas fa-heart ps-2" style="color: red"></i>
+                                    </button> 
+                                </div>
 
-                                <!-- <div v-if="fav_restaurant == false"> -->
-                                    <button type="button" id="favourites" v-on:click="addFavourites()">
-                                        Add to Favourites<i class="fas fa-heart ps-2" style="color: red"></i>
-                                    </button>
-                                <!-- </div> -->
-
+                       
                             </div>
                         </div>
                     </div>
