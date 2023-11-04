@@ -29,7 +29,7 @@ const root = Vue.createApp({
         isDisabled(){
 
             console.log("lolsss")
-            // window.location.href = '../templates/index.html'
+
             return  !(this.username && this.password)
           
     
@@ -37,7 +37,7 @@ const root = Vue.createApp({
     },
     methods:{
         login(){
-            window.location.href = '../restaurants_filter/rest_filter.html'
+            window.location.href = '../templates/index.html'
         }
     }
     //I will delete this part once everyone confirm they are okay with it 
