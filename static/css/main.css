@@ -154,7 +154,7 @@ ul{
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  /* color:#737373; */
 }
 .site-footer hr
 {
@@ -175,7 +175,7 @@ ul{
 }
 .site-footer a
 {
-  color:#737373;
+  color:blue;
 }
 .site-footer a:hover
 {
@@ -309,4 +309,15 @@ ul{
     margin-right:0;
     font-weight:600
   }
+}
+
+
+#smallearth{
+  height:7vw;
+  width:7vw;
+  min-width:4vw;
+  min-height:4vw;
+
+
+
 }

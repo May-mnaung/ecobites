@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navigationBar">
+    <nav class="navbar navbar-expand-lg navbar-light" id="navigationBar">
         <a class="navbar-brand d-flex align-items-center" href="../templates/index.html">
             <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
         </a>
@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="" >Home</a>
+                    <a class="nav-link" href="../templates/index.html" >Home</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="../../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
+                    <a class="nav-link" href="../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="../../map/final/mapPointer2.html" >Restaurant Nearby</a>
+                    <a class="nav-link" href="../map/mapPointer2.html" >Restaurant Nearby</a>
                 </li>
                 <li class="nav-item active mx-4">
-                    <a class="nav-link" href="../../templates/contact.html">Contact Us</a>
+                    <a class="nav-link" href="../templates/contact.html">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -89,9 +89,13 @@
                             <div class="d-flex">
                                 <a :href="restaurant.page_link" id="website" class="me-5">View website</a>
                                 
-                                <button type="button" id="favourites" onclick="location.href = '../saved_fav_restaurant/favourite.restaurant.html';">
-                                    Add to Favourites<i class="fas fa-heart ps-2" style="color: red"></i>
-                                </button>
+
+                                <!-- <div v-if="fav_restaurant == false"> -->
+                                    <button type="button" id="favourites" v-on:click="addFavourites()">
+                                        Add to Favourites<i class="fas fa-heart ps-2" style="color: red"></i>
+                                    </button>
+                                <!-- </div> -->
+
                             </div>
                         </div>
                     </div>
