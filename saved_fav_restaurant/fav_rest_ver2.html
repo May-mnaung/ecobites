@@ -119,9 +119,97 @@
                                             <div v-for="star in restaurant.stars" :key="star" class="fas fa-star"></div>
                                         </div> -->
 
-                                        <div class="d-flex reviews-stars">
+                                        <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings)" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings)" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
                                             <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings)" :key="star"></div>
                                           </div>
+                                           -->
+                                           <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in 5" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled }"></div>
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in 5" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings) }"></div>
+                                          </div>
+                                           -->
+                                           <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).filled" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled }"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).filled" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled && !calculateStars(restaurant.Ratings).isHalfStar }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).isHalfStar"></div>
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).filled" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled && !calculateStars(restaurant.Ratings).isHalfStar }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).isHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in calculateStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).filled" :key="star" :class="{ 'filled-star': true }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in 5 - calculateStars(restaurant.Ratings).filled - (calculateStars(restaurant.Ratings).hasHalfStar ? 0.5 : 0)" :key="star"></div>
+                                          </div> -->
+
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(restaurant.Ratings).filled" :key="star" :class="{ 'filled-star': true }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in calculateStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in 5" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled && !calculateStars(restaurant.Ratings).hasHalfStar }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in 5 - calculateStars(restaurant.Ratings).filled - (calculateStars(restaurant.Ratings).hasHalfStar ? 0.5 : 0)" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <span class="fas fa-star" v-for="star in fullStars" :key="star"></span>
+                                            <span class="fas fa-star-half-alt" v-if="halfStar"></span>
+                                            <span class="far fa-star" v-for="star in emptyStars" :key="star"></span>
+                                          </div>
+                                           -->
+                                           <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in 5" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings).filled && !calculateStars(restaurant.Ratings).hasHalfStar }"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(restaurant.Ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in 5 - calculateStars(restaurant.Ratings).filled - (calculateStars(restaurant.Ratings).hasHalfStar ? 0.5 : 0)" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in 5" :key="star" :class="{ 'filled-star': star <= calculateStars(restaurant.Ratings) }"></div>
+                                        </div>
+                                           -->
+                                           <!-- <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in calculateStars(ratings).filled" :key="star"></div>
+                                            <div class="fas fa-star-half-alt" v-if="calculateStars(ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in calculateStars(ratings).unfilled" :key="star"></div>
+                                          </div> -->
+                                          <!-- <div class="star-ratings"> -->
+                                            <!-- <div class="star" v-for="star in filledStars(restaurant.Ratings)"></div>
+                                            <div class="star" v-for="star in unfilledStars(restaurant.Ratings)"></div>
+                                          </div>
+                                           -->
+                                           <!-- <div class="d-flex reviews-stars">
+                                             Calculate and display filled stars 
+                                            <div class="fas fa-star" v-for="star in filledStars(restaurant.Ratings)" :key="star"></div>
+                                            Display half star if applicable 
+                                            <div class="fas fa-star-half-alt" v-if="hasHalfStar(restaurant.Ratings)"></div>
+                                            Calculate and display unfilled stars 
+                                            <div class="far fa-star" v-for="star in unfilledStars(restaurant.Ratings)" :key="star"></div>
+                                          </div>-->
+                                           
+
+                                           <div class="d-flex reviews-stars">
+                                            <div class="fas fa-star" v-for="star in filledStars(restaurant.Ratings).filled" :key="star"></div>
+                                            <div class="fas fa-star-half-alt" v-if="filledStars(restaurant.Ratings).hasHalfStar"></div>
+                                            <div class="far fa-star" v-for="star in filledStars(restaurant.Ratings).unfilled" :key="star"></div>
+                                          </div>
+                                          
+                                          
+                                          
                                     </div>
                                 </div>
                             </div>
@@ -323,7 +411,9 @@ const stars_45 = `<div class="fas fa-star"></div>
     Vue.createApp({
         data() {
             return {
-                likedRestaurants: []
+                likedRestaurants: [],
+                ratings: 0,
+                
                 
 
             }
@@ -333,7 +423,7 @@ const stars_45 = `<div class="fas fa-star"></div>
             axios.get('http://127.0.0.1:5000/api/restaurants')
                 .then(response => {
                     this.likedRestaurants = response.data.filter(restaurant => restaurant.fav_restaurant === true);
-
+                    
                     //change it to false when u unclick
                 })
                 .catch(error => {
@@ -341,6 +431,8 @@ const stars_45 = `<div class="fas fa-star"></div>
 
                 });
         },
+      
+        
         methods: {
           toggleFavorite(restaurant) {
          
@@ -348,15 +440,15 @@ const stars_45 = `<div class="fas fa-star"></div>
                 
                 rest_id = restaurant["_id"]["$oid"]
                 axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
-        'fav_restaurant': false
-    }).then(
-        response => {
-            console.log(response.data)
-        }
-    ).catch(
-        error => {
-            console.log(error)
-        })
+                'fav_restaurant': false
+            }).then(
+                response => {
+                    console.log(response.data)
+                }
+            ).catch(
+                error => {
+                    console.log(error)
+                })
 
     //         }
     //     }
@@ -367,16 +459,160 @@ const stars_45 = `<div class="fas fa-star"></div>
                 rest_id = restaurant["_id"]["$oid"]
                   location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
             },
-            calculateStars(ratings) {
-            // Convert ratings to stars (assuming ratings are out of 5)
-            const maxRating = 5;
-            const filledStars = Math.round((ratings / maxRating) * maxRating);
-            return Array(filledStars).fill(0);
-            }
+            // calculateStars(ratings) {
+            // // Convert ratings to stars (assuming ratings are out of 5)
+            // const maxRating = 5;
+            // const filledStars = Math.round((ratings / maxRating) * maxRating);
+            // return Array(filledStars).fill(0);
+    //         // }
+    //         filledStars(ratings) {
+    //     const maxRating = 5;
+    //     const filledStars = Math.floor(ratings);
+    //     return Array(filledStars).fill(0);
+    //     },
+    //     hasHalfStar(ratings) {
+    //     return ratings % 1 === 0.5;
+    //     },
+    //     unfilledStars(ratings) {
+    //     const maxStars = 5;
+    //     const filledStars = Math.floor(ratings);
+    //     const halfStar = this.hasHalfStar(ratings) ? 1 : 0;
+    //     const unfilledStars = maxStars - filledStars - halfStar;
+    //     return Array(unfilledStars).fill(0);
+    //     },
+    // },
+    filledStars(ratings) {
+  const roundedRatings = Math.round(ratings);
+  const maxRating = 5;
+  
+  if (roundedRatings === Math.floor(ratings) + 0.5) {
+    // If the rounded ratings are exactly x.5, show x filled stars and 0.5 half star
+    return {
+      filled: Math.floor(ratings),
+      hasHalfStar: true,
+      unfilled: maxRating - Math.ceil(ratings),
+    };
+  } else {
+    // For other cases, show rounded ratings as filled stars and remaining stars as unfilled
+    return {
+      filled: Math.round(ratings),
+      hasHalfStar: false,
+      unfilled: maxRating - Math.round(ratings),
+    };
+  }
+}
+}
+   
 
 
 
-        }
+
+          
+
+
+
+
+
+
+//   // Check if there is a half-star (rating ends with .5)
+//   const hasHalfStar = ratings % 1 === 0.5;
+
+//   return { filled: filledStars, hasHalfStar };
+// // }
+//                         calculateStars(ratings) {
+//                         // Calculate the number of filled stars based on integer part of the rating
+//                         const filledStars = Math.floor(ratings);
+
+//                         // Calculate the number of unfilled stars
+//                         const unfilledStars = 5 - filledStars;
+
+//                         // Determine if there is a half-star (rating ends with .5)
+//                         const hasHalfStar = ratings % 1 === 0.5;
+
+//                         return { filled: filledStars, unfilled: unfilledStars, hasHalfStar };
+//                         }
+
+                            // calculateStars(ratings) {
+                            // // Calculate the number of filled stars based on integer part of the rating
+                            // const filledStars = Math.floor(ratings);
+                            
+                            // // Determine if there is a half-star (rating ends with .5)
+                            // const hasHalfStar = ratings % 1 === 0.5;
+                            
+                            // // Ensure there are always 5 stars in total
+                            // const totalStars = Math.min(5, filledStars + (hasHalfStar ? 0.5 : 0));
+                            
+                            // return { filled: totalStars, hasHalfStar };
+                            // }
+
+
+//                             calculateStars(ratings) {
+//   // Calculate the number of filled stars based on integer part of the rating
+//   const filledStars = Math.floor(ratings);
+  
+//   // Determine if there is a half-star (rating ends with .5)
+//   const hasHalfStar = ratings % 1 === 0.5;
+  
+//   // Ensure there are always 5 stars in total
+//   const totalStars = Math.min(5, filledStars + (hasHalfStar ? 0.5 : 0));
+  
+//   return { filled: totalStars, hasHalfStar };
+// }
+// calculateStars(ratings) {
+//                     // Round the ratings to the nearest whole number and clamp to a range of 0 to 5
+//                     const roundedRatings = Math.min(Math.max(Math.round(ratings), 0), 5);
+//                     return roundedRatings;
+// //                 }
+// calculateStars(ratings) {
+//     // Round the ratings to the nearest whole number
+//     const roundedRatings = Math.round(ratings);
+    
+//     // Check if there's a half-star
+//     const hasHalfStar = (ratings - roundedRatings) === 0.5;
+
+//     // Calculate the number of filled stars (rounded down)
+//     const filledStars = Math.floor(roundedRatings);
+    
+//     // Calculate the number of unfilled stars
+//     const unfilledStars = 5 - filledStars - (hasHalfStar ? 0.5 : 0);
+
+//     return { filled: filledStars, hasHalfStar, unfilled: unfilledStars };
+// }
+// calculateStars(ratings) {
+//           // Calculate the number of filled stars (rounded down)
+//           const filledStars = Math.floor(ratings);
+
+//           // Check if there's a half-star
+//           const hasHalfStar = (ratings - filledStars) === 0.5;
+
+//           // Calculate the number of unfilled stars
+//           const maxStars = 5;
+//           const unfilledStars = maxStars - filledStars - (hasHalfStar ? 0.5 : 0);
+
+//           return { filledStars, hasHalfStar, unfilledStars };
+//         }
+// filledStars(ratings) {
+//       // Calculate the number of filled stars (rounded down)
+//       const filledStars = Math.floor(ratings);
+
+//       return new Array(filledStars);
+//     },
+//     unfilledStars(ratings) {
+//       const maxStars = 5;
+//       // Calculate the number of unfilled stars
+//       const unfilledStars = maxStars - Math.ceil(ratings);
+
+//       return new Array(unfilledStars);
+//     },
+
+
+
+
+
+
+
+
+        
     //             rest_id = restaurant["_id"]["$oid"]
     //             axios.post('http://localhost:5000/api/restaurant/' + rest_id, {
     //     'fav__restaurants': false
