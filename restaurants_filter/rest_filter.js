@@ -370,6 +370,15 @@ const submitButton = document.getElementById("submitFilter");
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   submitButtonClicked = true;
+  // Auto close filterbar when submit button is clicked (phone screen)
+  if(filterBar.classList.contains("filter-bar-visible")){
+    console.log("ok");
+    filterBar.classList.remove("filter-bar-visible");
+    console.log("oh no removed!")
+    filterBar.style.width = '';
+    cardContainer.style.display = ''; 
+  }
+
   filterAndDisplayResults();
 
 });
