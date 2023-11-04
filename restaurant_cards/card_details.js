@@ -68,7 +68,8 @@ const root = Vue.createApp({
 
 
         addFavourites() {
-            console.log("=== You're in addFavourites() ===")    
+            console.log("=== You're in addFavourites() ===")   
+            alert("Added to favourites list!") 
               axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
                   fav_restaurant: true
               }).then(
