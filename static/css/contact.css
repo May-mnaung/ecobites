@@ -38,6 +38,7 @@ textarea, input {
   background-color: white;
 }
 .letter {
+  padding-top: 80px;
   position: absolute;
   left: 0;
   right: 0;
