@@ -1,3 +1,5 @@
+// If no in favourites list, display add to favourites
+
 const params = new URLSearchParams(location.search);
 const restaurantId = params.get("id");
 
@@ -10,6 +12,7 @@ const root = Vue.createApp({
             vegan: "",
             vegetarian: "",
             cuisines: "",
+            favRestaurant: "",
         };
     },
     created() {
@@ -19,7 +22,10 @@ const root = Vue.createApp({
         axios.get(`http://localhost:5000/api/restaurant/${restaurantId}`)
             .then(response => {
                 this.restaurant = response.data;
+                console.log(response.data);
                 this.foodType = response.data.Cuisine_Foodtype;
+                this.favRestaurant = this.restaurant.fav_restaurant;
+                console.log(this.favRestaurant);
                 
                 
             })
@@ -59,7 +65,65 @@ const root = Vue.createApp({
                 console.log(this.cuisines);
                 return true
             }
+        },
+
+        toggleFavorite() {
+            console.log("=== You're in toggleFavourites() ===")   
+            this.restaurant.fav_restaurant = !this.restaurant.fav_restaurant;
+            // If changed to true (added)
+            axios.post('http://localhost:5000/api/restaurant/' + this.restaurantId, {
+            'fav_restaurant': this.restaurant.fav_restaurant
+        }).then(
+            response => {
+                console.log(response.data)
+            }
+        ).catch(
+            error => {
+                console.log(error)
+            })
+
+            console.log(this.favRestaurant)
+        },
+
+        backPage(){
+            window.history.back()
         }
+
+        // addFavourites() {
+        //     console.log("=== You're in addFavourites() ===")   
+        //     alert("Added to favourites list!") 
+        //       axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
+        //           fav_restaurant: true
+        //       }).then(
+        //           response => {
+        //               console.log(response.data)
+        //           }
+        //       ).catch(
+        //           error => {
+        //               console.log(error)
+        //           })
+        //           this.restaurant.fav_restaurant= true
+        //           console.log(this.favRestaurant);
+        // },
+
+        // removeFavourites() {
+        //     // If unselect, fav_restaurant become false
+        //     console.log("=== You're in removeFavourites() ===")   
+        //     alert("Removed from favourites list!") 
+        //       axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
+        //           fav_restaurant: false
+        //       }).then(
+        //           response => {
+        //               console.log(response.data)
+        //           }
+        //       ).catch(
+        //           error => {
+        //               console.log(error)
+        //           })
+        //           this.restaurant.fav_restaurant= true
+        //           console.log(this.favRestaurant);
+        // },
+
     }
 })
 
@@ -79,6 +143,7 @@ root.component('title-component', {
                     {{ ratings }}
                 </div>
             </div>
+            
         </div> 
 
         <div class="row">

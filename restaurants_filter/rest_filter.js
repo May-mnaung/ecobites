@@ -56,20 +56,24 @@ let lastSelectedRating = null; // Variable to store the last selected rating
 const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
 ratingCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default link behavior
+        event.preventDefault(); 
         const selectedRating = parseFloat(checkbox.getAttribute("value"));
 
         if (selectedRating === lastSelectedRating) {
             // Deselect the rating
             lastSelectedRating = null;
-            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.remove("selected");
         } else {
             // Select the rating
             lastSelectedRating = selectedRating;
-            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.add("selected"); 
+        }
+        if (submitButtonClicked) {
+          updateSelectedRatings(); 
+          filterAndDisplayResults(); 
         }
 
-        updateSelectedRatings(); // Update the selectedRatings array
+        // updateSelectedRatings(); // Update the selectedRatings array
     });
 });
 
@@ -81,9 +85,9 @@ function updateSelectedRatings() {
 
 // Function to filter and display results based on selected filters
 function filterAndDisplayResults() {
-  if (!submitButtonClicked) {
-    return; // Do not display cards until "Submit" button is clicked
-  }
+  // if (!submitButtonClicked) {
+  //   return; // Do not display cards until "Submit" button is clicked
+  // }
   
   const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(checkbox => checkbox.value);
   const selectedCuisines = Array.from(document.querySelectorAll('input[name="cuisine"]:checked')).map(checkbox => checkbox.id);
@@ -134,7 +138,8 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      location.href = '../restaurant_cards/card_details.html';
+      rest_id = restaurants[i]["_id"]["$oid"]
+      location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
         })
 
     cardImage.className = "card-img-top";
@@ -150,7 +155,7 @@ function filterAndDisplayResults() {
 
     //Append the heart icon to the heart button container
     heartButtonContainer.appendChild(heartIcon);
-    heartButtonContainer.style = "margin-top: 10px; margin-right: 10px";
+    heartButtonContainer.style = "margin-top: 20px; margin-right: 20px";
     heartButtonContainer.addEventListener('click', function() {
       if (this.classList.contains("clicked")) {
         this.classList.remove('clicked');
@@ -355,66 +360,58 @@ function filterAndDisplayResults() {
   }
 }
 
-// Add event listeners to your checkboxes to call filterAndDisplayResults
+// Add event listeners to checkboxes to call filterAndDisplayResults
 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach((checkbox) => {
-  checkbox.addEventListener("change", filterAndDisplayResults);
+  //checkbox.addEventListener("change", filterAndDisplayResults);
 });
 
-// Add an event listener for the "Submit" button
 const submitButton = document.getElementById("submitFilter");
 submitButton.addEventListener("click", function(event) {
-  event.preventDefault(); // Prevent the form from submitting
-
-  // Set the flag to indicate the "Submit" button has been clicked
+  event.preventDefault();
   submitButtonClicked = true;
+  // Auto close filterbar when submit button is clicked (phone screen)
+  if(filterBar.classList.contains("filter-bar-visible")){
+    console.log("ok");
+    filterBar.classList.remove("filter-bar-visible");
+    console.log("oh no removed!")
+    filterBar.style.width = '';
+    cardContainer.style.display = ''; 
+  }
 
-  // Call the filterAndDisplayResults function to update results based on selected filters
   filterAndDisplayResults();
-});
 
-// Initial call to fetch data and display results
+});
 fetchData();
 
 //code for refresh button
 document.addEventListener("DOMContentLoaded", function () {
-  // Get references to the submit button, clear filter button, and all checkboxes
   const submitButton = document.getElementById("submitFilter");
   const clearFilterButton = document.querySelector(".refresh-button");
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-  // Function to check if at least one checkbox is checked
+  //Check if at least one checkbox is checked
   function updateSubmitButton() {
     const atLeastOneChecked = [...checkboxes].some((checkbox) => checkbox.checked);
     submitButton.disabled = !atLeastOneChecked;
   }
 
-  // Add an event listener to each checkbox
   checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", updateSubmitButton);
   });
-
- // Event listener for the "Clear Filter" button
   clearFilterButton.addEventListener("click", function () {
-    // Uncheck all checkboxes
     checkboxes.forEach((checkbox) => {
       checkbox.checked = false;
     });
 
 
-
   lastSelectedRating = null;
-
-  // Disable the submit button
   submitButton.disabled = true;
-  // Call filterAndDisplayResults to display all restaurants
   submitButtonClicked = true;
   filterAndDisplayResults();
   
 });
 
-
-  // Initial call to set the submit button state
  updateSubmitButton();
 });
   

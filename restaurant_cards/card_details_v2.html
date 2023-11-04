@@ -18,7 +18,7 @@
         <a class="navbar-brand d-flex align-items-center" href="../templates/index.html">
             <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -50,6 +50,8 @@
             v-bind:ratings="restaurant.Ratings"
             v-bind:price="restaurant.Price">
         </title-component>
+
+        <i class="fa-solid fa-xmark fa-2xl" id="returnBtn" v-on:click="backPage()"></i>
 
             <div class="row d-flex align-items-center">
                 <image-component
@@ -87,11 +89,23 @@
                             <h2 class="fw-bolder mb-3">Details:</h2>
                             <h3>{{ restaurant.Location }}</h3>
                             <div class="d-flex">
-                                <a :href="restaurant.page_link" id="website" class="me-5">View website</a>
+                                <a :href="restaurant.page_link" id="website" class="me-4">View website</a>
                                 
-                                <button type="button" id="favourites" onclick="location.href = '../saved_fav_restaurant/favourite.restaurant.html';">
-                                    Add to Favourites<i class="fas fa-heart ps-2" style="color: red"></i>
-                                </button>
+                                <div class="heart-button">
+                                    <!-- If true: Remove -->
+                                    <button v-if="favRestaurant" type="button" v-on:click="toggleFavorite()" id="favourites" class="px-3">
+                                        Remove from Likes<i class="fas fa-heart ps-1" style="color: red"></i>
+                                        <!-- <i class="fa-solid fa-xmark fa-lg" style="color: red"></i> -->
+                                    </button> 
+                
+                                    <!-- If false: Add -->
+                                    <button v-else type="button" v-on:click="toggleFavorite()" id="favourites" class="px-4">
+                                        Add to Likes
+                                        <i class="fas fa-heart ps-1" style="color: red"></i>
+                                    </button> 
+                                </div>
+
+                       
                             </div>
                         </div>
                     </div>
@@ -101,6 +115,7 @@
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="card_details.js"></script>
 </body>
 </html>
