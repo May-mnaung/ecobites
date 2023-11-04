@@ -71,13 +71,6 @@ const root = Vue.createApp({
             console.log("=== You're in toggleFavourites() ===")   
             this.restaurant.fav_restaurant = !this.restaurant.fav_restaurant;
             // If changed to true (added)
-            if(this.restaurant.fav_restaurant){
-                alert("Added to likes!");
-                
-            }else {
-                alert("Removed from likes!")   
-            
-            }
             axios.post('http://localhost:5000/api/restaurant/' + this.restaurantId, {
             'fav_restaurant': this.restaurant.fav_restaurant
         }).then(
