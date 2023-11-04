@@ -206,11 +206,20 @@ i {
 
 
 #favourites {
-    width: 220px;
-    background-color: rgb(187, 231, 187);
-    color: white;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: rgb(174, 215, 174);
+    color: rgb(255, 255, 255);
     font-weight: bolder;
     border: transparent;
     border-radius: 40px;
 }
 
+#returnBtn {
+    position: absolute;
+    top: 115px;
+    right: 30px;
+    color: black;
+    opacity: 0.35;
+
+}

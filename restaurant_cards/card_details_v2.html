@@ -51,6 +51,8 @@
             v-bind:price="restaurant.Price">
         </title-component>
 
+        <i class="fa-solid fa-xmark fa-2xl" id="returnBtn" v-on:click="backPage()"></i>
+
             <div class="row d-flex align-items-center">
                 <image-component
                     v-bind:image="restaurant.Image">
@@ -87,19 +89,19 @@
                             <h2 class="fw-bolder mb-3">Details:</h2>
                             <h3>{{ restaurant.Location }}</h3>
                             <div class="d-flex">
-                                <a :href="restaurant.page_link" id="website" class="me-5">View website</a>
+                                <a :href="restaurant.page_link" id="website" class="me-4">View website</a>
                                 
                                 <div class="heart-button">
                                     <!-- If true: Remove -->
-                                    <button v-if="favRestaurant" type="button" v-on:click="toggleFavorite()" id="favourites">
-                                        Remove from Favorites
-                                        <i class="fa-solid fa-xmark ps-2" style="color: red"></i>
+                                    <button v-if="favRestaurant" type="button" v-on:click="toggleFavorite()" id="favourites" class="px-3">
+                                        Remove from Likes<i class="fas fa-heart ps-1" style="color: red"></i>
+                                        <!-- <i class="fa-solid fa-xmark fa-lg" style="color: red"></i> -->
                                     </button> 
                 
                                     <!-- If false: Add -->
-                                    <button v-else type="button" v-on:click="toggleFavorite()" id="favourites">
-                                        Add to Favorites
-                                        <i class="fas fa-heart ps-2" style="color: red"></i>
+                                    <button v-else type="button" v-on:click="toggleFavorite()" id="favourites" class="px-4">
+                                        Add to Likes
+                                        <i class="fas fa-heart ps-1" style="color: red"></i>
                                     </button> 
                                 </div>
 

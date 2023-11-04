@@ -72,9 +72,11 @@ const root = Vue.createApp({
             this.restaurant.fav_restaurant = !this.restaurant.fav_restaurant;
             // If changed to true (added)
             if(this.restaurant.fav_restaurant){
-                alert("Added to favourites list")
+                alert("Added to likes!");
+                
             }else {
-                alert("Removed from favourites List")   
+                alert("Removed from likes!")   
+            
             }
             axios.post('http://localhost:5000/api/restaurant/' + this.restaurantId, {
             'fav_restaurant': this.restaurant.fav_restaurant
@@ -89,6 +91,10 @@ const root = Vue.createApp({
 
             console.log(this.favRestaurant)
         },
+
+        backPage(){
+            window.history.back()
+        }
 
         // addFavourites() {
         //     console.log("=== You're in addFavourites() ===")   
@@ -144,6 +150,7 @@ root.component('title-component', {
                     {{ ratings }}
                 </div>
             </div>
+            
         </div> 
 
         <div class="row">
