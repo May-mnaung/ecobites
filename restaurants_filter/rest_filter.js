@@ -151,7 +151,7 @@ function filterAndDisplayResults() {
 
     //Append the heart icon to the heart button container
     heartButtonContainer.appendChild(heartIcon);
-    heartButtonContainer.style = "margin-top: 10px; margin-right: 10px";
+    heartButtonContainer.style = "margin-top: 20px; margin-right: 20px";
     heartButtonContainer.addEventListener('click', function() {
       if (this.classList.contains("clicked")) {
         this.classList.remove('clicked');
