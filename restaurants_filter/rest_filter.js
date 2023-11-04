@@ -56,20 +56,24 @@ let lastSelectedRating = null; // Variable to store the last selected rating
 const ratingCheckboxes = document.querySelectorAll('a[name="ratings"]');
 ratingCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default link behavior
+        event.preventDefault(); 
         const selectedRating = parseFloat(checkbox.getAttribute("value"));
 
         if (selectedRating === lastSelectedRating) {
             // Deselect the rating
             lastSelectedRating = null;
-            checkbox.classList.remove("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.remove("selected");
         } else {
             // Select the rating
             lastSelectedRating = selectedRating;
-            checkbox.classList.add("selected"); // Optionally, you can add a visual indication for the selected rating
+            checkbox.classList.add("selected"); 
+        }
+        if (submitButtonClicked) {
+          updateSelectedRatings(); 
+          filterAndDisplayResults(); 
         }
 
-        updateSelectedRatings(); // Update the selectedRatings array
+        // updateSelectedRatings(); // Update the selectedRatings array
     });
 });
 
