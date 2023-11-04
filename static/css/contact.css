@@ -41,7 +41,7 @@ textarea, input {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 30px;
   width: 30rem;
   margin: auto;
   perspective: 60rem;
@@ -67,7 +67,7 @@ textarea, input {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 22px;
   margin: auto;
 }
 .envelope.front {
@@ -132,8 +132,11 @@ textarea, input {
     animation: fadeInEnvelope 0.5s 1.33s forwards ease-out;
   }
   & .result-message {
-    opacity: 1;
-    transform: translateY(12rem);
+    
+      opacity: 1;
+      position: relative; /* Add position relative */
+      transform: translateY(12rem);
+      text-align:center; 
   }
   & small {
     opacity: 0;

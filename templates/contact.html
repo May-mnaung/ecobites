@@ -66,6 +66,7 @@
         text-align: center;
     }
 
+    
     h1{
         font-family: 'Times New Roman', Times, serif;
     }
@@ -78,25 +79,28 @@
     #message::placeholder{
         font-family: 'Times New Roman', Times, serif;
     }
+    
+
 
     /* CSS for the error message */
-.error {
-  position: relative;
-  width: 100%;/* Background color for the error message */
-  color: rgb(246, 87, 87); /* Text color for the error message */
-  text-align: center;
-  padding: 10px; /* Adjust padding as needed */
-  margin-top: 10px; /* Spacing between "side" and error message */
+        .error {
+        position: absolute;
+        width: 100%;/* Background color for the error message */
+        color: rgb(251, 115, 115); /* Text color for the error message */
+        text-align: center;
+        top: 50%;
+        padding: 10px; 
+        margin-top: 20px;
 
-}
+        }
 
 /* Rest of your CSS styles */
 
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" id="navigationBar">
-        <a class="navbar-brand d-flex align-items-center" href="../templates/index.html">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navigationBar">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="../static/images/icon.PNG" class="mr-2" id="Logo" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,25 +108,32 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto nav">
-                <li class="nav-item active mx-4">
-                    <a class="nav-link" href="../templates/index.html" >Home</a>
-                </li>
-                <li class="nav-item active mx-4">
-                    <a class="nav-link" href="../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
-                </li>
-                <li class="nav-item active mx-4">
-                    <a class="nav-link" href="../map/mapPointer2.html" >Restaurant Nearby</a>
-                </li>
-                <li class="nav-item active mx-4">
-                    <a class="nav-link active" href="../templates/contact.html">Contact Us</a>
-                </li>
-            </ul>
+    
+              <li class="nav-item active mx-4">
+                <a class="nav-link active" href="../templates/index.html" >Home</a>
+            </li>
+            <li class="nav-item active mx-4">
+                <a class="nav-link" href="../restaurants_filter/rest_filter.html" >Restaurant Filter</a>
+            </li>
+            <li class="nav-item active mx-4">
+                <a class="nav-link" href="../map/mapPointer2.html" >Restaurant Nearby</a>
+            </li>
+            <li class="nav-item active mx-4">
+                <a class="nav-link" href="../templates/contact.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
         <div class="icons-container">
             <a href="../saved_fav_restaurant/fav_rest_ver2.html" class="bi bi-heart" style="font-size: 20px;"></a>
             <a href="../Landing_page/landing_page.html" class="bi bi-box-arrow-right" style="font-size: 20px;"></a>
         </div>
     </nav>
+    <div>
+        
+        <br>
+        <br>
+        
+    </div>
     <div class="wrapper centered">
     <article class="letter">
     <div class="side">
@@ -144,14 +155,16 @@
       </p>
     </div>
     </article>
+    <div class="error">
+        <p id="error-message" class="error-message"></p>
+    </div>
     
     <div class="envelope front"></div>
     <div class="envelope back"></div>
     </div>
-    <div class="error">
-        <p id="error-message" class="error-message"></p>
-    </div>
-    <p class="result-message">Thank you for your message</p>
+    <br>
+    <br>
+    <!-- <p class="result-message">Thank you for your message</p> -->
     
     
     <footer class="site-footer fixed-bottom">
@@ -205,14 +218,16 @@
         var error_msg = '';
 
         if (name === '') {
-            error_msg += 'Please enter your name.\n';
+            error_msg += ' >Please enter your name';
         }
         if (email === '' || !emailRegex.test(email)) {
-            error_msg += 'Please enter a valid email address.\n';
+            error_msg += '>Please provide a valid email';
         }
-        if (msg === '') {
-            error_msg += 'Please enter your message.';
+        
+        if (msg === '' && error_msg!='') {
+            error_msg += '>Key in your message';
         }
+       
 
         var errorMessageElement = document.getElementById('error-message');
         
