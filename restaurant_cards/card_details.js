@@ -76,6 +76,12 @@ const root = Vue.createApp({
         }).then(
             response => {
                 console.log(response.data)
+
+                if (this.restaurant.fav_restaurant) {
+                    document.getElementById("display-message").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&#128226; Successfully added to favorites";
+                } else {
+                    document.getElementById("display-message").innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&#128226; Successfully removed from favorites";
+                }
             }
         ).catch(
             error => {
