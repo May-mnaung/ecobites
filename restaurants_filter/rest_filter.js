@@ -371,9 +371,11 @@ submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   submitButtonClicked = true;
   filterAndDisplayResults();
-  
-  
-  
+  if(filterBar.classList.contains("filter-bar-visible")){
+    filterBar.classList.remove("filter-bar-visible");
+    filterBar.style.width = '';
+    cardContainer.style.display = ''; 
+  }
 
 });
 fetchData();
