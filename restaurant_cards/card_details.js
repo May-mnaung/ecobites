@@ -95,40 +95,7 @@ const root = Vue.createApp({
             window.history.back()
         }
 
-        // addFavourites() {
-        //     console.log("=== You're in addFavourites() ===")   
-        //     alert("Added to favourites list!") 
-        //       axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
-        //           fav_restaurant: true
-        //       }).then(
-        //           response => {
-        //               console.log(response.data)
-        //           }
-        //       ).catch(
-        //           error => {
-        //               console.log(error)
-        //           })
-        //           this.restaurant.fav_restaurant= true
-        //           console.log(this.favRestaurant);
-        // },
 
-        // removeFavourites() {
-        //     // If unselect, fav_restaurant become false
-        //     console.log("=== You're in removeFavourites() ===")   
-        //     alert("Removed from favourites list!") 
-        //       axios.post('http://127.0.0.1:5000/api/restaurant/' + this.restaurantId, {
-        //           fav_restaurant: false
-        //       }).then(
-        //           response => {
-        //               console.log(response.data)
-        //           }
-        //       ).catch(
-        //           error => {
-        //               console.log(error)
-        //           })
-        //           this.restaurant.fav_restaurant= true
-        //           console.log(this.favRestaurant);
-        // },
 
     }
 })
