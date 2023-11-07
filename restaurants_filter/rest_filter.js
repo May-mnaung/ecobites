@@ -138,7 +138,7 @@ function filterAndDisplayResults() {
 
     //sihua add on this few lines 62-65:
     cardImage.addEventListener("click", function(){
-      rest_id = restaurants[i]["_id"]["$oid"]
+      rest_id = filteredRestaurants[i]["_id"]["$oid"]
       location.href = `../restaurant_cards/card_details_v2.html?id=${rest_id}`;
         })
 
@@ -370,21 +370,16 @@ const submitButton = document.getElementById("submitFilter");
 submitButton.addEventListener("click", function(event) {
   event.preventDefault();
   submitButtonClicked = true;
-  // Auto close filterbar when submit button is clicked (phone screen)
-  if(filterBar.classList.contains("filter-bar-visible")){
-    console.log("ok");
-    filterBar.classList.remove("filter-bar-visible");
-    console.log("oh no removed!")
-    filterBar.style.width = '';
-    cardContainer.style.display = ''; 
-  }
-
   filterAndDisplayResults();
+  
+  
+  
 
 });
 fetchData();
 
 //code for refresh button
+
 document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("submitFilter");
   const clearFilterButton = document.querySelector(".refresh-button");
@@ -404,14 +399,21 @@ document.addEventListener("DOMContentLoaded", function () {
       checkbox.checked = false;
     });
 
+    // Clear the "selected" class from star rating checkboxes
+    lastSelectedRating = null;
+    ratingCheckboxes.forEach((checkbox) => {
+    checkbox.classList.remove("selected");
+  });
 
-  lastSelectedRating = null;
+
+  
   submitButton.disabled = true;
   submitButtonClicked = true;
   filterAndDisplayResults();
   
 });
 
+ 
  updateSubmitButton();
 });
   
