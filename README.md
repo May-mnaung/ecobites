@@ -55,7 +55,7 @@ To run the application:
 To deactivate your virtual environment, simply run the following code in the terminal:
          ```~ deactivate```
 
-##WAD2-Project
+## WAD2-Project
 Homepage is located under:index.html
 
 Recipes, individual recipe pages are located under:recipe_folder 
