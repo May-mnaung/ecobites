@@ -131,6 +131,10 @@ ul{
 
 
 /* CSS FOR RESTAURANT CARDS */
+#card-container .col{
+    margin-bottom: 48px;
+}
+
 .card-img-top{
     width: 100%;
     height: 280px; 
