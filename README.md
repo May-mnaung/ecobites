@@ -83,7 +83,7 @@ Steps to run the ecobites web application
 1. Run the backend steps included in the running the backend 
 2. Start running your MAMP/WAMP
 3. The application should be seen when the file path has been entered in the search bar
-4. Start from the landing_page.html 
+4. Start from the landing_page.html
    
 
 
