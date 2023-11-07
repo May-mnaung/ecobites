@@ -54,6 +54,9 @@ Flask needs to know the URL to the database:
         Mac users: ```export MONGO_URI=mongodb+srv://ecobites041:aqYZIewe4fg3Lyig@cluster0.u3pvg7m.mongodb.net/```
         Windows users: ```set MONGO_URI=mongodb+srv://ecobites041:aqYZIewe4fg3Lyig@cluster0.u3pvg7m.mongodb.net/```
 
+Install flask cors 
+```pip install flask-cors```
+
 To run the application:
          ```flask run```
 
