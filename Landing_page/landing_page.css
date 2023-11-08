@@ -60,25 +60,6 @@ div{
 
 
 
-
-
-
-#nav_bar{
-    background-color: #75996d;
-    padding-top: 1.5vw;
-    padding-bottom:1vw;
-    width:100%;
-    margin-left:0;
-    margin-right:0;
-    box-sizing: border-box;
-    position:fixed;
-    z-index:2;
-    padding-left:3vw;
-    
-}
-
-
-
 .nav-link{
     color:white;
     font-weight: lighter;
@@ -91,22 +72,6 @@ div{
 }
 
 
-
-
-
-#ecobite{
-    color:black;
-    text-shadow: 2px 2px 1px rgb(94, 94, 94);
-    font-weight: bold;
-    font-size: 3vw;
-    top:1.5vw;
-    margin-top:1.5%;
-    position:absolute;
-    vertical-align: middle;
-
-
-
-}
 
 
 #btn{
@@ -248,92 +213,6 @@ ul{
 
   }
 
-/* .text1{
-  margin-left:40px;
-  text-wrap:balance;
-  line-height: 1.5;
-  display: inline-block;
-  position: absolute;
-  vertical-align: middle;
-  margin-top: 3%;
-  margin-right: 3%;
-  text-align: center;
-  padding-right:10%;
-  line-height:2;
-} */
-
-
-.greenback{
-  background-color: #C2E6BA;
-  width:100%;
-  margin-bottom: 10vw;
-
-
-}
-
-.greenblock{
-  background-color: #75996d;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  position:absolute
-}
-
-.white_title{
-  font-size:2.5vw;
-  color: white;
-  font-weight:bolder;
-  text-wrap:balance;
-  line-height: 1.5;
-  text-align: center;
-  padding-top:20px
-
-
-}
-
-.card_text{
-  color:white;
-  text-wrap: pretty;
-  line-height: 1.5;
-  text-align: center;
-  font-style: italic;
-  padding-top: 3vw;
-  padding-left: 3vw;
-  padding-right: 3vw;
-  vertical-align: top;
-  
-}
-
-.card{
-  border-radius: 15px;
-  border:none;
-  margin-right: 3vw;
-  margin-left: 3vw;
-  height: min-content;
-  width: 50rem; 
-  background-color: #75996d;
-  max-width:300px;
-  
-
-}
-
-.icon{
-  justify-self: center;
-  margin-top:10vw;
-  max-width: 30%;
-  max-height:30%;
-	
-}
-
-.lasticon{
-  justify-self: center;
-  width: 15vw;
-  height: 15vw;
-
-
-}
-
 /* (A) SPEECH BOX */
 .speech {
   /* (A1) FONT */
@@ -378,18 +257,6 @@ ul{
   
   }
 
-  .trans_box{
-    padding:5vw;
-    text-align: center;
-    text-wrap: pretty;
-    line-height: 1.5;
-    margin-left:10%;
-    margin-right:10%;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 15px;
-    
-  }
-
   .underline{
     text-decoration: underline;
   }
@@ -405,17 +272,6 @@ ul{
   margin-bottom:0
 
 
-
-  }
-
-  .text2{
-  /* font-size: 2.5vw; */
-  margin-left: 20%;
-  text-wrap:pretty;
-  line-height: 1.5;
-  position: relative;
-  vertical-align: middle;
-  text-align: center;
 
   }
 
@@ -442,13 +298,6 @@ ul{
  
   }
 
-  .links{
-    color: black;
-    font-size: 1.5vw;
-    text-decoration: none;
-    text-wrap:pretty;
-    
-  }
 
   .last_title{
     text-wrap:pretty;
@@ -462,31 +311,6 @@ ul{
 
   }
 
-  #adjbox{
-    /* font-size:2vw; */
-    margin-left:0;
-    margin-right:0;
-    padding:2vw;
-    margin-bottom:0;
-    margin-top: auto;
-    margin-bottom: auto;
-
-  }
-
-  .iconadj1{
-    margin-left: 10vw; 
-    display: inline-block;
-    max-width:15%;
-
-  }
-
-  .iconadj2{
-    margin-left: 8vw; ;
-    display:inline-block;
-    max-width:20%;
-    margin-top:2.5vw
-  }
-
   #adjtext{
     line-height: 1;
     margin-left:auto;
@@ -494,13 +318,6 @@ ul{
 
   }
 
-  #improve{
-    margin-left:20px; margin-right:0px;
-  }
-
-  .chainpic{
-    width:20vw;
-  }
 
   #earth{
     height:7vw;
@@ -533,22 +350,6 @@ ul{
 
   h5{
     font-size: 1vw;
-  }
-
-  #twocard{
-    width:80vw;
-    justify-content: center;
-    margin-top:5vw;
-  }
-
-  #center{
-    margin-left:0;
-    margin-right:0;
-  }
-
-  #moveleft{
-    margin-left:0;
-    margin-top:5vw
   }
   
 
@@ -761,10 +562,6 @@ ul{
     height:6.75vw
 }
 
-#Logo
-{
-    width: 27%;
-}
 
 .nav-link {
     color: black;
